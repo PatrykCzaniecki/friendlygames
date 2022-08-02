@@ -22,43 +22,22 @@ namespace FriendlyGames.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
+            modelBuilder.Entity("EventUser", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<int>("CurrentPlayersId")
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Country")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("PhoneNumber")
+                    b.Property<int>("EventsHistoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("PostalCode")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasKey("CurrentPlayersId", "EventsHistoryId");
 
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.HasIndex("EventsHistoryId");
 
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
+                    b.ToTable("EventUser");
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Soccer", b =>
+            modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -105,7 +84,45 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasIndex("LocationId");
 
-                    b.ToTable("Soccer");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Events");
+                });
+
+            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Country")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("PostalCode")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.Team", b =>
@@ -123,14 +140,9 @@ namespace FriendlyGames.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int?>("SoccerId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
-                    b.HasIndex("SoccerId");
-
-                    b.ToTable("Team");
+                    b.ToTable("Teams");
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>
@@ -171,10 +183,25 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasIndex("TeamId");
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Soccer", b =>
+            modelBuilder.Entity("EventUser", b =>
+                {
+                    b.HasOne("FriendlyGames.Domain.Models.User", null)
+                        .WithMany()
+                        .HasForeignKey("CurrentPlayersId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("FriendlyGames.Domain.Models.Event", null)
+                        .WithMany()
+                        .HasForeignKey("EventsHistoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.HasOne("FriendlyGames.Domain.Models.Location", "Location")
                         .WithMany()
@@ -182,14 +209,15 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Location");
-                });
+                    b.HasOne("FriendlyGames.Domain.Models.User", "EventCreator")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Team", b =>
-                {
-                    b.HasOne("FriendlyGames.Domain.Models.Soccer", null)
-                        .WithMany("TeamList")
-                        .HasForeignKey("SoccerId");
+                    b.Navigation("EventCreator");
+
+                    b.Navigation("Location");
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>
@@ -197,11 +225,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasOne("FriendlyGames.Domain.Models.Team", null)
                         .WithMany("CurrentPlayers")
                         .HasForeignKey("TeamId");
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Soccer", b =>
-                {
-                    b.Navigation("TeamList");
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.Team", b =>

@@ -16,25 +16,24 @@ namespace FriendlyGames.Domain.Models
         public string NickName { get; set; }
         public string Password { get; set; }
         public DateTime DateOfBirth { get; set; }
-        [NotMapped]
-        public List<Event> EventsHistory
+        public List<Event> EventsHistory { get; set; }
+
+        /*get
         {
-            get
+            return EventsHistory;
+        }
+        set
+        {
+            foreach (var Event in ActualEvents)
             {
-                return EventsHistory;
-            }
-            set
-            {
-                foreach (var Event in ActualEvents)
+                //do przetestowania czy data sie zgadza
+                if (Event.EndTime >= DateTime.Now)
                 {
-                    //do przetestowania czy data sie zgadza
-                    if (Event.EndTime >= DateTime.Now)
-                    {
-                        EventsHistory.Add(Event);
-                    }
+                    EventsHistory.Add(Event);
                 }
             }
-        }
+        }*/
+
         [NotMapped]
         public List<Event> ActualEvents { get; set; }
     }
