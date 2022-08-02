@@ -14,8 +14,4 @@
 		</PackageReference>
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Domain\FriendlyGames.Domain.csproj" />
-	</ItemGroup>
-
 </Project>

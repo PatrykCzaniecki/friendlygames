@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Data\FriendlyGames.Data.csproj" />
-    <ProjectReference Include="..\Domain\FriendlyGames.Domain.csproj" />
   </ItemGroup>
 
 </Project>
