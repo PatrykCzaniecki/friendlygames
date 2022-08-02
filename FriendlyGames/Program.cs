@@ -11,7 +11,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<FriendlyGamesDbContext>(
-    opt => opt.UseSqlServer("DefaultConnection")
+    opt => opt.UseSqlServer("MssqlConnection")
     );
 
 var app = builder.Build();
