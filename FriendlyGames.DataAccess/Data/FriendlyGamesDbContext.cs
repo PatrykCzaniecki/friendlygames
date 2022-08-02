@@ -15,12 +15,16 @@ namespace FriendlyGames.DataAccess.Data
         public DbSet<Team> Team { get; set; }
         public DbSet<User> User { get; set; }
 
-        public FriendlyGamesDbContext(DbContextOptions options) : base(options){}
+        public FriendlyGamesDbContext(DbContextOptions options) : base(options)
+        {
 
-        //protected override void OnModelCreating(ModelBuilder modelBuilder)
-        //{
-        //    base.OnModelCreating(modelBuilder);
+        }
 
-        //}
+       protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+           /*base.OnModelCreating(modelBuilder);
+           modelBuilder.Entity<Soccer>().*/
+
+        }
     }
 }

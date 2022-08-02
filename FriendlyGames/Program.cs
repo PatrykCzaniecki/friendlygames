@@ -10,8 +10,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FriendlyGamesDbContext>(
-    opt => opt.UseSqlServer("DefaultConnection")
+    opt => opt.UseSqlServer(connectionString)
     );
 
 var app = builder.Build();
