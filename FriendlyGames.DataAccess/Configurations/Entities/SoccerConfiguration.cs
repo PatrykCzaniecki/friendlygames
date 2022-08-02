@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FriendlyGames.DataAccess.Configurations.Entities
 {
-    public class SoccerConfiguration : IEntityTypeConfiguration<Soccer>
+    /*public class SoccerConfiguration : IEntityTypeConfiguration<Soccer>
     {
         public void Configure(EntityTypeBuilder<Soccer> builder)
         {
@@ -17,5 +17,5 @@ namespace FriendlyGames.DataAccess.Configurations.Entities
                 new Soccer { Id = 1, Name = "test" }
             );
         }
-    }
+    }*/
 }
