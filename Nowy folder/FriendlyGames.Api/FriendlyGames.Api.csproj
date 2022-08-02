@@ -23,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Data\FriendlyGames.Data.csproj" />
+    <ProjectReference Include="..\FriendlyGames.DataAccess\FriendlyGames.DataAccess.csproj" />
+    <ProjectReference Include="..\FriendlyGames.Domain\FriendlyGames.Domain.csproj" />
   </ItemGroup>
 
 </Project>

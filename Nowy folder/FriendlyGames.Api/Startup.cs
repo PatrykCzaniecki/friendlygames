@@ -1,5 +1,5 @@
 ﻿using System.Reflection;
-using FriendlyGames.Data;
+using FriendlyGames.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
@@ -19,7 +19,7 @@ public class Startup
     public void ConfigureServices(IServiceCollection services)
     {
         // DbContext
-        services.AddDbContext<FriendlyGamesContext>(options =>
+        services.AddDbContext<FriendlyGamesDbContext>(options =>
         {
             options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection"));
         });
