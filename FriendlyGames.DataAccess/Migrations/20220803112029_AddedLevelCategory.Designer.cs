@@ -4,6 +4,7 @@ using FriendlyGames.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    partial class FriendlyGamesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220803112029_AddedLevelCategory")]
+    partial class AddedLevelCategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -125,84 +127,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Enums.SurfaceCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SurfaceCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Grass"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Court"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Sand"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Hall"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Pool"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Name = "Others"
-                        });
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Enums.SurroundingCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SurroundingCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Indoor"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Outdoor"
-                        });
-                });
-
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -230,12 +154,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("SurfaceCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("SurroundingCategoryId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.HasIndex("CreatorId");
@@ -243,10 +161,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasIndex("EventCategoryId");
 
                     b.HasIndex("LevelCategoryId");
-
-                    b.HasIndex("SurfaceCategoryId");
-
-                    b.HasIndex("SurroundingCategoryId");
 
                     b.ToTable("Events");
 
@@ -259,9 +173,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventCategoryId = 1,
                             LevelCategoryId = 2,
                             Name = "Runmageddon",
-                            StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            SurfaceCategoryId = 1,
-                            SurroundingCategoryId = 1
+                            StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified)
                         },
                         new
                         {
@@ -271,9 +183,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventCategoryId = 2,
                             LevelCategoryId = 1,
                             Name = "My kontra Wy",
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            SurfaceCategoryId = 1,
-                            SurroundingCategoryId = 2
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified)
                         });
                 });
 
@@ -394,28 +304,28 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 14, 12, 56, 431, DateTimeKind.Local).AddTicks(1642)
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 20, 29, 360, DateTimeKind.Local).AddTicks(512)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 14, 12, 56, 431, DateTimeKind.Local).AddTicks(1703)
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 20, 29, 360, DateTimeKind.Local).AddTicks(564)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 14, 12, 56, 431, DateTimeKind.Local).AddTicks(1716)
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 20, 29, 360, DateTimeKind.Local).AddTicks(578)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 14, 12, 56, 431, DateTimeKind.Local).AddTicks(1730)
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 20, 29, 360, DateTimeKind.Local).AddTicks(593)
                         });
                 });
 
@@ -503,27 +413,11 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Enums.SurfaceCategory", "SurfaceCategory")
-                        .WithMany()
-                        .HasForeignKey("SurfaceCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("FriendlyGames.Domain.Enums.SurroundingCategory", "SurroundingCategory")
-                        .WithMany()
-                        .HasForeignKey("SurroundingCategoryId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Creator");
 
                     b.Navigation("EventCategory");
 
                     b.Navigation("LevelCategory");
-
-                    b.Navigation("SurfaceCategory");
-
-                    b.Navigation("SurroundingCategory");
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.FootballMatch", b =>
