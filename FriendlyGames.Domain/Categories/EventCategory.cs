@@ -1,4 +1,4 @@
-﻿namespace FriendlyGames.Domain.Models;
+﻿namespace FriendlyGames.Domain.Categories;
 
 public class EventCategory
 {

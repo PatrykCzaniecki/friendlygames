@@ -1,3 +1,4 @@
+using FriendlyGames.Domain.Categories;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FriendlyGames.Domain.Models;

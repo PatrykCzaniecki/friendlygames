@@ -24,6 +24,19 @@ namespace FriendlyGames.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "RegistrationCategory",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_RegistrationCategory", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Teams",
                 columns: table => new
                 {
@@ -145,8 +158,7 @@ namespace FriendlyGames.DataAccess.Migrations
                     EventId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     RegistrationDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    RegistrationStatus = table.Column<int>(type: "int", nullable: false),
-                    RegistrationStatusAsString = table.Column<string>(type: "nvarchar(64)", maxLength: 64, nullable: false)
+                    RegistrationCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -157,6 +169,12 @@ namespace FriendlyGames.DataAccess.Migrations
                         principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_Registrations_RegistrationCategory_RegistrationCategoryId",
+                        column: x => x.RegistrationCategoryId,
+                        principalTable: "RegistrationCategory",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Registrations_Users_UserId",
                         column: x => x.UserId,
@@ -172,6 +190,16 @@ namespace FriendlyGames.DataAccess.Migrations
                 {
                     { 1, "Biegi krótkie, długie i takie sobie...", "Bieg" },
                     { 2, "Nic się nie stało, rodacy nic się nie stało", "Mecz piłki nożnej" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "RegistrationCategory",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Waiting" },
+                    { 2, "Accepted" },
+                    { 3, "Rejected" }
                 });
 
             migrationBuilder.InsertData(
@@ -219,13 +247,13 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Registrations",
-                columns: new[] { "EventId", "UserId", "RegistrationDateTime", "RegistrationStatus", "RegistrationStatusAsString" },
+                columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
                 values: new object[,]
                 {
-                    { 1, 1, new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8892), 1, "Accepted" },
-                    { 1, 2, new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8934), 0, "Waiting" },
-                    { 2, 1, new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8953), 0, "Waiting" },
-                    { 2, 2, new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8944), 1, "Accepted" }
+                    { 1, 1, 1, new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7162) },
+                    { 1, 2, 1, new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7245) },
+                    { 2, 1, 3, new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7286) },
+                    { 2, 2, 2, new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7266) }
                 });
 
             migrationBuilder.CreateIndex(
@@ -259,6 +287,11 @@ namespace FriendlyGames.DataAccess.Migrations
                 column: "UserId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Registrations_RegistrationCategoryId",
+                table: "Registrations",
+                column: "RegistrationCategoryId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Registrations_UserId",
                 table: "Registrations",
                 column: "UserId");
@@ -280,6 +313,9 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "Events");
+
+            migrationBuilder.DropTable(
+                name: "RegistrationCategory");
 
             migrationBuilder.DropTable(
                 name: "EventCategories");

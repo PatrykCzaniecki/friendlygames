@@ -22,6 +22,75 @@ namespace FriendlyGames.DataAccess.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
+            modelBuilder.Entity("FriendlyGames.Domain.Categories.EventCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("EventCategories");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Biegi krótkie, długie i takie sobie...",
+                            Name = "Bieg"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Nic się nie stało, rodacy nic się nie stało",
+                            Name = "Mecz piłki nożnej"
+                        });
+                });
+
+            modelBuilder.Entity("FriendlyGames.Domain.Enums.RegistrationCategory", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("RegistrationCategory");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Waiting"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Accepted"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Rejected"
+                        });
+                });
+
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -72,41 +141,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventCategoryId = 2,
                             Name = "My kontra Wy",
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified)
-                        });
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.EventCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("EventCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Biegi krótkie, długie i takie sobie...",
-                            Name = "Bieg"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Nic się nie stało, rodacy nic się nie stało",
-                            Name = "Mecz piłki nożnej"
                         });
                 });
 
@@ -207,18 +241,15 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("UserId")
                         .HasColumnType("int");
 
+                    b.Property<int>("RegistrationCategoryId")
+                        .HasColumnType("int");
+
                     b.Property<DateTime>("RegistrationDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("RegistrationStatus")
-                        .HasColumnType("int");
-
-                    b.Property<string>("RegistrationStatusAsString")
-                        .IsRequired()
-                        .HasMaxLength(64)
-                        .HasColumnType("nvarchar(64)");
-
                     b.HasKey("EventId", "UserId");
+
+                    b.HasIndex("RegistrationCategoryId");
 
                     b.HasIndex("UserId");
 
@@ -229,33 +260,29 @@ namespace FriendlyGames.DataAccess.Migrations
                         {
                             EventId = 1,
                             UserId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8892),
-                            RegistrationStatus = 1,
-                            RegistrationStatusAsString = "Accepted"
+                            RegistrationCategoryId = 1,
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7162)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8934),
-                            RegistrationStatus = 0,
-                            RegistrationStatusAsString = "Waiting"
+                            RegistrationCategoryId = 1,
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7245)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8944),
-                            RegistrationStatus = 1,
-                            RegistrationStatusAsString = "Accepted"
+                            RegistrationCategoryId = 2,
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7266)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 3, 11, 18, 30, 408, DateTimeKind.Local).AddTicks(8953),
-                            RegistrationStatus = 0,
-                            RegistrationStatusAsString = "Waiting"
+                            RegistrationCategoryId = 3,
+                            RegistrationDateTime = new DateTime(2022, 8, 3, 13, 9, 39, 220, DateTimeKind.Local).AddTicks(7286)
                         });
                 });
 
@@ -331,7 +358,7 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Models.EventCategory", "EventCategory")
+                    b.HasOne("FriendlyGames.Domain.Categories.EventCategory", "EventCategory")
                         .WithMany()
                         .HasForeignKey("EventCategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -396,6 +423,12 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
+                    b.HasOne("FriendlyGames.Domain.Enums.RegistrationCategory", "RegistrationCategory")
+                        .WithMany()
+                        .HasForeignKey("RegistrationCategoryId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
                     b.HasOne("FriendlyGames.Domain.Models.User", "User")
                         .WithMany("Registrations")
                         .HasForeignKey("UserId")
@@ -403,6 +436,8 @@ namespace FriendlyGames.DataAccess.Migrations
                         .IsRequired();
 
                     b.Navigation("Event");
+
+                    b.Navigation("RegistrationCategory");
 
                     b.Navigation("User");
                 });

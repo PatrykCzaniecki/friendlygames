@@ -1,4 +1,5 @@
-﻿using FriendlyGames.Domain.Enums;
+﻿using FriendlyGames.Domain.Categories;
+using FriendlyGames.Domain.Enums;
 using FriendlyGames.Domain.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -22,10 +23,6 @@ public class FriendlyGamesDbContext : DbContext
     {
         // Defining relations and type conversions
         modelBuilder.Entity<Registration>()
-            .Property(r => r.RegistrationStatusAsString)
-            .HasConversion<string>()
-            .HasMaxLength(64);
-        modelBuilder.Entity<Registration>()
             .HasKey(r => new { r.EventId, r.UserId });
         modelBuilder.Entity<Registration>()
             .HasOne(r => r.Event)
@@ -47,6 +44,9 @@ public class FriendlyGamesDbContext : DbContext
             .HasOne(fm => fm.Event);
 
         // Seeding data
+        modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 1, Name = "Waiting"});
+        modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 2, Name = "Accepted"});
+        modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 3, Name = "Rejected"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
             { Id = 1, Name = "Bieg", Description = "Biegi krótkie, długie i takie sobie..." });
@@ -82,28 +82,28 @@ public class FriendlyGamesDbContext : DbContext
             {
                 EventId = 1,
                 UserId = 1,
-                RegistrationStatus = RegistrationStatus.Accepted
+                RegistrationCategoryId = 1
             });
         modelBuilder.Entity<Registration>()
             .HasData(new Registration
             {
                 EventId = 1,
                 UserId = 2,
-                RegistrationStatus = RegistrationStatus.Waiting
+                RegistrationCategoryId = 1
             });
         modelBuilder.Entity<Registration>()
             .HasData(new Registration
             {
                 EventId = 2,
                 UserId = 2,
-                RegistrationStatus = RegistrationStatus.Accepted
+                RegistrationCategoryId = 2
             });
         modelBuilder.Entity<Registration>()
             .HasData(new Registration
             {
                 EventId = 2,
                 UserId = 1,
-                RegistrationStatus = RegistrationStatus.Waiting
+                RegistrationCategoryId = 3
             });
         modelBuilder.Entity<Team>()
             .HasData(new Team
