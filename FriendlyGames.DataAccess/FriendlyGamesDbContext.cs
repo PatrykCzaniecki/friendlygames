@@ -60,16 +60,17 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 3, Name = "Sand" });
         modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 4, Name = "Hall" });
         modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 5, Name = "Pool" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 6, Name = "Others" });
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 6, Name = "Synthetic" });
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 7, Name = "Others" });
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() {Id = 1, Name = "Easy"});
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() { Id = 2, Name = "Medium" });
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() { Id = 3, Name = "Advanced" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-            { Id = 1, Name = "Bieg", Description = "Biegi krótkie, długie i takie sobie..." });
+            { Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-            { Id = 2, Name = "Mecz piłki nożnej", Description = "Nic się nie stało, rodacy nic się nie stało" });
+            { Id = 2, Name = "Piłka Nożna", Description = "Orlikowe granie" });
         modelBuilder.Entity<User>()
             .HasData(new User { Id = 1, FirstName = "John", LastName = "Doe" });
         modelBuilder.Entity<User>()
@@ -78,20 +79,20 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Event
             {
                 Id = 1,
-                Name = "Runmageddon",
+                Name = "Koszykówka",
                 CreatorId = 1,
                 StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0),
                 EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0),
                 EventCategoryId = 1,
                 LevelCategoryId = 2,
-                SurfaceCategoryId = 1,
-                SurroundingCategoryId = 1
+                SurfaceCategoryId = 6,
+                SurroundingCategoryId = 2
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
             {
                 Id = 2,
-                Name = "My kontra Wy",
+                Name = "Piła Nożna",
                 CreatorId = 2,
                 StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0),
                 EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0),
@@ -132,19 +133,19 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Team
             {
                 Id = 1,
-                Name = "My",
+                Name = "Wilki",
             });
         modelBuilder.Entity<Team>()
             .HasData(new Team
             {
                 Id = 2,
-                Name = "Wy",
+                Name = "Owce",
             });
         modelBuilder.Entity<Player>()
             .HasData(new Player
             {
                 Id = 1,
-                Nickname = "JD",
+                Nickname = "DzikiNapastnik",
                 UserId = 1,
                 TeamId = 1,
             });
@@ -152,7 +153,7 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Player
             {
                 Id = 2,
-                Nickname = "AS",
+                Nickname = "SzatańskiBramkarz",
                 UserId = 2,
                 TeamId = 1,
             });
@@ -160,7 +161,7 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Player
             {
                 Id = 3,
-                Nickname = "DJ",
+                Nickname = "SzybkaOsa",
                 UserId = 1,
                 TeamId = 2,
             });
@@ -168,7 +169,7 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Player
             {
                 Id = 4,
-                Nickname = "SA",
+                Nickname = "GroźnyNiedźwiedz",
                 UserId = 2,
                 TeamId = 2
             });
