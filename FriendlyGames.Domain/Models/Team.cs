@@ -1,7 +1,10 @@
-﻿namespace FriendlyGames.Domain.Models;
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace FriendlyGames.Domain.Models;
 
 public class Team
 {
+    [Key]
     public int Id { get; set; }
     public string Name { get; set; }
     public List<Player> Players { get; set; }

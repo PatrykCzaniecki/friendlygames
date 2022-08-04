@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using FriendlyGames.Domain.Categories;
 using System.ComponentModel.DataAnnotations.Schema;
 using FriendlyGames.Domain.Enums;
@@ -6,6 +7,7 @@ namespace FriendlyGames.Domain.Models;
 
 public class Event
 {
+    [Key]
     public int Id { get; set; }
     public string Name { get; set; } = null!;
     public DateTime StartDateTime { get; set; }

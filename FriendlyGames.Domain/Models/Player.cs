@@ -1,9 +1,11 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace FriendlyGames.Domain.Models;
 
 public class Player
 {
+    [Key]
     public int Id { get; set; }
     public string Nickname { get; set; }
     [ForeignKey(nameof(UserId))]
