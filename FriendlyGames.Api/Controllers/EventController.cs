@@ -49,6 +49,47 @@ namespace FriendlyGames.Api.Controllers
             }
         }
 
+        [HttpGet("{id:int}", Name = "GetEvent")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<EventGetDto>> GetEvent(int id)
+        {
+            _logger.LogInformation($"{nameof(GetEvent)} called...");
+
+            try
+            {
+                var registrations = await _dbContext.Registrations.Include(x => x.RegistrationCategory)
+                    .Include(x => x.User)
+                    .Where(e => e.EventId == id).ToListAsync();
+
+                var specificEvent = await _dbContext.Events.Include(x => x.Creator)
+                    .Include(x => x.EventCategory)
+                    .Include(x => x.Registrations)
+                    .Include(x => x.LevelCategory)
+                    .Include(x => x.SurfaceCategory)
+                    .Include(x => x.SurroundingCategory)
+                    .FirstOrDefaultAsync(e => e.Id == id);
+
+                if (specificEvent == null)
+                {
+                    return NotFound($"Not found that specific event");
+                }
+
+                specificEvent.Registrations = registrations;
+
+                var result = _mapper.Map<EventGetDto>(specificEvent);
+
+                return Ok(result);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Something went wrong in {nameof(GetEvent)}");
+
+                return Problem("Internal server error, please try again later...");
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

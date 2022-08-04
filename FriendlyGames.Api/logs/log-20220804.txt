@@ -630,3 +630,166 @@ System.InvalidOperationException: The '120SecondsDuration' cache profile is not 
    at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
    at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
 2022-58-04 11:58:04.810 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event - - - 500 - text/plain;+charset=utf-8 109.7647ms
+2022-14-04 13:14:14.936 +02:00 INF Application is starting...
+2022-14-04 13:14:17.641 +02:00 INF Now listening on: https://localhost:7089
+2022-14-04 13:14:17.645 +02:00 INF Now listening on: http://localhost:5089
+2022-14-04 13:14:17.650 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-14-04 13:14:17.651 +02:00 INF Hosting environment: Development
+2022-14-04 13:14:17.651 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-14-04 13:14:19.060 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-14-04 13:14:19.875 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 825.6336ms
+2022-14-04 13:14:19.948 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-14-04 13:14:19.948 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-14-04 13:14:19.961 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 14.1632ms
+2022-14-04 13:14:20.084 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 136.2343ms
+2022-14-04 13:14:20.299 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-14-04 13:14:20.747 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 448.0877ms
+2022-14-04 13:14:37.297 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/1 - -
+2022-14-04 13:14:37.348 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-14-04 13:14:37.408 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-14-04 13:14:37.941 +02:00 INF GetEvent called...
+2022-14-04 13:14:39.661 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-14-04 13:14:42.669 +02:00 INF Executed DbCommand (193ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__id_0
+2022-14-04 13:14:42.909 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Api.Dtos.EventGetDto'.
+2022-14-04 13:14:43.189 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 5772.7295ms
+2022-14-04 13:14:43.192 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-14-04 13:14:43.214 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/1 - - - 200 331 application/json;+charset=utf-8 5917.3841ms
+2022-15-04 13:15:12.345 +02:00 INF Application is starting...
+2022-15-04 13:15:14.579 +02:00 INF Now listening on: https://localhost:7089
+2022-15-04 13:15:14.585 +02:00 INF Now listening on: http://localhost:5089
+2022-15-04 13:15:14.591 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-15-04 13:15:14.592 +02:00 INF Hosting environment: Development
+2022-15-04 13:15:14.592 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-15-04 13:15:15.721 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-15-04 13:15:16.369 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 662.9389ms
+2022-15-04 13:15:16.423 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-15-04 13:15:16.423 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-15-04 13:15:16.431 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 7.5147ms
+2022-15-04 13:15:16.537 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 113.7862ms
+2022-15-04 13:15:16.713 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-15-04 13:15:17.337 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 624.1343ms
+2022-15-04 13:15:24.788 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/2 - -
+2022-15-04 13:15:24.863 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-15-04 13:15:24.905 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-15-04 13:15:25.495 +02:00 INF GetEvent called...
+2022-15-04 13:15:27.443 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-15-04 13:15:29.167 +02:00 INF Executed DbCommand (151ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__id_0
+2022-15-04 13:15:29.392 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Api.Dtos.EventGetDto'.
+2022-15-04 13:15:29.659 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 4745.7355ms
+2022-15-04 13:15:29.661 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-15-04 13:15:29.675 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/2 - - - 200 332 application/json;+charset=utf-8 4887.1972ms
+2022-17-04 13:17:42.462 +02:00 INF Application is starting...
+2022-17-04 13:17:45.384 +02:00 INF Now listening on: https://localhost:7089
+2022-17-04 13:17:45.392 +02:00 INF Now listening on: http://localhost:5089
+2022-17-04 13:17:45.398 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-17-04 13:17:45.399 +02:00 INF Hosting environment: Development
+2022-17-04 13:17:45.399 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-17-04 13:17:46.510 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-17-04 13:17:47.277 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 776.6430ms
+2022-17-04 13:17:47.316 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-17-04 13:17:47.328 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 12.0566ms
+2022-17-04 13:17:47.357 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-17-04 13:17:47.503 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 145.8602ms
+2022-17-04 13:17:47.803 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-17-04 13:17:48.210 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 407.4104ms
+2022-17-04 13:17:57.079 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/1 - -
+2022-17-04 13:17:57.150 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-17-04 13:17:57.207 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-17-04 13:17:57.813 +02:00 INF GetEvent called...
+2022-17-04 13:17:59.658 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-18-04 13:18:01.665 +02:00 INF Executed DbCommand (163ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-18-04 13:18:01.991 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Api.Dtos.EventGetDto'.
+2022-18-04 13:18:02.278 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 5060.9852ms
+2022-18-04 13:18:02.280 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-18-04 13:18:02.298 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/1 - - - 200 3145 application/json;+charset=utf-8 5218.8850ms
+2022-35-04 13:35:05.135 +02:00 INF Application is starting...
+2022-35-04 13:35:08.244 +02:00 INF Now listening on: https://localhost:7089
+2022-35-04 13:35:08.251 +02:00 INF Now listening on: http://localhost:5089
+2022-35-04 13:35:08.257 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-35-04 13:35:08.258 +02:00 INF Hosting environment: Development
+2022-35-04 13:35:08.258 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-35-04 13:35:09.347 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-35-04 13:35:09.995 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 661.0443ms
+2022-35-04 13:35:10.072 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-35-04 13:35:10.072 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-35-04 13:35:10.096 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 24.1625ms
+2022-35-04 13:35:10.212 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 140.1312ms
+2022-35-04 13:35:10.428 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-35-04 13:35:10.840 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 411.4632ms
+2022-35-04 13:35:19.546 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/56 - -
+2022-35-04 13:35:19.615 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-35-04 13:35:19.660 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-35-04 13:35:20.283 +02:00 INF GetEvent called...
+2022-35-04 13:35:22.054 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-35-04 13:35:25.292 +02:00 INF Executed DbCommand (139ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-35-04 13:35:25.628 +02:00 INF Executed DbCommand (30ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-35-04 13:35:25.647 +02:00 INF Executing NotFoundObjectResult, writing value of type 'System.String'.
+2022-35-04 13:35:25.655 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 5987.7631ms
+2022-35-04 13:35:25.659 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-35-04 13:35:25.672 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/56 - - - 404 - text/plain;+charset=utf-8 6125.2561ms
+2022-35-04 13:35:35.663 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/1 - -
+2022-35-04 13:35:35.663 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-35-04 13:35:35.664 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-35-04 13:35:35.665 +02:00 INF GetEvent called...
+2022-35-04 13:35:35.667 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-35-04 13:35:35.693 +02:00 INF Executed DbCommand (18ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-35-04 13:35:35.864 +02:00 INF Executed DbCommand (17ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-35-04 13:35:35.959 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Api.Dtos.EventGetDto'.
+2022-35-04 13:35:36.216 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 551.9176ms
+2022-35-04 13:35:36.216 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-35-04 13:35:36.216 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/1 - - - 200 3475 application/json;+charset=utf-8 553.1907ms
