@@ -2,14 +2,13 @@
 using FriendlyGames.Api.Dtos;
 using FriendlyGames.Domain.Models;
 
-namespace FriendlyGames.Api.Mapper
+namespace FriendlyGames.Api.Mapper;
+
+public class EventProfile : Profile
 {
-    public class EventProfile : Profile
+    public EventProfile()
     {
-        public EventProfile()
-        {
-            CreateMap<Event, EventCreateDto>().ReverseMap();
-            CreateMap<Event, EventGetDto>().ReverseMap();
-        }
+        CreateMap<Event, EventCreateDto>().ReverseMap();
+        CreateMap<Event, EventDto>().ReverseMap();
     }
 }

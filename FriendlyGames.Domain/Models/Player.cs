@@ -5,13 +5,15 @@ namespace FriendlyGames.Domain.Models;
 
 public class Player
 {
-    [Key]
-    public int Id { get; set; }
+    [Key] public int Id { get; set; }
+
     public string Nickname { get; set; }
-    [ForeignKey(nameof(UserId))]
-    public User User { get; set; } = null!;
+
+    [ForeignKey(nameof(UserId))] public User User { get; set; } = null!;
+
     public int UserId { get; set; }
-    [ForeignKey(nameof(TeamId))]
-    public Team Team { get; set; } = null!;
+
+    [ForeignKey(nameof(TeamId))] public Team Team { get; set; } = null!;
+
     public int TeamId { get; set; }
 }
