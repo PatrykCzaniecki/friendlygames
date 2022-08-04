@@ -7,8 +7,6 @@ namespace FriendlyGames.Api.Dtos
 {
     public class EventGetDto : EventCreateDto
     {
-        [Required]
-        public int Id { get; set; }
         public User Creator { get; set; }
         public EventCategory EventCategory { get; set; }
         public List<Registration> Registrations { get; set; }

@@ -9,7 +9,6 @@ public class FriendlyGamesDbContext : DbContext
 {
     public DbSet<EventCategory> EventCategories { get; set; }
     public DbSet<SurfaceCategory> SurfaceCategories { get; set; }
-
     public DbSet<SurroundingCategory> SurroundingCategories { get; set; }
     public DbSet<RegistrationCategory> RegistrationCategories { get; set; }
     public DbSet<LevelCategory> LevelCategories { get; set; }
@@ -18,7 +17,6 @@ public class FriendlyGamesDbContext : DbContext
     public DbSet<Registration> Registrations { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Team> Teams { get; set; }
-
     public DbSet<FootballMatch> FootballMatches { get; set; }
 
     public FriendlyGamesDbContext(DbContextOptions options) : base(options)
