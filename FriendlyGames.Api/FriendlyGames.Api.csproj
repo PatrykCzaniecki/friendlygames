@@ -19,10 +19,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\FriendlyGames.DataAccess\FriendlyGames.DataAccess.csproj" />
     <ProjectReference Include="..\FriendlyGames.Domain\FriendlyGames.Domain.csproj" />
   </ItemGroup>
