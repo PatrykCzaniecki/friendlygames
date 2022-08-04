@@ -123,5 +123,59 @@ namespace FriendlyGames.Api.Controllers
                 return Problem("Internal server error, please try again later...");
             }
         }
+
+        [HttpDelete("{id:int}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> DeleteEvent(int id)
+        {
+            _logger.LogInformation($"{nameof(DeleteEvent)} called...");
+
+            if (id < 1)
+            {
+                _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteEvent)}");
+
+                return BadRequest();
+            }
+
+            try
+            {
+                var registrations = await _dbContext.Registrations.Include(x => x.RegistrationCategory)
+                    .Include(x => x.User)
+                    .Where(e => e.EventId == id).ToListAsync();
+
+                var specificEvent = await _dbContext.Events.Include(x => x.Creator)
+                    .Include(x => x.EventCategory)
+                    .Include(x => x.Registrations)
+                    .Include(x => x.LevelCategory)
+                    .Include(x => x.SurfaceCategory)
+                    .Include(x => x.SurroundingCategory)
+                    .FirstOrDefaultAsync(x => x.Id == id);
+
+                if (specificEvent == null)
+                {
+                    return NotFound($"There is no country with id = {id}");
+                }
+
+                //zapytac się czy nie ma lepszego sposobu
+                foreach (var registration in registrations)
+                {
+                    _dbContext.Registrations.Remove(registration);
+                }
+                _dbContext.Events.Remove(specificEvent);
+                await _dbContext.SaveChangesAsync();
+
+                return NoContent();
+
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Something went wrong in {nameof(DeleteEvent)}");
+
+                return Problem("Internal server error, please try again later...");
+            }
+        }
     }
 }
