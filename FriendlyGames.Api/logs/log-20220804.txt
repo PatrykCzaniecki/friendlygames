@@ -793,3 +793,511 @@ ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[E
 2022-35-04 13:35:36.216 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 551.9176ms
 2022-35-04 13:35:36.216 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
 2022-35-04 13:35:36.216 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/1 - - - 200 3475 application/json;+charset=utf-8 553.1907ms
+2022-49-04 13:49:43.513 +02:00 INF Application is starting...
+2022-49-04 13:49:47.126 +02:00 INF Now listening on: https://localhost:7089
+2022-49-04 13:49:47.130 +02:00 INF Now listening on: http://localhost:5089
+2022-49-04 13:49:47.133 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-49-04 13:49:47.133 +02:00 INF Hosting environment: Development
+2022-49-04 13:49:47.133 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-49-04 13:49:47.309 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger - -
+2022-49-04 13:49:47.436 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger - - - 301 0 - 130.4881ms
+2022-49-04 13:49:47.441 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-49-04 13:49:47.709 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 268.3010ms
+2022-49-04 13:49:47.725 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui-standalone-preset.js - -
+2022-49-04 13:49:47.725 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui.css - -
+2022-49-04 13:49:47.727 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-49-04 13:49:47.738 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui-bundle.js - -
+2022-49-04 13:49:47.750 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 24.1117ms
+2022-49-04 13:49:47.770 +02:00 INF Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-49-04 13:49:47.770 +02:00 INF Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-49-04 13:49:47.773 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui.css - - - 200 143943 text/css 47.2496ms
+2022-49-04 13:49:47.773 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 47.3349ms
+2022-49-04 13:49:47.779 +02:00 INF Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-49-04 13:49:47.780 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 44.5407ms
+2022-49-04 13:49:47.987 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-49-04 13:49:48.012 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/favicon-32x32.png - -
+2022-49-04 13:49:48.013 +02:00 INF Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-49-04 13:49:48.013 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/favicon-32x32.png - - - 200 628 image/png 0.4145ms
+2022-49-04 13:49:48.125 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.4180ms
+2022-50-04 13:50:02.025 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-50-04 13:50:02.050 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-50-04 13:50:02.075 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-50-04 13:50:02.714 +02:00 INF DeleteEvent called...
+2022-50-04 13:50:03.706 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-50-04 13:50:06.067 +02:00 INF Executed DbCommand (82ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__id_0
+2022-50-04 13:50:06.317 +02:00 ERR Failed executing DbCommand (13ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Events]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-50-04 13:50:06.473 +02:00 ERR An exception occurred in the database while saving changes for context type 'FriendlyGames.DataAccess.FriendlyGamesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:eac5aad1-9ab0-4e21-9517-dd2600e7c8b2
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:eac5aad1-9ab0-4e21-9517-dd2600e7c8b2
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-50-04 13:50:06.545 +02:00 ERR Something went wrong in DeleteEvent
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:eac5aad1-9ab0-4e21-9517-dd2600e7c8b2
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FriendlyGames.Api.Controllers.EventController.DeleteEvent(Int32 id) in D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\EventController.cs:line 153
+2022-50-04 13:50:06.563 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-50-04 13:50:06.784 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api) in 4703.7269ms
+2022-50-04 13:50:06.785 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-50-04 13:50:06.793 +02:00 INF Request finished HTTP/2 DELETE https://localhost:7089/Event/1 - - - 500 260 application/problem+json;+charset=utf-8 4768.5334ms
+2022-50-04 13:50:50.706 +02:00 INF Application is starting...
+2022-50-04 13:50:51.763 +02:00 INF Now listening on: https://localhost:7089
+2022-50-04 13:50:51.766 +02:00 INF Now listening on: http://localhost:5089
+2022-50-04 13:50:51.768 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-50-04 13:50:51.768 +02:00 INF Hosting environment: Development
+2022-50-04 13:50:51.768 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-50-04 13:50:52.162 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-50-04 13:50:52.428 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 269.8354ms
+2022-50-04 13:50:52.442 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-50-04 13:50:52.446 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 4.3425ms
+2022-50-04 13:50:52.656 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-50-04 13:50:52.778 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 121.4590ms
+2022-50-04 13:50:58.777 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-50-04 13:50:58.801 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-50-04 13:50:58.826 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-50-04 13:50:59.137 +02:00 INF DeleteEvent called...
+2022-51-04 13:51:00.079 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-51-04 13:51:00.984 +02:00 INF Executed DbCommand (77ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__id_0
+2022-51-04 13:51:01.236 +02:00 ERR Failed executing DbCommand (11ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Events]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-51-04 13:51:01.286 +02:00 ERR An exception occurred in the database while saving changes for context type 'FriendlyGames.DataAccess.FriendlyGamesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a435ada2-870c-4aeb-8906-4b1676ca606c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a435ada2-870c-4aeb-8906-4b1676ca606c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-51-04 13:51:01.361 +02:00 ERR Something went wrong in DeleteEvent
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:a435ada2-870c-4aeb-8906-4b1676ca606c
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at FriendlyGames.Api.Controllers.EventController.DeleteEvent(Int32 id) in D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\EventController.cs:line 153
+2022-51-04 13:51:01.375 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-51-04 13:51:01.515 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api) in 2684.7343ms
+2022-51-04 13:51:01.516 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-51-04 13:51:01.524 +02:00 INF Request finished HTTP/2 DELETE https://localhost:7089/Event/1 - - - 500 260 application/problem+json;+charset=utf-8 2746.8545ms
+2022-51-04 13:51:40.513 +02:00 INF Application is starting...
+2022-51-04 13:51:41.586 +02:00 INF Now listening on: https://localhost:7089
+2022-51-04 13:51:41.590 +02:00 INF Now listening on: http://localhost:5089
+2022-51-04 13:51:41.593 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-51-04 13:51:41.593 +02:00 INF Hosting environment: Development
+2022-51-04 13:51:41.593 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-51-04 13:51:41.900 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-51-04 13:51:42.271 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 374.5829ms
+2022-51-04 13:51:42.290 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-51-04 13:51:42.295 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 4.8779ms
+2022-51-04 13:51:42.397 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-51-04 13:51:42.536 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 138.5002ms
+2022-51-04 13:51:47.965 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-51-04 13:51:47.990 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-51-04 13:51:48.014 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-51-04 13:51:48.335 +02:00 INF DeleteEvent called...
+2022-51-04 13:51:59.279 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-52-04 13:52:00.216 +02:00 INF Executed DbCommand (78ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId]
+FROM [Events] AS [e]
+WHERE [e].[Id] = @__id_0
+2022-52-04 13:52:35.561 +02:00 ERR Failed executing DbCommand (30ms) [Parameters=[@p0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Events]
+WHERE [Id] = @p0;
+SELECT @@ROWCOUNT;
+2022-52-04 13:52:35.610 +02:00 ERR An exception occurred in the database while saving changes for context type 'FriendlyGames.DataAccess.FriendlyGamesDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b07878fe-58ab-4ddd-a381-4c35b2e021f6
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.SqlClient.SqlException (0x80131904): The DELETE statement conflicted with the REFERENCE constraint "FK_Registrations_Events_EventId". The conflict occurred in database "FriendlyGames", table "dbo.Registrations", column 'EventId'.
+The statement has been terminated.
+   at Microsoft.Data.SqlClient.SqlCommand.<>c.<ExecuteDbDataReaderAsync>b__188_0(Task`1 result)
+   at System.Threading.Tasks.ContinuationResultTaskFromResultTask`2.InnerInvoke()
+   at System.Threading.Tasks.Task.<>c.<.cctor>b__272_0(Object obj)
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+ClientConnectionId:b07878fe-58ab-4ddd-a381-4c35b2e021f6
+Error Number:547,State:0,Class:16
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.SqlServer.Storage.Internal.SqlServerExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2022-54-04 13:54:41.033 +02:00 INF Application is starting...
+2022-54-04 13:54:42.287 +02:00 INF Now listening on: https://localhost:7089
+2022-54-04 13:54:42.292 +02:00 INF Now listening on: http://localhost:5089
+2022-54-04 13:54:42.295 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-54-04 13:54:42.295 +02:00 INF Hosting environment: Development
+2022-54-04 13:54:42.295 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-54-04 13:54:42.972 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-54-04 13:54:43.207 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 237.0796ms
+2022-54-04 13:54:43.223 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-54-04 13:54:43.228 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 5.3454ms
+2022-54-04 13:54:43.344 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-54-04 13:54:43.470 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 126.0284ms
+2022-54-04 13:54:47.526 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-54-04 13:54:47.551 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-54-04 13:54:47.576 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-54-04 13:54:47.903 +02:00 INF DeleteEvent called...
+2022-54-04 13:54:48.817 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-54-04 13:54:49.840 +02:00 INF Executed DbCommand (79ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-54-04 13:54:50.077 +02:00 INF Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-54-04 13:54:50.211 +02:00 ERR Something went wrong in DeleteEvent
+System.InvalidOperationException: The association between entity types 'Event' and 'Registration' has been severed, but the relationship is either marked as required or is implicitly required because the foreign key is not nullable. If the dependent/child entity should be deleted when a required relationship is severed, configure the relationship to use cascade deletes. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see the key values.
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.InternalEntityEntry.HandleConceptualNulls(Boolean sensitiveLoggingEnabled, Boolean force, Boolean isCascadeDelete)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.CascadeDelete(InternalEntityEntry entry, Boolean force, IEnumerable`1 foreignKeys)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.EntityEntry.set_State(EntityState value)
+   at Microsoft.EntityFrameworkCore.Internal.InternalDbSet`1.Remove(TEntity entity)
+   at FriendlyGames.Api.Controllers.EventController.DeleteEvent(Int32 id) in D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\EventController.cs:line 164
+2022-54-04 13:54:50.243 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-54-04 13:54:50.385 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api) in 2804.0741ms
+2022-54-04 13:54:50.387 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-54-04 13:54:50.396 +02:00 INF Request finished HTTP/2 DELETE https://localhost:7089/Event/1 - - - 500 260 application/problem+json;+charset=utf-8 2869.7889ms
+2022-55-04 13:55:12.433 +02:00 INF Application is starting...
+2022-55-04 13:55:13.408 +02:00 INF Now listening on: https://localhost:7089
+2022-55-04 13:55:13.411 +02:00 INF Now listening on: http://localhost:5089
+2022-55-04 13:55:13.414 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-55-04 13:55:13.414 +02:00 INF Hosting environment: Development
+2022-55-04 13:55:13.414 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-55-04 13:55:13.944 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-55-04 13:55:14.281 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 343.3906ms
+2022-55-04 13:55:14.310 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-55-04 13:55:14.315 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 4.6692ms
+2022-55-04 13:55:14.487 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-55-04 13:55:14.689 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 203.3043ms
+2022-55-04 13:55:52.721 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-55-04 13:55:52.744 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-55-04 13:55:52.767 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-55-04 13:55:53.076 +02:00 INF DeleteEvent called...
+2022-56-04 13:56:08.539 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-56-04 13:56:09.576 +02:00 INF Executed DbCommand (81ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-56-04 13:56:18.551 +02:00 INF Executed DbCommand (20ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-00-04 14:00:22.619 +02:00 INF Application is starting...
+2022-00-04 14:00:24.044 +02:00 INF Now listening on: https://localhost:7089
+2022-00-04 14:00:24.048 +02:00 INF Now listening on: http://localhost:5089
+2022-00-04 14:00:24.051 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-00-04 14:00:24.052 +02:00 INF Hosting environment: Development
+2022-00-04 14:00:24.052 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-00-04 14:00:24.563 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-00-04 14:00:24.795 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 234.8586ms
+2022-00-04 14:00:24.810 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-00-04 14:00:24.814 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 4.5823ms
+2022-00-04 14:00:24.931 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-00-04 14:00:25.055 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 123.0956ms
+2022-00-04 14:00:30.883 +02:00 INF Request starting HTTP/2 DELETE https://localhost:7089/Event/1 - -
+2022-00-04 14:00:30.908 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-00-04 14:00:30.935 +02:00 INF Route matched with {action = "DeleteEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] DeleteEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-00-04 14:00:31.256 +02:00 INF DeleteEvent called...
+2022-00-04 14:00:32.171 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-00-04 14:00:33.153 +02:00 INF Executed DbCommand (78ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-00-04 14:00:33.387 +02:00 INF Executed DbCommand (9ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-00-04 14:00:33.563 +02:00 INF Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Registrations]
+WHERE [EventId] = @p0 AND [UserId] = @p1;
+SELECT @@ROWCOUNT;
+2022-00-04 14:00:33.571 +02:00 INF Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Registrations]
+WHERE [EventId] = @p0 AND [UserId] = @p1;
+SELECT @@ROWCOUNT;
+2022-00-04 14:00:33.575 +02:00 INF Executed DbCommand (4ms) [Parameters=[@p2='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [Events]
+WHERE [Id] = @p2;
+SELECT @@ROWCOUNT;
+2022-00-04 14:00:33.615 +02:00 INF Executing StatusCodeResult, setting HTTP status code 204
+2022-00-04 14:00:33.620 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api) in 2681.0966ms
+2022-00-04 14:00:33.621 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.DeleteEvent (FriendlyGames.Api)'
+2022-00-04 14:00:33.629 +02:00 INF Request finished HTTP/2 DELETE https://localhost:7089/Event/1 - - - 204 - - 2746.0665ms
+2022-00-04 14:00:57.726 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/1 - -
+2022-00-04 14:00:57.731 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-00-04 14:00:57.734 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-00-04 14:00:57.737 +02:00 INF GetEvent called...
+2022-00-04 14:00:57.745 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-00-04 14:00:57.750 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-00-04 14:00:57.766 +02:00 INF Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-00-04 14:00:57.772 +02:00 INF Executing NotFoundObjectResult, writing value of type 'System.String'.
+2022-00-04 14:00:57.773 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 38.4255ms
+2022-00-04 14:00:57.773 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-00-04 14:00:57.773 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/1 - - - 404 - text/plain;+charset=utf-8 46.6522ms
+2022-01-04 14:01:07.119 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/Event/2 - -
+2022-01-04 14:01:07.119 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-01-04 14:01:07.120 +02:00 INF Route matched with {action = "GetEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventGetDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-01-04 14:01:07.121 +02:00 INF GetEvent called...
+2022-01-04 14:01:07.163 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-01-04 14:01:07.165 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-01-04 14:01:07.166 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[CreatorId], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[Name], [t].[StartDateTime], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[Description], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[CreatorId], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[Name], [e].[StartDateTime], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[Description], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-01-04 14:01:07.180 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Api.Dtos.EventGetDto'.
+2022-01-04 14:01:07.328 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api) in 208.167ms
+2022-01-04 14:01:07.328 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.GetEvent (FriendlyGames.Api)'
+2022-01-04 14:01:07.328 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/Event/2 - - - 200 3429 application/json;+charset=utf-8 208.9365ms
