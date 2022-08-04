@@ -22,6 +22,33 @@ namespace FriendlyGames.Api.Controllers
             this._logger = logger;
         }
 
+        [HttpGet]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<IActionResult> GetEvents()
+        {
+            _logger.LogInformation($"{nameof(GetEvents)} called...");
+
+            try
+            {
+                var allEvents = await _dbContext.Events.Include(x => x.Creator)
+                    .Include(x => x.EventCategory)
+                    .Include(x => x.Registrations)
+                    .Include(x => x.LevelCategory)
+                    .Include(x => x.SurfaceCategory)
+                    .Include(x => x.SurroundingCategory)
+                    .ToListAsync();
+                var results = _mapper.Map<IList<EventGetDto>>(allEvents);
+                return Ok(results);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Something went wrong in {nameof(GetEvents)}");
+                
+                return Problem("Internal server error, please try again later...");
+            }
+        }
+
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -40,12 +67,13 @@ namespace FriendlyGames.Api.Controllers
 
             try
             {
-                
                 var newEvent = _mapper.Map<Event>(eventCreateDto);
                 await _dbContext.Events.AddAsync(newEvent);
                 await _dbContext.SaveChangesAsync();
 
-                return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);
+                return Ok();
+                
+                //return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);
             }
             catch (Exception exception)
             {

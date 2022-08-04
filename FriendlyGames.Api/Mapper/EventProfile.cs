@@ -9,6 +9,7 @@ namespace FriendlyGames.Api.Mapper
         public EventProfile()
         {
             CreateMap<Event, EventCreateDto>().ReverseMap();
+            CreateMap<Event, EventGetDto>().ReverseMap();
         }
     }
 }
