@@ -7,9 +7,12 @@ namespace FriendlyGames.DataAccess;
 
 public class FriendlyGamesDbContext : DbContext
 {
+    public FriendlyGamesDbContext(DbContextOptions options) : base(options)
+    {
+    }
+
     public DbSet<EventCategory> EventCategories { get; set; }
     public DbSet<SurfaceCategory> SurfaceCategories { get; set; }
-
     public DbSet<SurroundingCategory> SurroundingCategories { get; set; }
     public DbSet<RegistrationCategory> RegistrationCategories { get; set; }
     public DbSet<LevelCategory> LevelCategories { get; set; }
@@ -18,18 +21,13 @@ public class FriendlyGamesDbContext : DbContext
     public DbSet<Registration> Registrations { get; set; }
     public DbSet<Player> Players { get; set; }
     public DbSet<Team> Teams { get; set; }
-
     public DbSet<FootballMatch> FootballMatches { get; set; }
-
-    public FriendlyGamesDbContext(DbContextOptions options) : base(options)
-    {
-    }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Defining relations and type conversions
         modelBuilder.Entity<Registration>()
-            .HasKey(r => new { r.EventId, r.UserId });
+            .HasKey(r => new {r.EventId, r.UserId});
         modelBuilder.Entity<Registration>()
             .HasOne(r => r.Event)
             .WithMany(e => e.Registrations)
@@ -54,27 +52,27 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 2, Name = "Accepted"});
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 3, Name = "Rejected"});
         modelBuilder.Entity<SurroundingCategory>().HasData(new SurroundingCategory {Id = 1, Name = "Indoor"});
-        modelBuilder.Entity<SurroundingCategory>().HasData(new SurroundingCategory {Id = 2, Name = "Outdoor" });
+        modelBuilder.Entity<SurroundingCategory>().HasData(new SurroundingCategory {Id = 2, Name = "Outdoor"});
         modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 1, Name = "Grass"});
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 2, Name = "Court" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 3, Name = "Sand" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 4, Name = "Hall" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 5, Name = "Pool" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 6, Name = "Synthetic" });
-        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory { Id = 7, Name = "Others" });
-        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() {Id = 1, Name = "Easy"});
-        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() { Id = 2, Name = "Medium" });
-        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory() { Id = 3, Name = "Advanced" });
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 2, Name = "Court"});
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 3, Name = "Sand"});
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 4, Name = "Hall"});
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 5, Name = "Pool"});
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 6, Name = "Synthetic"});
+        modelBuilder.Entity<SurfaceCategory>().HasData(new SurfaceCategory {Id = 7, Name = "Others"});
+        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 1, Name = "Easy"});
+        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 2, Name = "Medium"});
+        modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 3, Name = "Advanced"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-            { Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza" });
+                {Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-            { Id = 2, Name = "Piłka Nożna", Description = "Orlikowe granie" });
+                {Id = 2, Name = "Piłka Nożna", Description = "Orlikowe granie"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 1, FirstName = "John", LastName = "Doe" });
+            .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 2, FirstName = "Adam", LastName = "Smith" });
+            .HasData(new User {Id = 2, FirstName = "Adam", LastName = "Smith"});
         modelBuilder.Entity<Event>()
             .HasData(new Event
             {
@@ -133,13 +131,13 @@ public class FriendlyGamesDbContext : DbContext
             .HasData(new Team
             {
                 Id = 1,
-                Name = "Wilki",
+                Name = "Wilki"
             });
         modelBuilder.Entity<Team>()
             .HasData(new Team
             {
                 Id = 2,
-                Name = "Owce",
+                Name = "Owce"
             });
         modelBuilder.Entity<Player>()
             .HasData(new Player
@@ -147,7 +145,7 @@ public class FriendlyGamesDbContext : DbContext
                 Id = 1,
                 Nickname = "DzikiNapastnik",
                 UserId = 1,
-                TeamId = 1,
+                TeamId = 1
             });
         modelBuilder.Entity<Player>()
             .HasData(new Player
@@ -155,7 +153,7 @@ public class FriendlyGamesDbContext : DbContext
                 Id = 2,
                 Nickname = "SzatańskiBramkarz",
                 UserId = 2,
-                TeamId = 1,
+                TeamId = 1
             });
         modelBuilder.Entity<Player>()
             .HasData(new Player
@@ -163,7 +161,7 @@ public class FriendlyGamesDbContext : DbContext
                 Id = 3,
                 Nickname = "SzybkaOsa",
                 UserId = 1,
-                TeamId = 2,
+                TeamId = 2
             });
         modelBuilder.Entity<Player>()
             .HasData(new Player
