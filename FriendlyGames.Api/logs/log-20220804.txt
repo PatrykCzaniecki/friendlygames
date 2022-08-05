@@ -338,3 +338,31 @@ System.InvalidOperationException: No route matches the supplied values.
 2022-13-04 11:13:14.794 +02:00 INF Application started. Press Ctrl+C to shut down.
 2022-13-04 11:13:14.795 +02:00 INF Hosting environment: Development
 2022-13-04 11:13:14.795 +02:00 INF Content root path: C:\Users\dell\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-15-04 11:15:01.040 +02:00 INF Application is starting...
+2022-15-04 11:15:04.159 +02:00 INF Now listening on: https://localhost:7089
+2022-15-04 11:15:04.162 +02:00 INF Now listening on: http://localhost:5089
+2022-15-04 11:15:04.165 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-15-04 11:15:04.165 +02:00 INF Hosting environment: Development
+2022-15-04 11:15:04.166 +02:00 INF Content root path: C:\Users\dell\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-15-04 11:15:05.444 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-15-04 11:15:05.886 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-15-04 11:15:05.899 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 459.4019ms
+2022-15-04 11:15:05.902 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 15.2435ms
+2022-15-04 11:15:06.275 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-15-04 11:15:06.472 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 196.4468ms
+2022-15-04 11:15:16.829 +02:00 INF Request starting HTTP/2 POST https://localhost:7089/Event application/json-patch+json 235
+2022-15-04 11:15:16.870 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventController.CreateEvent (FriendlyGames.Api)'
+2022-15-04 11:15:16.910 +02:00 INF Route matched with {action = "CreateEvent", controller = "Event"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] CreateEvent(FriendlyGames.Api.Dtos.EventCreateDto) on controller FriendlyGames.Api.Controllers.EventController (FriendlyGames.Api).
+2022-15-04 11:15:17.643 +02:00 INF CreateEvent called...
+2022-15-04 11:15:18.851 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-15-04 11:15:20.522 +02:00 INF Executed DbCommand (720ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = DateTime2), @p2='?' (DbType = Int32), @p3='?' (DbType = Int32), @p4='?' (Size = 4000), @p5='?' (DbType = DateTime2), @p6='?' (DbType = Int32), @p7='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Events] ([CreatorId], [EndDateTime], [EventCategoryId], [LevelCategoryId], [Name], [StartDateTime], [SurfaceCategoryId], [SurroundingCategoryId])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7);
+SELECT [Id]
+FROM [Events]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity();
+2022-15-04 11:15:20.706 +02:00 INF Executing StatusCodeResult, setting HTTP status code 200
+2022-15-04 11:15:20.716 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventController.CreateEvent (FriendlyGames.Api) in 3797.7867ms
+2022-15-04 11:15:20.718 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventController.CreateEvent (FriendlyGames.Api)'
+2022-15-04 11:15:20.736 +02:00 INF Request finished HTTP/2 POST https://localhost:7089/Event application/json-patch+json 235 - 200 0 - 3907.5517ms

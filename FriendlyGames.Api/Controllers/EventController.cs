@@ -45,7 +45,9 @@ namespace FriendlyGames.Api.Controllers
                 await _dbContext.Events.AddAsync(newEvent);
                 await _dbContext.SaveChangesAsync();
 
-                return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);
+                return Ok();
+
+                /*return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);*/
             }
             catch (Exception exception)
             {
