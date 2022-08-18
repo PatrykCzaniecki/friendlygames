@@ -1,6 +1,6 @@
 ﻿namespace FriendlyGames.Api.Dtos;
 
-public class EventCreateDto
+public class EventCreateUpdateDto
 {
     public string Name { get; set; }
     public DateTime StartDateTime { get; set; }

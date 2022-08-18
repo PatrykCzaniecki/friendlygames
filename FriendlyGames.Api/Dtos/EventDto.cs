@@ -4,7 +4,7 @@ using FriendlyGames.Domain.Models;
 
 namespace FriendlyGames.Api.Dtos;
 
-public class EventDto : EventCreateDto
+public class EventUpdateDto : EventCreateUpdateDto
 {
     public User Creator { get; set; }
     public EventCategory EventCategory { get; set; }

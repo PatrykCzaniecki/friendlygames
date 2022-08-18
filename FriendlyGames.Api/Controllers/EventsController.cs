@@ -7,15 +7,15 @@ using Microsoft.EntityFrameworkCore;
 
 namespace FriendlyGames.Api.Controllers;
 
-[Controller]
-[Route("[controller]")]
-public class EventController : Controller
+[ApiController]
+[Route("api/[controller]")]
+public class EventsController : ControllerBase
 {
     private readonly FriendlyGamesDbContext _dbContext;
-    private readonly ILogger<EventController> _logger;
+    private readonly ILogger<EventsController> _logger;
     private readonly IMapper _mapper;
 
-    public EventController(IMapper mapper, ILogger<EventController> logger, FriendlyGamesDbContext dbContext)
+    public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext)
     {
         _dbContext = dbContext;
         _mapper = mapper;
@@ -25,7 +25,7 @@ public class EventController : Controller
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> GetEvents()
+    public async Task<ActionResult<IEnumerable<EventUpdateDto>>> GetEvents()
     {
         _logger.LogInformation($"{nameof(GetEvents)} called...");
 
@@ -38,7 +38,7 @@ public class EventController : Controller
                 .Include(x => x.SurfaceCategory)
                 .Include(x => x.SurroundingCategory)
                 .ToListAsync();
-            var results = _mapper.Map<IList<EventDto>>(allEvents);
+            var results = _mapper.Map<IList<EventUpdateDto>>(allEvents);
             return Ok(results);
         }
         catch (Exception exception)
@@ -53,7 +53,7 @@ public class EventController : Controller
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<EventDto>> GetEvent(int id)
+    public async Task<ActionResult<EventUpdateDto>> GetEvent(int id)
     {
         _logger.LogInformation($"{nameof(GetEvent)} called...");
 
@@ -75,7 +75,7 @@ public class EventController : Controller
 
             specificEvent.Registrations = registrations;
 
-            var result = _mapper.Map<EventDto>(specificEvent);
+            var result = _mapper.Map<EventUpdateDto>(specificEvent);
 
             return Ok(result);
         }
@@ -91,7 +91,7 @@ public class EventController : Controller
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> CreateEvent([FromBody] EventCreateDto eventCreateDto)
+    public async Task<IActionResult> CreateEvent([FromBody] EventCreateUpdateDto eventCreateUpdateDto)
     {
         _logger.LogInformation($"{nameof(CreateEvent)} called...");
 
@@ -104,13 +104,12 @@ public class EventController : Controller
 
         try
         {
-            var newEvent = _mapper.Map<Event>(eventCreateDto);
+            var newEvent = _mapper.Map<Event>(eventCreateUpdateDto);
             await _dbContext.Events.AddAsync(newEvent);
             await _dbContext.SaveChangesAsync();
 
-                return Ok();
-
-                /*return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);*/
+            
+                return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);
             }
             catch (Exception exception)
             {
@@ -124,7 +123,7 @@ public class EventController : Controller
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateEvent(int id, [FromBody] EventDto eventDto)
+    public async Task<IActionResult> UpdateEvent([FromBody] EventCreateUpdateDto eventUpdateDto, int id)
     {
         _logger.LogInformation($"{nameof(UpdateEvent)} called...");
 
@@ -136,26 +135,15 @@ public class EventController : Controller
 
         try
         {
-            var registrations = await _dbContext.Registrations.Include(x => x.RegistrationCategory)
-                .Include(x => x.User)
-                .Where(e => e.EventId == id).ToListAsync();
-
-            var eventToEdit = await _dbContext.Events.Include(x => x.Creator)
-                .Include(x => x.EventCategory)
-                .Include(x => x.Registrations)
-                .Include(x => x.LevelCategory)
-                .Include(x => x.SurfaceCategory)
-                .Include(x => x.SurroundingCategory)
+            var eventToEdit = await _dbContext.Events
                 .FirstOrDefaultAsync(e => e.Id == id);
 
             if (eventToEdit == null) return BadRequest("Submitted data is invalid!");
-            eventToEdit.Registrations = registrations;
+            _mapper.Map(eventUpdateDto, eventToEdit);
 
-            var result = _mapper.Map<EventDto>(eventToEdit);
-            _dbContext.Events.Update(eventToEdit);
             await _dbContext.SaveChangesAsync();
 
-            return Ok(result);
+            return Ok(eventUpdateDto);
         }
         catch (Exception exception)
         {
