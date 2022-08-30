@@ -19,9 +19,6 @@ public class FriendlyGamesDbContext : DbContext
     public DbSet<Event> Events { get; set; }
     public DbSet<User> Users { get; set; }
     public DbSet<Registration> Registrations { get; set; }
-    public DbSet<Player> Players { get; set; }
-    public DbSet<Team> Teams { get; set; }
-    public DbSet<FootballMatch> FootballMatches { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -36,16 +33,10 @@ public class FriendlyGamesDbContext : DbContext
             .HasOne(r => r.User)
             .WithMany(u => u.Registrations)
             .OnDelete(DeleteBehavior.Restrict);
-        modelBuilder.Entity<FootballMatch>()
-            .HasOne(fm => fm.TeamA)
-            .WithMany(t => t.MatchesA)
+        modelBuilder.Entity<Event>()
+            .HasOne(e => e.Location)
+            .WithOne(l => l.Event)
             .OnDelete(DeleteBehavior.Restrict);
-        modelBuilder.Entity<FootballMatch>()
-            .HasOne(fm => fm.TeamB)
-            .WithMany(t => t.MatchesB)
-            .OnDelete(DeleteBehavior.Restrict);
-        modelBuilder.Entity<FootballMatch>()
-            .HasOne(fm => fm.Event);
 
         // Seeding data
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 1, Name = "Waiting"});
@@ -63,6 +54,10 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 1, Name = "Easy"});
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 2, Name = "Medium"});
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 3, Name = "Advanced"});
+        modelBuilder.Entity<Location>().HasData(new Location
+            { Id = 1, City = "Tarnów", Street = "Piłsudskiego 24", EventId = 1 });
+        modelBuilder.Entity<Location>().HasData(new Location
+            { Id = 2, City = "Kraków", Street = "Grzegórzecka 24", EventId = 2 });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
                 {Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza"});
@@ -84,7 +79,11 @@ public class FriendlyGamesDbContext : DbContext
                 EventCategoryId = 1,
                 LevelCategoryId = 2,
                 SurfaceCategoryId = 6,
-                SurroundingCategoryId = 2
+                SurroundingCategoryId = 2,
+                MaxNumberOfPlayers = 8,
+                PriceForEvent = 30.0,
+                LocationId = 1,
+                ImageForEvent = "basketball-box.png"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -97,7 +96,11 @@ public class FriendlyGamesDbContext : DbContext
                 EventCategoryId = 2,
                 LevelCategoryId = 1,
                 SurfaceCategoryId = 1,
-                SurroundingCategoryId = 2
+                SurroundingCategoryId = 2,
+                MaxNumberOfPlayers = 10,
+                PriceForEvent = 0.0,
+                LocationId = 2,
+                ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Registration>()
             .HasData(new Registration
@@ -126,58 +129,6 @@ public class FriendlyGamesDbContext : DbContext
                 EventId = 2,
                 UserId = 1,
                 RegistrationCategoryId = 3
-            });
-        modelBuilder.Entity<Team>()
-            .HasData(new Team
-            {
-                Id = 1,
-                Name = "Wilki"
-            });
-        modelBuilder.Entity<Team>()
-            .HasData(new Team
-            {
-                Id = 2,
-                Name = "Owce"
-            });
-        modelBuilder.Entity<Player>()
-            .HasData(new Player
-            {
-                Id = 1,
-                Nickname = "DzikiNapastnik",
-                UserId = 1,
-                TeamId = 1
-            });
-        modelBuilder.Entity<Player>()
-            .HasData(new Player
-            {
-                Id = 2,
-                Nickname = "SzatańskiBramkarz",
-                UserId = 2,
-                TeamId = 1
-            });
-        modelBuilder.Entity<Player>()
-            .HasData(new Player
-            {
-                Id = 3,
-                Nickname = "SzybkaOsa",
-                UserId = 1,
-                TeamId = 2
-            });
-        modelBuilder.Entity<Player>()
-            .HasData(new Player
-            {
-                Id = 4,
-                Nickname = "GroźnyNiedźwiedz",
-                UserId = 2,
-                TeamId = 2
-            });
-        modelBuilder.Entity<FootballMatch>()
-            .HasData(new FootballMatch
-            {
-                Id = 1,
-                TeamAId = 1,
-                TeamBId = 2,
-                EventId = 2
             });
     }
 }

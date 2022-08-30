@@ -4,6 +4,7 @@ using FriendlyGames.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    partial class FriendlyGamesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220830082432_DeleteTables")]
+    partial class DeleteTables
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -225,25 +227,12 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("EventCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageForEvent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("LevelCategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("MaxNumberOfPlayers")
                         .HasColumnType("int");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<double>("PriceForEvent")
-                        .HasColumnType("float");
 
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
@@ -262,9 +251,6 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasIndex("LevelCategoryId");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique();
-
                     b.HasIndex("SurfaceCategoryId");
 
                     b.HasIndex("SurroundingCategoryId");
@@ -278,12 +264,8 @@ namespace FriendlyGames.DataAccess.Migrations
                             CreatorId = 1,
                             EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 1,
-                            ImageForEvent = "basketball-box.png",
                             LevelCategoryId = 2,
-                            LocationId = 1,
-                            MaxNumberOfPlayers = 8,
                             Name = "Koszykówka",
-                            PriceForEvent = 30.0,
                             StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             SurfaceCategoryId = 6,
                             SurroundingCategoryId = 2
@@ -294,55 +276,11 @@ namespace FriendlyGames.DataAccess.Migrations
                             CreatorId = 2,
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 2,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 1,
-                            LocationId = 2,
-                            MaxNumberOfPlayers = 10,
                             Name = "Piła Nożna",
-                            PriceForEvent = 0.0,
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
                             SurfaceCategoryId = 1,
                             SurroundingCategoryId = 2
-                        });
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tarnów",
-                            EventId = 1,
-                            Street = "Piłsudskiego 24"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Kraków",
-                            EventId = 2,
-                            Street = "Grzegórzecka 24"
                         });
                 });
 
@@ -374,28 +312,28 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1386)
+                            RegistrationDateTime = new DateTime(2022, 8, 30, 10, 24, 31, 223, DateTimeKind.Local).AddTicks(466)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1587)
+                            RegistrationDateTime = new DateTime(2022, 8, 30, 10, 24, 31, 223, DateTimeKind.Local).AddTicks(543)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1619)
+                            RegistrationDateTime = new DateTime(2022, 8, 30, 10, 24, 31, 223, DateTimeKind.Local).AddTicks(564)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1645)
+                            RegistrationDateTime = new DateTime(2022, 8, 30, 10, 24, 31, 223, DateTimeKind.Local).AddTicks(584)
                         });
                 });
 
@@ -454,12 +392,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Models.Location", "Location")
-                        .WithOne("Event")
-                        .HasForeignKey("FriendlyGames.Domain.Models.Event", "LocationId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("FriendlyGames.Domain.Enums.SurfaceCategory", "SurfaceCategory")
                         .WithMany()
                         .HasForeignKey("SurfaceCategoryId")
@@ -477,8 +409,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Navigation("EventCategory");
 
                     b.Navigation("LevelCategory");
-
-                    b.Navigation("Location");
 
                     b.Navigation("SurfaceCategory");
 
@@ -515,12 +445,6 @@ namespace FriendlyGames.DataAccess.Migrations
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Navigation("Registrations");
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Navigation("Event")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>

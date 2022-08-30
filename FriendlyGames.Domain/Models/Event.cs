@@ -34,4 +34,10 @@ public class Event
 
     [ForeignKey(nameof(SurroundingCategoryId))]
     public SurroundingCategory SurroundingCategory { get; set; }
+    public int MaxNumberOfPlayers { get; set; }
+    public double PriceForEvent { get; set; }
+    public int LocationId { get; set; }
+    [ForeignKey(nameof(LocationId))] 
+    public Location Location { get; set; }
+    public string ImageForEvent { get; set; } 
 }
