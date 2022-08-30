@@ -37,9 +37,10 @@ public class EventsController : ControllerBase
                 .Include(x => x.LevelCategory)
                 .Include(x => x.SurfaceCategory)
                 .Include(x => x.SurroundingCategory)
+                .Include(x => x.Location)
                 .ToListAsync();
-            var results = _mapper.Map<IList<EventUpdateDto>>(allEvents);
-            return Ok(results);
+            //var results = _mapper.Map<IList<EventUpdateDto>>(allEvents);
+            return Ok(allEvents);
         }
         catch (Exception exception)
         {
@@ -108,13 +109,11 @@ public class EventsController : ControllerBase
             await _dbContext.Events.AddAsync(newEvent);
             await _dbContext.SaveChangesAsync();
 
-            
-                return CreatedAtRoute("GetEvent", new { id = newEvent.Id }, newEvent);
-            }
-            catch (Exception exception)
-            {
-                _logger.LogError(exception, $"Something went wrong in {nameof(CreateEvent)}");
-
+            return CreatedAtRoute("CreateEvent", new {id = newEvent.Id}, newEvent);
+        }
+        catch (Exception exception)
+        {
+            _logger.LogError(exception, $"Something went wrong in {nameof(CreateEvent)}");
             return Problem("Internal server error, please try again later...");
         }
     }
@@ -152,7 +151,6 @@ public class EventsController : ControllerBase
         }
     }
 
-
     [HttpDelete("{id:int}")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -185,7 +183,6 @@ public class EventsController : ControllerBase
 
             if (specificEvent == null) return NotFound($"There is no country with id = {id}");
 
-            //zapytac się czy nie ma lepszego sposobu
             foreach (var registration in registrations) _dbContext.Registrations.Remove(registration);
             _dbContext.Events.Remove(specificEvent);
             await _dbContext.SaveChangesAsync();
