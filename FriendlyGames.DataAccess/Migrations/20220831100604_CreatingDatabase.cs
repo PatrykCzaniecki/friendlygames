@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-    public partial class AddLocationToEventAndSeedingData : Migration
+    public partial class CreatingDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -266,14 +266,14 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5791) },
-                    { 1, 2, 1, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5847) },
-                    { 2, 1, 3, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5870) },
-                    { 2, 2, 2, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5860) },
-                    { 3, 3, 2, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5879) },
-                    { 4, 4, 2, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5890) },
-                    { 5, 5, 2, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5899) },
-                    { 6, 6, 2, new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5908) }
+                    { 1, 1, 1, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3045) },
+                    { 1, 2, 1, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3083) },
+                    { 2, 1, 3, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3131) },
+                    { 2, 2, 2, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3092) },
+                    { 3, 3, 2, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3141) },
+                    { 4, 4, 2, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3150) },
+                    { 5, 5, 2, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3158) },
+                    { 6, 6, 2, new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3166) }
                 });
 
             migrationBuilder.CreateIndex(

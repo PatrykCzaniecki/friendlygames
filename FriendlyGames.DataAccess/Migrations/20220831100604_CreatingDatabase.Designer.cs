@@ -4,6 +4,7 @@ using FriendlyGames.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    partial class FriendlyGamesDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220831100604_CreatingDatabase")]
+    partial class CreatingDatabase
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -448,56 +450,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(54)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3045)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(94)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3083)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(103)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3092)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(111)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3131)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(119)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3141)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(128)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3150)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(136)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3158)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(144)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 12, 6, 4, 461, DateTimeKind.Local).AddTicks(3166)
                         });
                 });
 
