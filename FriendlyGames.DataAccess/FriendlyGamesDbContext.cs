@@ -58,37 +58,37 @@ public class FriendlyGamesDbContext : DbContext
                 {Id = 2, Name = "Piłka Nożna", Description = "Orlikowe granie"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 3, Name = "Siłownia", Description = "Ciężki trening" });
+                {Id = 3, Name = "Siłownia", Description = "Ciężki trening"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 4, Name = "Bieganie", Description = "Sprinty na 200m" });
+                {Id = 4, Name = "Bieganie", Description = "Sprinty na 200m"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 5, Name = "Rower", Description = "Nauka jazdy na jednym kole" });
+                {Id = 5, Name = "Rower", Description = "Nauka jazdy na jednym kole"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 6, Name = "Siatkówka", Description = "Mecz o wszystko" });
+                {Id = 6, Name = "Siatkówka", Description = "Mecz o wszystko"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 7, Name = "Tenis", Description = "1 vs 1" });
+                {Id = 7, Name = "Tenis", Description = "1 vs 1"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 8, Name = "Ping Pong", Description = "Brak stołu.., ktoś coś?" });
+                {Id = 8, Name = "Ping Pong", Description = "Brak stołu.., ktoś coś?"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                { Id = 9, Name = "Kręgielnia", Description = "Sobotni chill" });
+                {Id = 9, Name = "Kręgielnia", Description = "Sobotni chill"});
         modelBuilder.Entity<User>()
             .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"});
         modelBuilder.Entity<User>()
             .HasData(new User {Id = 2, FirstName = "Adam", LastName = "Smith"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 3, FirstName = "Franek", LastName = "Stopka" });
+            .HasData(new User {Id = 3, FirstName = "Franek", LastName = "Stopka"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 4, FirstName = "Asia", LastName = "Szul" });
+            .HasData(new User {Id = 4, FirstName = "Asia", LastName = "Szul"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 5, FirstName = "Tomek", LastName = "Broda" });
+            .HasData(new User {Id = 5, FirstName = "Tomek", LastName = "Broda"});
         modelBuilder.Entity<User>()
-            .HasData(new User { Id = 6, FirstName = "Grzegorz", LastName = "Wisła" });
+            .HasData(new User {Id = 6, FirstName = "Grzegorz", LastName = "Wisła"});
         modelBuilder.Entity<Event>()
             .HasData(new Event
             {

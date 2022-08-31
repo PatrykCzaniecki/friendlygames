@@ -14,6 +14,7 @@ public class EventsController : ControllerBase
     private readonly FriendlyGamesDbContext _dbContext;
     private readonly ILogger<EventsController> _logger;
     private readonly IMapper _mapper;
+
     public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext)
     {
         _dbContext = dbContext;

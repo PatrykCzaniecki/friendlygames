@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    [Migration("20220831091919_AddLocationToEventAndSeedingData")]
+    [Migration("20220831093332_AddLocationToEventAndSeedingData")]
     partial class AddLocationToEventAndSeedingData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -450,56 +450,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(473)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5791)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(518)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5847)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(536)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5860)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(545)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5870)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(554)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5879)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(564)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5890)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(573)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5899)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(583)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 33, 32, 375, DateTimeKind.Local).AddTicks(5908)
                         });
                 });
 
