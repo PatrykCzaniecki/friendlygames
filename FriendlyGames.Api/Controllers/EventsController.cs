@@ -70,15 +70,16 @@ public class EventsController : ControllerBase
                 .Include(x => x.LevelCategory)
                 .Include(x => x.SurfaceCategory)
                 .Include(x => x.SurroundingCategory)
+                .Include(x => x.Location)
                 .FirstOrDefaultAsync(e => e.Id == id);
 
             if (specificEvent == null) return NotFound("Not found that specific event");
 
             specificEvent.Registrations = registrations;
 
-            var result = _mapper.Map<EventUpdateDto>(specificEvent);
+            //var result = _mapper.Map<EventUpdateDto>(specificEvent);
 
-            return Ok(result);
+            return Ok(specificEvent);
         }
         catch (Exception exception)
         {
