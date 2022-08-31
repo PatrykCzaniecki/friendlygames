@@ -33,10 +33,6 @@ public class FriendlyGamesDbContext : DbContext
             .HasOne(r => r.User)
             .WithMany(u => u.Registrations)
             .OnDelete(DeleteBehavior.Restrict);
-        modelBuilder.Entity<Event>()
-            .HasOne(e => e.Location)
-            .WithOne(l => l.Event)
-            .OnDelete(DeleteBehavior.Restrict);
 
         // Seeding data
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 1, Name = "Oczekujące"});
@@ -54,18 +50,6 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 1, Name = "Łatwy"});
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 2, Name = "Średni"});
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 3, Name = "Zaawanzowany"});
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 1, City = "Tarnów", Street = "Piłsudskiego 24", EventId = 1 });
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 2, City = "Kraków", Street = "Grzegórzecka 24", EventId = 2 });
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 3, City = "Żywiec", Street = "Kazimierza Tetmajera 75", EventId = 3 });
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 4, City = "Wrocław", Street = "Różanka", EventId = 4 });
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 5, City = "Szczecin", Street = "Modra 104", EventId = 5 });
-        modelBuilder.Entity<Location>().HasData(new Location
-            { Id = 6, City = "Warszawa", Street = "Vincenta van Gogha 1", EventId = 6 });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
                 {Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza"});
@@ -119,14 +103,15 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 2,
                 MaxNumberOfPlayers = 8,
                 PriceForEvent = 30.0,
-                LocationId = 1,
+                City = "Tarnów",
+                Street = "Piłsudskiego 24",
                 ImageForEvent = "basketball-box.png"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
             {
                 Id = 2,
-                Name = "Piła Nożna",
+                Name = "Piłka Nożna",
                 CreatorId = 2,
                 StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0),
                 EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0),
@@ -136,7 +121,8 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 2,
                 MaxNumberOfPlayers = 10,
                 PriceForEvent = 0.0,
-                LocationId = 2,
+                City = "Kraków",
+                Street = "Grzegórzecka 24",
                 ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Event>()
@@ -153,7 +139,8 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 2,
                 MaxNumberOfPlayers = 10,
                 PriceForEvent = 0.0,
-                LocationId = 3,
+                City = "Żywiec",
+                Street = "Kazimierza Tetmajera 75",
                 ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Event>()
@@ -170,7 +157,8 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 2,
                 MaxNumberOfPlayers = 3,
                 PriceForEvent = 0.0,
-                LocationId = 4,
+                City = "Wrocław",
+                Street = "Różanka",
                 ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Event>()
@@ -187,7 +175,8 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 2,
                 MaxNumberOfPlayers = 15,
                 PriceForEvent = 10.0,
-                LocationId = 5,
+                City = "Szczecin",
+                Street = "Modra 104",
                 ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Event>()
@@ -204,7 +193,8 @@ public class FriendlyGamesDbContext : DbContext
                 SurroundingCategoryId = 1,
                 MaxNumberOfPlayers = 4,
                 PriceForEvent = 16.0,
-                LocationId = 6,
+                City = "Warszawa",
+                Street = "Vincenta van Gogha 1",
                 ImageForEvent = "footbal-box.png"
             });
         modelBuilder.Entity<Registration>()

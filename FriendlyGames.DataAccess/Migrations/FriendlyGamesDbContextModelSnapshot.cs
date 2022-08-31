@@ -258,6 +258,10 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("CreatorId")
                         .HasColumnType("int");
 
@@ -274,9 +278,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("LevelCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MaxNumberOfPlayers")
                         .HasColumnType("int");
 
@@ -289,6 +290,10 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SurfaceCategoryId")
                         .HasColumnType("int");
@@ -304,9 +309,6 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasIndex("LevelCategoryId");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique();
-
                     b.HasIndex("SurfaceCategoryId");
 
                     b.HasIndex("SurroundingCategoryId");
@@ -317,166 +319,104 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
+                            City = "Tarnów",
                             CreatorId = 1,
                             EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 1,
                             ImageForEvent = "basketball-box.png",
                             LevelCategoryId = 2,
-                            LocationId = 1,
                             MaxNumberOfPlayers = 8,
                             Name = "Koszykówka",
                             PriceForEvent = 30.0,
                             StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Piłsudskiego 24",
                             SurfaceCategoryId = 6,
                             SurroundingCategoryId = 2
                         },
                         new
                         {
                             Id = 2,
+                            City = "Kraków",
                             CreatorId = 2,
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 2,
                             ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 1,
-                            LocationId = 2,
                             MaxNumberOfPlayers = 10,
-                            Name = "Piła Nożna",
+                            Name = "Piłka Nożna",
                             PriceForEvent = 0.0,
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Grzegórzecka 24",
                             SurfaceCategoryId = 1,
                             SurroundingCategoryId = 2
                         },
                         new
                         {
                             Id = 3,
+                            City = "Żywiec",
                             CreatorId = 3,
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 3,
                             ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 2,
-                            LocationId = 3,
                             MaxNumberOfPlayers = 10,
                             Name = "Siłownia",
                             PriceForEvent = 0.0,
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Kazimierza Tetmajera 75",
                             SurfaceCategoryId = 3,
                             SurroundingCategoryId = 2
                         },
                         new
                         {
                             Id = 4,
+                            City = "Wrocław",
                             CreatorId = 4,
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 4,
                             ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 3,
-                            LocationId = 4,
                             MaxNumberOfPlayers = 3,
                             Name = "Bieganie",
                             PriceForEvent = 0.0,
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Różanka",
                             SurfaceCategoryId = 7,
                             SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatorId = 5,
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 5,
-                            ImageForEvent = "footbal-box.png",
-                            LevelCategoryId = 2,
-                            LocationId = 5,
-                            MaxNumberOfPlayers = 15,
-                            Name = "Rower",
-                            PriceForEvent = 10.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            SurfaceCategoryId = 7,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatorId = 6,
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 9,
-                            ImageForEvent = "footbal-box.png",
-                            LevelCategoryId = 1,
-                            LocationId = 6,
-                            MaxNumberOfPlayers = 4,
-                            Name = "Kręgle",
-                            PriceForEvent = 16.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            SurfaceCategoryId = 4,
-                            SurroundingCategoryId = 1
-                        });
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tarnów",
-                            EventId = 1,
-                            Street = "Piłsudskiego 24"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Kraków",
-                            EventId = 2,
-                            Street = "Grzegórzecka 24"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Żywiec",
-                            EventId = 3,
-                            Street = "Kazimierza Tetmajera 75"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            City = "Wrocław",
-                            EventId = 4,
-                            Street = "Różanka"
                         },
                         new
                         {
                             Id = 5,
                             City = "Szczecin",
-                            EventId = 5,
-                            Street = "Modra 104"
+                            CreatorId = 5,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 5,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 2,
+                            MaxNumberOfPlayers = 15,
+                            Name = "Rower",
+                            PriceForEvent = 10.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Modra 104",
+                            SurfaceCategoryId = 7,
+                            SurroundingCategoryId = 2
                         },
                         new
                         {
                             Id = 6,
                             City = "Warszawa",
-                            EventId = 6,
-                            Street = "Vincenta van Gogha 1"
+                            CreatorId = 6,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 9,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 1,
+                            MaxNumberOfPlayers = 4,
+                            Name = "Kręgle",
+                            PriceForEvent = 16.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Vincenta van Gogha 1",
+                            SurfaceCategoryId = 4,
+                            SurroundingCategoryId = 1
                         });
                 });
 
@@ -508,56 +448,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9086)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(473)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9135)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(518)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9146)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(536)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9155)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(545)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9165)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(554)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9175)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(564)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9185)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(573)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 15, 10, 26, 138, DateTimeKind.Local).AddTicks(9194)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(583)
                         });
                 });
 
@@ -640,12 +580,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Models.Location", "Location")
-                        .WithOne("Event")
-                        .HasForeignKey("FriendlyGames.Domain.Models.Event", "LocationId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("FriendlyGames.Domain.Enums.SurfaceCategory", "SurfaceCategory")
                         .WithMany()
                         .HasForeignKey("SurfaceCategoryId")
@@ -663,8 +597,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Navigation("EventCategory");
 
                     b.Navigation("LevelCategory");
-
-                    b.Navigation("Location");
 
                     b.Navigation("SurfaceCategory");
 
@@ -701,12 +633,6 @@ namespace FriendlyGames.DataAccess.Migrations
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Navigation("Registrations");
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Navigation("Event")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>

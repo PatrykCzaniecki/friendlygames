@@ -14,7 +14,6 @@ public class EventsController : ControllerBase
     private readonly FriendlyGamesDbContext _dbContext;
     private readonly ILogger<EventsController> _logger;
     private readonly IMapper _mapper;
-
     public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext)
     {
         _dbContext = dbContext;
@@ -37,7 +36,8 @@ public class EventsController : ControllerBase
                 .Include(x => x.LevelCategory)
                 .Include(x => x.SurfaceCategory)
                 .Include(x => x.SurroundingCategory)
-                .Include(x => x.Location)
+                .Include(x => x.City)
+                .Include(x => x.Street)
                 .ToListAsync();
             //var results = _mapper.Map<IList<EventUpdateDto>>(allEvents);
             return Ok(allEvents);
@@ -70,7 +70,8 @@ public class EventsController : ControllerBase
                 .Include(x => x.LevelCategory)
                 .Include(x => x.SurfaceCategory)
                 .Include(x => x.SurroundingCategory)
-                .Include(x => x.Location)
+                .Include(x => x.City)
+                .Include(x => x.Street)
                 .FirstOrDefaultAsync(e => e.Id == id);
 
             if (specificEvent == null) return NotFound("Not found that specific event");

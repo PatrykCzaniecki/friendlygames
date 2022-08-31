@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    [Migration("20220830091622_AddLocation")]
-    partial class AddLocation
+    [Migration("20220831091919_AddLocationToEventAndSeedingData")]
+    partial class AddLocationToEventAndSeedingData
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -56,6 +56,48 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 2,
                             Description = "Orlikowe granie",
                             Name = "Piłka Nożna"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Ciężki trening",
+                            Name = "Siłownia"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Description = "Sprinty na 200m",
+                            Name = "Bieganie"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Description = "Nauka jazdy na jednym kole",
+                            Name = "Rower"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Description = "Mecz o wszystko",
+                            Name = "Siatkówka"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            Description = "1 vs 1",
+                            Name = "Tenis"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            Description = "Brak stołu.., ktoś coś?",
+                            Name = "Ping Pong"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            Description = "Sobotni chill",
+                            Name = "Kręgielnia"
                         });
                 });
 
@@ -79,17 +121,17 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Easy"
+                            Name = "Łatwy"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Medium"
+                            Name = "Średni"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Advanced"
+                            Name = "Zaawanzowany"
                         });
                 });
 
@@ -113,17 +155,17 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Waiting"
+                            Name = "Oczekujące"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Accepted"
+                            Name = "Zaakceptowane"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Rejected"
+                            Name = "Odrzucone"
                         });
                 });
 
@@ -147,37 +189,37 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Grass"
+                            Name = "Trawa"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Court"
+                            Name = "Kort"
                         },
                         new
                         {
                             Id = 3,
-                            Name = "Sand"
+                            Name = "Piasek"
                         },
                         new
                         {
                             Id = 4,
-                            Name = "Hall"
+                            Name = "Hala"
                         },
                         new
                         {
                             Id = 5,
-                            Name = "Pool"
+                            Name = "Basen"
                         },
                         new
                         {
                             Id = 6,
-                            Name = "Synthetic"
+                            Name = "Syntetyczna"
                         },
                         new
                         {
                             Id = 7,
-                            Name = "Others"
+                            Name = "Inne"
                         });
                 });
 
@@ -201,12 +243,12 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Name = "Indoor"
+                            Name = "Węwnątrz"
                         },
                         new
                         {
                             Id = 2,
-                            Name = "Outdoor"
+                            Name = "Na zewnątrz"
                         });
                 });
 
@@ -217,6 +259,10 @@ namespace FriendlyGames.DataAccess.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("City")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("CreatorId")
                         .HasColumnType("int");
@@ -234,9 +280,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("LevelCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<int>("LocationId")
-                        .HasColumnType("int");
-
                     b.Property<int>("MaxNumberOfPlayers")
                         .HasColumnType("int");
 
@@ -249,6 +292,10 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.Property<DateTime>("StartDateTime")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Street")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("SurfaceCategoryId")
                         .HasColumnType("int");
@@ -264,9 +311,6 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasIndex("LevelCategoryId");
 
-                    b.HasIndex("LocationId")
-                        .IsUnique();
-
                     b.HasIndex("SurfaceCategoryId");
 
                     b.HasIndex("SurroundingCategoryId");
@@ -277,74 +321,104 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
+                            City = "Tarnów",
                             CreatorId = 1,
                             EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 1,
                             ImageForEvent = "basketball-box.png",
                             LevelCategoryId = 2,
-                            LocationId = 1,
                             MaxNumberOfPlayers = 8,
                             Name = "Koszykówka",
                             PriceForEvent = 30.0,
                             StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Piłsudskiego 24",
                             SurfaceCategoryId = 6,
                             SurroundingCategoryId = 2
                         },
                         new
                         {
                             Id = 2,
+                            City = "Kraków",
                             CreatorId = 2,
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 2,
                             ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 1,
-                            LocationId = 2,
                             MaxNumberOfPlayers = 10,
-                            Name = "Piła Nożna",
+                            Name = "Piłka Nożna",
                             PriceForEvent = 0.0,
                             StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Grzegórzecka 24",
                             SurfaceCategoryId = 1,
                             SurroundingCategoryId = 2
-                        });
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("City")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("EventId")
-                        .HasColumnType("int");
-
-                    b.Property<string>("Street")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Location");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tarnów",
-                            EventId = 1,
-                            Street = "Piłsudskiego 24"
                         },
                         new
                         {
-                            Id = 2,
-                            City = "Kraków",
-                            EventId = 2,
-                            Street = "Grzegórzecka 24"
+                            Id = 3,
+                            City = "Żywiec",
+                            CreatorId = 3,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 3,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 2,
+                            MaxNumberOfPlayers = 10,
+                            Name = "Siłownia",
+                            PriceForEvent = 0.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Kazimierza Tetmajera 75",
+                            SurfaceCategoryId = 3,
+                            SurroundingCategoryId = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            City = "Wrocław",
+                            CreatorId = 4,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 4,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 3,
+                            MaxNumberOfPlayers = 3,
+                            Name = "Bieganie",
+                            PriceForEvent = 0.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Różanka",
+                            SurfaceCategoryId = 7,
+                            SurroundingCategoryId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            City = "Szczecin",
+                            CreatorId = 5,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 5,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 2,
+                            MaxNumberOfPlayers = 15,
+                            Name = "Rower",
+                            PriceForEvent = 10.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Modra 104",
+                            SurfaceCategoryId = 7,
+                            SurroundingCategoryId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            City = "Warszawa",
+                            CreatorId = 6,
+                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
+                            EventCategoryId = 9,
+                            ImageForEvent = "footbal-box.png",
+                            LevelCategoryId = 1,
+                            MaxNumberOfPlayers = 4,
+                            Name = "Kręgle",
+                            PriceForEvent = 16.0,
+                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
+                            Street = "Vincenta van Gogha 1",
+                            SurfaceCategoryId = 4,
+                            SurroundingCategoryId = 1
                         });
                 });
 
@@ -376,28 +450,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1386)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(473)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1587)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(518)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1619)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(536)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 30, 11, 16, 21, 350, DateTimeKind.Local).AddTicks(1645)
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(545)
+                        },
+                        new
+                        {
+                            EventId = 3,
+                            UserId = 3,
+                            RegistrationCategoryId = 2,
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(554)
+                        },
+                        new
+                        {
+                            EventId = 4,
+                            UserId = 4,
+                            RegistrationCategoryId = 2,
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(564)
+                        },
+                        new
+                        {
+                            EventId = 5,
+                            UserId = 5,
+                            RegistrationCategoryId = 2,
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(573)
+                        },
+                        new
+                        {
+                            EventId = 6,
+                            UserId = 6,
+                            RegistrationCategoryId = 2,
+                            RegistrationDateTime = new DateTime(2022, 8, 31, 11, 19, 18, 644, DateTimeKind.Local).AddTicks(583)
                         });
                 });
 
@@ -433,6 +535,30 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 2,
                             FirstName = "Adam",
                             LastName = "Smith"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            FirstName = "Franek",
+                            LastName = "Stopka"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            FirstName = "Asia",
+                            LastName = "Szul"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            FirstName = "Tomek",
+                            LastName = "Broda"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            FirstName = "Grzegorz",
+                            LastName = "Wisła"
                         });
                 });
 
@@ -456,12 +582,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Models.Location", "Location")
-                        .WithOne("Event")
-                        .HasForeignKey("FriendlyGames.Domain.Models.Event", "LocationId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("FriendlyGames.Domain.Enums.SurfaceCategory", "SurfaceCategory")
                         .WithMany()
                         .HasForeignKey("SurfaceCategoryId")
@@ -479,8 +599,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Navigation("EventCategory");
 
                     b.Navigation("LevelCategory");
-
-                    b.Navigation("Location");
 
                     b.Navigation("SurfaceCategory");
 
@@ -517,12 +635,6 @@ namespace FriendlyGames.DataAccess.Migrations
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Navigation("Registrations");
-                });
-
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Location", b =>
-                {
-                    b.Navigation("Event")
-                        .IsRequired();
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>
