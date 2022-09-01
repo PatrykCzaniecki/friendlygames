@@ -25,21 +25,25 @@ public class EventsController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<EventUpdateDto>>> GetEvents()
+    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents(int id)
     {
         _logger.LogInformation($"{nameof(GetEvents)} called...");
 
         try
         {
-            var allEvents = await _dbContext.Events.Include(x => x.Creator)
-                .Include(x => x.EventCategory)
+            if (id == 0)
+            {
+                var allEvents = await _dbContext.Events
+                    .Include(x => x.Registrations)
+                    .ToListAsync();
+                var result = _mapper.Map<IList<EventsDto>>(allEvents);
+                return Ok(result);
+            }
+            var specifiedEvents = await _dbContext.Events.Where(x => x.EventCategoryId == id)
                 .Include(x => x.Registrations)
-                .Include(x => x.LevelCategory)
-                .Include(x => x.SurfaceCategory)
-                .Include(x => x.SurroundingCategory)
                 .ToListAsync();
-            //var results = _mapper.Map<IList<EventUpdateDto>>(allEvents);
-            return Ok(allEvents);
+            var results = _mapper.Map<IList<EventsDto>>(specifiedEvents);
+            return Ok(results);
         }
         catch (Exception exception)
         {
@@ -53,7 +57,7 @@ public class EventsController : ControllerBase
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<EventUpdateDto>> GetEvent(int id)
+    public async Task<ActionResult<EventsDto>> GetEvent(int id)
     {
         _logger.LogInformation($"{nameof(GetEvent)} called...");
 

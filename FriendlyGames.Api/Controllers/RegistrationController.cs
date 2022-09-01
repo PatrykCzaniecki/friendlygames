@@ -49,7 +49,7 @@ public class RegistrationController : ControllerBase
     }
 
     [HttpGet("{eventId}/{userId}", Name = "GetRegistration")]
-    public async Task<ActionResult<EventUpdateDto>> GetRegistration(int eventId, int userId)
+    public async Task<ActionResult<EventsDto>> GetRegistration(int eventId, int userId)
     {
         _logger.LogInformation($"{nameof(GetRegistration)} called...");
 
