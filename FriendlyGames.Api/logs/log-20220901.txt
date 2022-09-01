@@ -2681,3 +2681,808 @@ ORDER BY [e].[Id], [r].[EventId]
 2022-37-01 11:37:59.411 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 5.5145ms
 2022-37-01 11:37:59.411 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
 2022-37-01 11:37:59.411 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 7798 application/json;+charset=utf-8 8.6024ms
+2022-43-01 13:43:19.044 +02:00 INF Application is starting...
+2022-43-01 13:43:21.170 +02:00 INF Now listening on: https://localhost:7089
+2022-43-01 13:43:21.175 +02:00 INF Now listening on: http://localhost:5089
+2022-43-01 13:43:21.180 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-43-01 13:43:21.181 +02:00 INF Hosting environment: Development
+2022-43-01 13:43:21.181 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-43-01 13:43:23.053 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-43-01 13:43:23.496 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 453.0978ms
+2022-43-01 13:43:23.536 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-43-01 13:43:23.543 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 6.5480ms
+2022-43-01 13:43:23.615 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-43-01 13:43:23.674 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.7950ms
+2022-43-01 13:43:23.933 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-43-01 13:43:24.120 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 187.1214ms
+2022-43-01 13:43:37.139 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - -
+2022-43-01 13:43:37.180 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:37.211 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-43-01 13:43:37.630 +02:00 INF GetSurroundings called...
+2022-43-01 13:43:38.743 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-43-01 13:43:39.874 +02:00 INF Executed DbCommand (97ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-43-01 13:43:40.199 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 42
+2022-43-01 13:43:40.269 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-43-01 13:43:40.449 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 3233.2733ms
+2022-43-01 13:43:40.451 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:40.461 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - - - 500 260 application/problem+json;+charset=utf-8 3322.3587ms
+2022-43-01 13:43:53.175 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding - -
+2022-43-01 13:43:53.177 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:53.177 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-43-01 13:43:53.178 +02:00 INF GetSurroundings called...
+2022-43-01 13:43:53.186 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-43-01 13:43:53.205 +02:00 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-43-01 13:43:53.243 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 37
+2022-43-01 13:43:53.243 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-43-01 13:43:53.244 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 66.6086ms
+2022-43-01 13:43:53.244 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:53.244 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding - - - 500 260 application/problem+json;+charset=utf-8 69.3521ms
+2022-43-01 13:43:54.846 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding - -
+2022-43-01 13:43:54.846 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:54.846 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-43-01 13:43:54.849 +02:00 INF GetSurroundings called...
+2022-43-01 13:43:54.900 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-43-01 13:43:54.902 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-43-01 13:43:54.940 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 37
+2022-43-01 13:43:54.940 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-43-01 13:43:54.941 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 94.2523ms
+2022-43-01 13:43:54.941 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:54.941 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding - - - 500 260 application/problem+json;+charset=utf-8 95.4343ms
+2022-43-01 13:43:57.467 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - -
+2022-43-01 13:43:57.467 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:57.467 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-43-01 13:43:57.467 +02:00 INF GetSurroundings called...
+2022-43-01 13:43:57.468 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-43-01 13:43:57.470 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-43-01 13:43:57.508 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 37
+2022-43-01 13:43:57.509 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-43-01 13:43:57.509 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 41.8657ms
+2022-43-01 13:43:57.509 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:57.509 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - - - 500 260 application/problem+json;+charset=utf-8 42.5150ms
+2022-43-01 13:43:59.479 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - -
+2022-43-01 13:43:59.479 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:59.479 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-43-01 13:43:59.480 +02:00 INF GetSurroundings called...
+2022-43-01 13:43:59.480 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-43-01 13:43:59.491 +02:00 INF Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-43-01 13:43:59.537 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 37
+2022-43-01 13:43:59.537 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-43-01 13:43:59.537 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 58.0141ms
+2022-43-01 13:43:59.538 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-43-01 13:43:59.538 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - - - 500 260 application/problem+json;+charset=utf-8 58.8178ms
+2022-44-01 13:44:16.459 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - -
+2022-44-01 13:44:16.459 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-44-01 13:44:16.459 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-44-01 13:44:16.460 +02:00 INF GetSurroundings called...
+2022-44-01 13:44:16.460 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-44-01 13:44:16.467 +02:00 INF Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-44-01 13:44:16.505 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 42
+2022-44-01 13:44:16.506 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-44-01 13:44:16.506 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 46.3929ms
+2022-44-01 13:44:16.506 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-44-01 13:44:16.506 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - - - 500 260 application/problem+json;+charset=utf-8 46.9863ms
+2022-47-01 13:47:10.744 +02:00 INF Application is starting...
+2022-47-01 13:47:12.336 +02:00 INF Now listening on: https://localhost:7089
+2022-47-01 13:47:12.342 +02:00 INF Now listening on: http://localhost:5089
+2022-47-01 13:47:12.347 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-47-01 13:47:12.348 +02:00 INF Hosting environment: Development
+2022-47-01 13:47:12.348 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-47-01 13:47:14.273 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-47-01 13:47:14.966 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 700.3533ms
+2022-47-01 13:47:15.051 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-47-01 13:47:15.051 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-47-01 13:47:15.063 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 12.0272ms
+2022-47-01 13:47:15.115 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 64.4869ms
+2022-47-01 13:47:15.230 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-47-01 13:47:15.452 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 222.0658ms
+2022-47-01 13:47:25.044 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - -
+2022-47-01 13:47:25.086 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-47-01 13:47:25.117 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-47-01 13:47:25.515 +02:00 INF GetSurroundings called...
+2022-47-01 13:47:26.612 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-47-01 13:47:27.698 +02:00 INF Executed DbCommand (97ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-47-01 13:47:27.944 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 42
+2022-47-01 13:47:27.991 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-47-01 13:47:28.171 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 3047.7634ms
+2022-47-01 13:47:28.173 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-47-01 13:47:28.183 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=1 - - - 500 260 application/problem+json;+charset=utf-8 3139.8848ms
+2022-47-01 13:47:50.335 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/1 - -
+2022-47-01 13:47:50.337 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-47-01 13:47:50.341 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-47-01 13:47:50.345 +02:00 INF GetEvent called...
+2022-47-01 13:47:50.370 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-47-01 13:47:50.474 +02:00 INF Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [r0].[Id], [r0].[Name], [u].[Id], [u].[FirstName], [u].[LastName]
+FROM [Registrations] AS [r]
+INNER JOIN [RegistrationCategories] AS [r0] ON [r].[RegistrationCategoryId] = [r0].[Id]
+INNER JOIN [Users] AS [u] ON [r].[UserId] = [u].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-47-01 13:47:50.677 +02:00 INF Executed DbCommand (8ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[City], [t].[CreatorId], [t].[Description], [t].[EndDateTime], [t].[EventCategoryId], [t].[ImageForEvent], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[FirstName], [t].[LastName], [t].[Id1], [t].[EventCategoryImage], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[City], [e].[CreatorId], [e].[Description], [e].[EndDateTime], [e].[EventCategoryId], [e].[ImageForEvent], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [u].[Id] AS [Id0], [u].[FirstName], [u].[LastName], [e0].[Id] AS [Id1], [e0].[EventCategoryImage], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [Users] AS [u] ON [e].[CreatorId] = [u].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-47-01 13:47:50.733 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-47-01 13:47:50.763 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 422.2573ms
+2022-47-01 13:47:50.763 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-47-01 13:47:50.763 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/1 - - - 200 1319 application/json;+charset=utf-8 428.1533ms
+2022-48-01 13:48:14.205 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - -
+2022-48-01 13:48:14.206 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-48-01 13:48:14.206 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.SurroundingDto]]] GetSurroundings(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-48-01 13:48:14.210 +02:00 INF GetSurroundings called...
+2022-48-01 13:48:14.275 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-48-01 13:48:14.281 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-48-01 13:48:14.319 +02:00 ERR Something went wrong in GetSurroundings
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+List`1 -> IList`1
+System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] -> System.Collections.Generic.IList`1[[FriendlyGames.Api.Dtos.SurroundingDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+SurroundingCategory -> SurroundingDto
+FriendlyGames.Domain.Enums.SurroundingCategory -> FriendlyGames.Api.Dtos.SurroundingDto
+   at lambda_method131(Closure , SurroundingCategory , SurroundingDto , ResolutionContext )
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   --- End of inner exception stack trace ---
+   at lambda_method130(Closure , Object , IList`1 , ResolutionContext )
+   at FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings(Int32 id) in D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api\Controllers\CategoryControllers\SurroundingController.cs:line 37
+2022-48-01 13:48:14.320 +02:00 INF Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2022-48-01 13:48:14.320 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 113.8106ms
+2022-48-01 13:48:14.320 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-48-01 13:48:14.320 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding?id=0 - - - 500 260 application/problem+json;+charset=utf-8 115.0776ms
+2022-53-01 13:53:07.475 +02:00 INF Application is starting...
+2022-53-01 13:53:09.135 +02:00 INF Now listening on: https://localhost:7089
+2022-53-01 13:53:09.139 +02:00 INF Now listening on: http://localhost:5089
+2022-53-01 13:53:09.142 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-53-01 13:53:09.142 +02:00 INF Hosting environment: Development
+2022-53-01 13:53:09.142 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-53-01 13:53:10.912 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-53-01 13:53:11.452 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 547.2685ms
+2022-53-01 13:53:11.549 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-53-01 13:53:11.549 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-53-01 13:53:11.560 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 10.8538ms
+2022-53-01 13:53:11.607 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 58.3764ms
+2022-53-01 13:53:11.742 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-53-01 13:53:11.943 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 200.4686ms
+2022-53-01 13:53:21.695 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding/1 - -
+2022-53-01 13:53:21.733 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:21.765 +02:00 INF Route matched with {action = "GetSurrounding", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingDto]] GetSurrounding(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-53-01 13:53:22.233 +02:00 INF GetSurrounding called...
+2022-53-01 13:53:23.459 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-53-01 13:53:24.525 +02:00 INF Executed DbCommand (102ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-53-01 13:53:24.642 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Enums.SurroundingCategory'.
+2022-53-01 13:53:24.806 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api) in 3036.5156ms
+2022-53-01 13:53:24.808 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:24.819 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding/1 - - - 200 28 application/json;+charset=utf-8 3124.1236ms
+2022-53-01 13:53:35.838 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding/2 - -
+2022-53-01 13:53:35.840 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:35.840 +02:00 INF Route matched with {action = "GetSurrounding", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingDto]] GetSurrounding(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-53-01 13:53:35.842 +02:00 INF GetSurrounding called...
+2022-53-01 13:53:35.851 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-53-01 13:53:35.862 +02:00 INF Executed DbCommand (4ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-53-01 13:53:35.863 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Enums.SurroundingCategory'.
+2022-53-01 13:53:35.863 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api) in 22.3071ms
+2022-53-01 13:53:35.863 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:35.863 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding/2 - - - 200 30 application/json;+charset=utf-8 25.2509ms
+2022-53-01 13:53:40.838 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding/3 - -
+2022-53-01 13:53:40.839 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:40.839 +02:00 INF Route matched with {action = "GetSurrounding", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingDto]] GetSurrounding(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-53-01 13:53:40.841 +02:00 INF GetSurrounding called...
+2022-53-01 13:53:40.906 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-53-01 13:53:40.909 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-53-01 13:53:40.910 +02:00 INF Executing NotFoundObjectResult, writing value of type 'System.String'.
+2022-53-01 13:53:40.911 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api) in 71.9793ms
+2022-53-01 13:53:40.911 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-53-01 13:53:40.911 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding/3 - - - 404 - text/plain;+charset=utf-8 73.0084ms
+2022-54-01 13:54:27.982 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding/1 - -
+2022-54-01 13:54:27.983 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-54-01 13:54:27.983 +02:00 INF Route matched with {action = "GetSurrounding", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingDto]] GetSurrounding(Int32) on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-54-01 13:54:27.983 +02:00 INF GetSurrounding called...
+2022-54-01 13:54:27.984 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-54-01 13:54:27.986 +02:00 INF Executed DbCommand (2ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+WHERE [s].[Id] = @__id_0
+2022-54-01 13:54:27.986 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Enums.SurroundingCategory'.
+2022-54-01 13:54:27.987 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api) in 3.8376ms
+2022-54-01 13:54:27.987 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurrounding (FriendlyGames.Api)'
+2022-54-01 13:54:27.987 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding/1 - - - 200 28 application/json;+charset=utf-8 5.9044ms
+2022-06-01 14:06:47.050 +02:00 INF Application is starting...
+2022-06-01 14:06:48.793 +02:00 INF Now listening on: https://localhost:7089
+2022-06-01 14:06:48.801 +02:00 INF Now listening on: http://localhost:5089
+2022-06-01 14:06:48.807 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-06-01 14:06:48.807 +02:00 INF Hosting environment: Development
+2022-06-01 14:06:48.807 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-06-01 14:06:50.425 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-06-01 14:06:50.915 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 496.2313ms
+2022-06-01 14:06:50.946 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-06-01 14:06:50.947 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-06-01 14:06:50.959 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 12.0308ms
+2022-06-01 14:06:51.007 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 60.4485ms
+2022-06-01 14:06:51.100 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-06-01 14:06:51.312 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 212.0086ms
+2022-07-01 14:07:44.894 +02:00 INF Application is starting...
+2022-07-01 14:07:46.443 +02:00 INF Now listening on: https://localhost:7089
+2022-07-01 14:07:46.446 +02:00 INF Now listening on: http://localhost:5089
+2022-07-01 14:07:46.449 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-07-01 14:07:46.450 +02:00 INF Hosting environment: Development
+2022-07-01 14:07:46.450 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-07-01 14:07:47.927 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-07-01 14:07:48.537 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 614.9769ms
+2022-07-01 14:07:48.590 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-07-01 14:07:48.590 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-07-01 14:07:48.610 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 19.3928ms
+2022-07-01 14:07:48.682 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 92.0080ms
+2022-07-01 14:07:48.825 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-07-01 14:07:49.015 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 189.8343ms
+2022-07-01 14:07:59.503 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surrounding - -
+2022-07-01 14:07:59.539 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-07-01 14:07:59.561 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surrounding"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController (FriendlyGames.Api).
+2022-07-01 14:07:59.990 +02:00 INF GetSurroundings called...
+2022-08-01 14:08:01.136 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-08-01 14:08:02.021 +02:00 INF Executed DbCommand (63ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-08-01 14:08:02.137 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-08-01 14:08:02.325 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api) in 2757.4624ms
+2022-08-01 14:08:02.327 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingController.GetSurroundings (FriendlyGames.Api)'
+2022-08-01 14:08:02.338 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surrounding - - - 200 61 application/json;+charset=utf-8 2834.4344ms
+2022-09-01 14:09:13.456 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-09-01 14:09:13.475 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 20.0081ms
+2022-09-01 14:09:13.495 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-09-01 14:09:13.496 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-09-01 14:09:13.528 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 33.2349ms
+2022-09-01 14:09:13.580 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 85.4856ms
+2022-09-01 14:09:13.688 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-09-01 14:09:13.705 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 17.4779ms
+2022-10-01 14:10:17.833 +02:00 INF Application is starting...
+2022-10-01 14:10:19.786 +02:00 INF Now listening on: https://localhost:7089
+2022-10-01 14:10:19.792 +02:00 INF Now listening on: http://localhost:5089
+2022-10-01 14:10:19.798 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-10-01 14:10:19.799 +02:00 INF Hosting environment: Development
+2022-10-01 14:10:19.799 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-10-01 14:10:21.304 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-10-01 14:10:21.827 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 562.7263ms
+2022-10-01 14:10:21.869 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-10-01 14:10:21.869 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-10-01 14:10:21.882 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 12.6573ms
+2022-10-01 14:10:21.924 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 54.9124ms
+2022-10-01 14:10:22.026 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-10-01 14:10:22.225 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 199.0969ms
+2022-10-01 14:10:26.880 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-10-01 14:10:26.917 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-10-01 14:10:26.936 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-10-01 14:10:27.323 +02:00 INF GetSurroundings called...
+2022-10-01 14:10:28.505 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-10-01 14:10:29.399 +02:00 INF Executed DbCommand (68ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-10-01 14:10:29.518 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-10-01 14:10:29.699 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 2758.0247ms
+2022-10-01 14:10:29.701 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-10-01 14:10:29.711 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 2831.1218ms
+2022-18-01 14:18:58.661 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-18-01 14:18:58.682 +02:00 INF CORS policy execution successful.
+2022-18-01 14:18:58.684 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-18-01 14:18:58.685 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-18-01 14:18:58.685 +02:00 INF GetSurroundings called...
+2022-18-01 14:18:58.688 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-18-01 14:18:58.734 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-18-01 14:18:58.735 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-18-01 14:18:58.736 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 50.9348ms
+2022-18-01 14:18:58.736 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-18-01 14:18:58.736 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 76.8118ms
+2022-18-01 14:18:58.737 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-18-01 14:18:58.738 +02:00 INF CORS policy execution successful.
+2022-18-01 14:18:58.738 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-18-01 14:18:58.738 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-18-01 14:18:58.740 +02:00 INF GetSurroundings called...
+2022-18-01 14:18:58.791 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-18-01 14:18:58.797 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-18-01 14:18:58.798 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-18-01 14:18:58.798 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 59.3951ms
+2022-18-01 14:18:58.798 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-18-01 14:18:58.798 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 60.7191ms
+2022-19-01 14:19:35.421 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-19-01 14:19:35.421 +02:00 INF CORS policy execution successful.
+2022-19-01 14:19:35.421 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-19-01 14:19:35.422 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-19-01 14:19:35.422 +02:00 INF GetSurroundings called...
+2022-19-01 14:19:35.422 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-19-01 14:19:35.424 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-19-01 14:19:35.425 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-19-01 14:19:35.425 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.1266ms
+2022-19-01 14:19:35.425 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-19-01 14:19:35.425 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 3.8405ms
+2022-20-01 14:20:29.852 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-20-01 14:20:29.852 +02:00 INF CORS policy execution successful.
+2022-20-01 14:20:29.852 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-20-01 14:20:29.853 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-20-01 14:20:29.853 +02:00 INF GetSurroundings called...
+2022-20-01 14:20:29.853 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-20-01 14:20:29.856 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-20-01 14:20:29.856 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-20-01 14:20:29.856 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.5554ms
+2022-20-01 14:20:29.856 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-20-01 14:20:29.857 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.4507ms
+2022-20-01 14:20:29.867 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-20-01 14:20:29.867 +02:00 INF CORS policy execution successful.
+2022-20-01 14:20:29.867 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-20-01 14:20:29.875 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-20-01 14:20:29.878 +02:00 INF GetSurroundings called...
+2022-20-01 14:20:29.881 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-20-01 14:20:29.883 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-20-01 14:20:29.884 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-20-01 14:20:29.884 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 8.8429ms
+2022-20-01 14:20:29.884 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-20-01 14:20:29.884 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 17.2607ms
+2022-21-01 14:21:28.303 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-21-01 14:21:28.303 +02:00 INF CORS policy execution successful.
+2022-21-01 14:21:28.305 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:28.305 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-21-01 14:21:28.307 +02:00 INF GetSurroundings called...
+2022-21-01 14:21:28.307 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-21-01 14:21:28.311 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-21-01 14:21:28.311 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-21-01 14:21:28.311 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 4.6405ms
+2022-21-01 14:21:28.311 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:28.312 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 10.0239ms
+2022-21-01 14:21:28.314 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-21-01 14:21:28.314 +02:00 INF CORS policy execution successful.
+2022-21-01 14:21:28.314 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:28.314 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-21-01 14:21:28.315 +02:00 INF GetSurroundings called...
+2022-21-01 14:21:28.315 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-21-01 14:21:28.320 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-21-01 14:21:28.325 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-21-01 14:21:28.325 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 10.8898ms
+2022-21-01 14:21:28.326 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:28.326 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 12.0954ms
+2022-21-01 14:21:31.370 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-21-01 14:21:31.370 +02:00 INF CORS policy execution successful.
+2022-21-01 14:21:31.370 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:31.371 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-21-01 14:21:31.371 +02:00 INF GetSurroundings called...
+2022-21-01 14:21:31.372 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-21-01 14:21:31.374 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-21-01 14:21:31.375 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-21-01 14:21:31.375 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.908ms
+2022-21-01 14:21:31.375 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:31.375 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 5.8231ms
+2022-21-01 14:21:31.377 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-21-01 14:21:31.377 +02:00 INF CORS policy execution successful.
+2022-21-01 14:21:31.377 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:31.377 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-21-01 14:21:31.377 +02:00 INF GetSurroundings called...
+2022-21-01 14:21:31.378 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-21-01 14:21:31.379 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-21-01 14:21:31.381 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-21-01 14:21:31.387 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 10.086ms
+2022-21-01 14:21:31.387 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-21-01 14:21:31.388 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 10.9009ms
+2022-23-01 14:23:32.694 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-23-01 14:23:32.694 +02:00 INF CORS policy execution successful.
+2022-23-01 14:23:32.694 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-23-01 14:23:32.725 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-23-01 14:23:32.738 +02:00 INF GetEvents called...
+2022-23-01 14:23:32.742 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-23-01 14:23:33.085 +02:00 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[City], [e].[CreatorId], [e].[Description], [e].[EndDateTime], [e].[EventCategoryId], [e].[ImageForEvent], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime]
+FROM [Events] AS [e]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [r].[EventId]
+2022-23-01 14:23:33.178 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-23-01 14:23:33.200 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 474.693ms
+2022-23-01 14:23:33.200 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-23-01 14:23:33.200 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 7798 application/json;+charset=utf-8 506.3803ms
+2022-23-01 14:23:33.202 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-23-01 14:23:33.202 +02:00 INF CORS policy execution successful.
+2022-23-01 14:23:33.202 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-23-01 14:23:33.202 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-23-01 14:23:33.202 +02:00 INF GetEvents called...
+2022-23-01 14:23:33.203 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-23-01 14:23:33.207 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[City], [e].[CreatorId], [e].[Description], [e].[EndDateTime], [e].[EventCategoryId], [e].[ImageForEvent], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime]
+FROM [Events] AS [e]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [r].[EventId]
+2022-23-01 14:23:33.209 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-23-01 14:23:33.209 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 7.1708ms
+2022-23-01 14:23:33.209 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-23-01 14:23:33.210 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 7798 application/json;+charset=utf-8 7.7930ms
+2022-23-01 14:23:35.289 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-23-01 14:23:35.290 +02:00 INF CORS policy execution successful.
+2022-23-01 14:23:35.290 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-23-01 14:23:35.290 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-23-01 14:23:35.290 +02:00 INF GetSurroundings called...
+2022-23-01 14:23:35.291 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-23-01 14:23:35.293 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-23-01 14:23:35.294 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-23-01 14:23:35.294 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.722ms
+2022-23-01 14:23:35.294 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-23-01 14:23:35.294 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.7236ms
+2022-23-01 14:23:35.296 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-23-01 14:23:35.296 +02:00 INF CORS policy execution successful.
+2022-23-01 14:23:35.296 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-23-01 14:23:35.296 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-23-01 14:23:35.296 +02:00 INF GetSurroundings called...
+2022-23-01 14:23:35.297 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-23-01 14:23:35.298 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-23-01 14:23:35.299 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-23-01 14:23:35.299 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 2.8463ms
+2022-23-01 14:23:35.299 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-23-01 14:23:35.299 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 3.5137ms
+2022-27-01 14:27:53.019 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-27-01 14:27:53.019 +02:00 INF CORS policy execution successful.
+2022-27-01 14:27:53.019 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-27-01 14:27:53.020 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-27-01 14:27:53.020 +02:00 INF GetSurroundings called...
+2022-27-01 14:27:53.021 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-27-01 14:27:53.023 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-27-01 14:27:53.023 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-27-01 14:27:53.024 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 4.1991ms
+2022-27-01 14:27:53.024 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-27-01 14:27:53.024 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 5.3042ms
+2022-27-01 14:27:53.027 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-27-01 14:27:53.027 +02:00 INF CORS policy execution successful.
+2022-27-01 14:27:53.027 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-27-01 14:27:53.027 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-27-01 14:27:53.027 +02:00 INF GetSurroundings called...
+2022-27-01 14:27:53.028 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-27-01 14:27:53.029 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-27-01 14:27:53.030 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-27-01 14:27:53.031 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.2716ms
+2022-27-01 14:27:53.031 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-27-01 14:27:53.031 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.1575ms
+2022-28-01 14:28:42.253 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-28-01 14:28:42.253 +02:00 INF CORS policy execution successful.
+2022-28-01 14:28:42.253 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-28-01 14:28:42.253 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-28-01 14:28:42.253 +02:00 INF GetSurroundings called...
+2022-28-01 14:28:42.254 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-28-01 14:28:42.256 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-28-01 14:28:42.257 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-28-01 14:28:42.257 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.5255ms
+2022-28-01 14:28:42.257 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-28-01 14:28:42.258 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.7437ms
+2022-28-01 14:28:42.265 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-28-01 14:28:42.265 +02:00 INF CORS policy execution successful.
+2022-28-01 14:28:42.265 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-28-01 14:28:42.265 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-28-01 14:28:42.266 +02:00 INF GetSurroundings called...
+2022-28-01 14:28:42.266 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-28-01 14:28:42.270 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-28-01 14:28:42.279 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-28-01 14:28:42.279 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 13.8004ms
+2022-28-01 14:28:42.279 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-28-01 14:28:42.280 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 14.7130ms
+2022-29-01 14:29:02.253 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-29-01 14:29:02.253 +02:00 INF CORS policy execution successful.
+2022-29-01 14:29:02.253 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-29-01 14:29:02.253 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-29-01 14:29:02.254 +02:00 INF GetSurroundings called...
+2022-29-01 14:29:02.254 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-29-01 14:29:02.255 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-29-01 14:29:02.256 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-29-01 14:29:02.257 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.076ms
+2022-29-01 14:29:02.257 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-29-01 14:29:02.257 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 3.9859ms
+2022-30-01 14:30:56.270 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-30-01 14:30:56.270 +02:00 INF CORS policy execution successful.
+2022-30-01 14:30:56.271 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-30-01 14:30:56.271 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-30-01 14:30:56.271 +02:00 INF GetSurroundings called...
+2022-30-01 14:30:56.271 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-30-01 14:30:56.273 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-30-01 14:30:56.274 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-30-01 14:30:56.274 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.3229ms
+2022-30-01 14:30:56.274 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-30-01 14:30:56.274 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.0357ms
+2022-30-01 14:30:56.280 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-30-01 14:30:56.281 +02:00 INF CORS policy execution successful.
+2022-30-01 14:30:56.281 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-30-01 14:30:56.281 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-30-01 14:30:56.281 +02:00 INF GetSurroundings called...
+2022-30-01 14:30:56.281 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-30-01 14:30:56.283 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-30-01 14:30:56.284 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-30-01 14:30:56.284 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.001ms
+2022-30-01 14:30:56.284 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-30-01 14:30:56.284 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 3.6488ms
+2022-31-01 14:31:06.249 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-31-01 14:31:06.249 +02:00 INF CORS policy execution successful.
+2022-31-01 14:31:06.250 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:06.250 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-31-01 14:31:06.250 +02:00 INF GetSurroundings called...
+2022-31-01 14:31:06.250 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-31-01 14:31:06.252 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-31-01 14:31:06.253 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-31-01 14:31:06.253 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.7617ms
+2022-31-01 14:31:06.254 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:06.254 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.4628ms
+2022-31-01 14:31:16.251 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-31-01 14:31:16.251 +02:00 INF CORS policy execution successful.
+2022-31-01 14:31:16.251 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:16.251 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-31-01 14:31:16.251 +02:00 INF GetSurroundings called...
+2022-31-01 14:31:16.252 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-31-01 14:31:16.254 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-31-01 14:31:16.255 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-31-01 14:31:16.255 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.5739ms
+2022-31-01 14:31:16.255 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:16.255 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.1325ms
+2022-31-01 14:31:21.250 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-31-01 14:31:21.250 +02:00 INF CORS policy execution successful.
+2022-31-01 14:31:21.250 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:21.250 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-31-01 14:31:21.250 +02:00 INF GetSurroundings called...
+2022-31-01 14:31:21.251 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-31-01 14:31:21.253 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-31-01 14:31:21.253 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-31-01 14:31:21.253 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.203ms
+2022-31-01 14:31:21.254 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:21.254 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 3.8366ms
+2022-31-01 14:31:57.010 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-31-01 14:31:57.014 +02:00 INF CORS policy execution successful.
+2022-31-01 14:31:57.016 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:57.016 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-31-01 14:31:57.017 +02:00 INF GetSurroundings called...
+2022-31-01 14:31:57.017 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-31-01 14:31:57.022 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-31-01 14:31:57.023 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-31-01 14:31:57.023 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 6.9256ms
+2022-31-01 14:31:57.023 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:57.024 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 13.7595ms
+2022-31-01 14:31:57.029 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-31-01 14:31:57.029 +02:00 INF CORS policy execution successful.
+2022-31-01 14:31:57.029 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:57.029 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-31-01 14:31:57.030 +02:00 INF GetSurroundings called...
+2022-31-01 14:31:57.031 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-31-01 14:31:57.039 +02:00 INF Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-31-01 14:31:57.047 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-31-01 14:31:57.048 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 18.206ms
+2022-31-01 14:31:57.048 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-31-01 14:31:57.048 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 19.1957ms
+2022-32-01 14:32:26.249 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-32-01 14:32:26.250 +02:00 INF CORS policy execution successful.
+2022-32-01 14:32:26.250 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:26.250 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-32-01 14:32:26.250 +02:00 INF GetSurroundings called...
+2022-32-01 14:32:26.250 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-32-01 14:32:26.252 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-32-01 14:32:26.253 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-32-01 14:32:26.253 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.0722ms
+2022-32-01 14:32:26.253 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:26.254 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.1327ms
+2022-32-01 14:32:36.269 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-32-01 14:32:36.269 +02:00 INF CORS policy execution successful.
+2022-32-01 14:32:36.270 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:36.270 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-32-01 14:32:36.270 +02:00 INF GetSurroundings called...
+2022-32-01 14:32:36.271 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-32-01 14:32:36.273 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-32-01 14:32:36.273 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-32-01 14:32:36.274 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.8355ms
+2022-32-01 14:32:36.274 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:36.274 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.8951ms
+2022-32-01 14:32:51.253 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-32-01 14:32:51.253 +02:00 INF CORS policy execution successful.
+2022-32-01 14:32:51.254 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:51.254 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-32-01 14:32:51.254 +02:00 INF GetSurroundings called...
+2022-32-01 14:32:51.254 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-32-01 14:32:51.260 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-32-01 14:32:51.265 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-32-01 14:32:51.266 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 11.7808ms
+2022-32-01 14:32:51.266 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-32-01 14:32:51.266 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 12.9074ms
+2022-35-01 14:35:46.256 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Surroundings - -
+2022-35-01 14:35:46.256 +02:00 INF CORS policy execution successful.
+2022-35-01 14:35:46.256 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-35-01 14:35:46.256 +02:00 INF Route matched with {action = "GetSurroundings", controller = "Surroundings"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.SurroundingsDto]] GetSurroundings() on controller FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController (FriendlyGames.Api).
+2022-35-01 14:35:46.257 +02:00 INF GetSurroundings called...
+2022-35-01 14:35:46.257 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: None
+2022-35-01 14:35:46.259 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-35-01 14:35:46.260 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Domain.Enums.SurroundingCategory, FriendlyGames.Domain, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-35-01 14:35:46.260 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api) in 3.4096ms
+2022-35-01 14:35:46.260 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoryControllers.SurroundingsController.GetSurroundings (FriendlyGames.Api)'
+2022-35-01 14:35:46.260 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Surroundings - - - 200 61 application/json;+charset=utf-8 4.2301ms
