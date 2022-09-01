@@ -52,31 +52,31 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 3, Name = "Zaawanzowany"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 1, Name = "Koszykówka", Description = "Szukam osób do gry w kosza"});
+                {Id = 1, Name = "Koszykówka", EventCategoryImage = "ball-of-basketball.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 2, Name = "Piłka Nożna", Description = "Orlikowe granie"});
+                {Id = 2, Name = "Piłka Nożna", EventCategoryImage = "football.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 3, Name = "Siłownia", Description = "Ciężki trening"});
+                {Id = 3, Name = "Siłownia", EventCategoryImage = "dumbbell.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 4, Name = "Bieganie", Description = "Sprinty na 200m"});
+                {Id = 4, Name = "Bieganie", EventCategoryImage = "running.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 5, Name = "Rower", Description = "Nauka jazdy na jednym kole"});
+                {Id = 5, Name = "Rower", EventCategoryImage = "bicycle.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 6, Name = "Siatkówka", Description = "Mecz o wszystko"});
+                {Id = 6, Name = "Siatkówka", EventCategoryImage = "siatkowka.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 7, Name = "Tenis", Description = "1 vs 1"});
+                {Id = 7, Name = "Tenis", EventCategoryImage = "tennis.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 8, Name = "Ping Pong", Description = "Brak stołu.., ktoś coś?"});
+                {Id = 8, Name = "Ping Pong", EventCategoryImage = "table-tennis.png" });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 9, Name = "Kręgielnia", Description = "Sobotni chill"});
+                {Id = 9, Name = "Kręgielnia", EventCategoryImage = "bowling.png" });
         modelBuilder.Entity<User>()
             .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"});
         modelBuilder.Entity<User>()
@@ -105,7 +105,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 30.0,
                 City = "Tarnów",
                 Street = "Piłsudskiego 24",
-                ImageForEvent = "basketball-box.png"
+                ImageForEvent = "basketball-box.png",
+                Description = "Szukam osób do gry w kosza"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -123,7 +124,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 0.0,
                 City = "Kraków",
                 Street = "Grzegórzecka 24",
-                ImageForEvent = "footbal-box.png"
+                ImageForEvent = "footbal-box.png",
+                Description = "Orlikowe granie"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -141,7 +143,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 0.0,
                 City = "Żywiec",
                 Street = "Kazimierza Tetmajera 75",
-                ImageForEvent = "footbal-box.png"
+                ImageForEvent = "footbal-box.png",
+                Description = "Ciężki trening"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -159,7 +162,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 0.0,
                 City = "Wrocław",
                 Street = "Różanka",
-                ImageForEvent = "footbal-box.png"
+                ImageForEvent = "footbal-box.png",
+                Description = "Sprinty na 200m"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -177,7 +181,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 10.0,
                 City = "Szczecin",
                 Street = "Modra 104",
-                ImageForEvent = "footbal-box.png"
+                ImageForEvent = "footbal-box.png",
+                Description = "Nauka jazdy na jednym kole"
             });
         modelBuilder.Entity<Event>()
             .HasData(new Event
@@ -195,7 +200,8 @@ public class FriendlyGamesDbContext : DbContext
                 PriceForEvent = 16.0,
                 City = "Warszawa",
                 Street = "Vincenta van Gogha 1",
-                ImageForEvent = "footbal-box.png"
+                ImageForEvent = "footbal-box.png",
+                Description = "Sobotni chill"
             });
         modelBuilder.Entity<Registration>()
             .HasData(new Registration

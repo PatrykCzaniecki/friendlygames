@@ -5,7 +5,11 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
+<<<<<<<< HEAD:FriendlyGames.DataAccess/Migrations/20220901092215_Initial.cs
     public partial class Initial : Migration
+========
+    public partial class CreateDatabase : Migration
+>>>>>>>> aefccb3a82de711329d5a34e4f6c997572104baa:FriendlyGames.DataAccess/Migrations/20220901090108_CreateDatabase.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +20,7 @@ namespace FriendlyGames.DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    EventCategoryImage = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -107,7 +111,8 @@ namespace FriendlyGames.DataAccess.Migrations
                     PriceForEvent = table.Column<double>(type: "float", nullable: false),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageForEvent = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageForEvent = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,18 +183,18 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "EventCategories",
-                columns: new[] { "Id", "Description", "Name" },
+                columns: new[] { "Id", "EventCategoryImage", "Name" },
                 values: new object[,]
                 {
-                    { 1, "Szukam osób do gry w kosza", "Koszykówka" },
-                    { 2, "Orlikowe granie", "Piłka Nożna" },
-                    { 3, "Ciężki trening", "Siłownia" },
-                    { 4, "Sprinty na 200m", "Bieganie" },
-                    { 5, "Nauka jazdy na jednym kole", "Rower" },
-                    { 6, "Mecz o wszystko", "Siatkówka" },
-                    { 7, "1 vs 1", "Tenis" },
-                    { 8, "Brak stołu.., ktoś coś?", "Ping Pong" },
-                    { 9, "Sobotni chill", "Kręgielnia" }
+                    { 1, "ball-of-basketball.png", "Koszykówka" },
+                    { 2, "football.png", "Piłka Nożna" },
+                    { 3, "dumbbell.png", "Siłownia" },
+                    { 4, "running.png", "Bieganie" },
+                    { 5, "bicycle.png", "Rower" },
+                    { 6, "siatkowka.png", "Siatkówka" },
+                    { 7, "tennis.png", "Tenis" },
+                    { 8, "table-tennis.png", "Ping Pong" },
+                    { 9, "bowling.png", "Kręgielnia" }
                 });
 
             migrationBuilder.InsertData(
@@ -250,15 +255,15 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Events",
-                columns: new[] { "Id", "City", "CreatorId", "EndDateTime", "EventCategoryId", "ImageForEvent", "LevelCategoryId", "MaxNumberOfPlayers", "Name", "PriceForEvent", "StartDateTime", "Street", "SurfaceCategoryId", "SurroundingCategoryId" },
+                columns: new[] { "Id", "City", "CreatorId", "Description", "EndDateTime", "EventCategoryId", "ImageForEvent", "LevelCategoryId", "MaxNumberOfPlayers", "Name", "PriceForEvent", "StartDateTime", "Street", "SurfaceCategoryId", "SurroundingCategoryId" },
                 values: new object[,]
                 {
-                    { 1, "Tarnów", 1, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 1, "basketball-box.png", 2, 8, "Koszykówka", 30.0, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), "Piłsudskiego 24", 6, 2 },
-                    { 2, "Kraków", 2, new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, "footbal-box.png", 1, 10, "Piłka Nożna", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Grzegórzecka 24", 1, 2 },
-                    { 3, "Żywiec", 3, new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, "footbal-box.png", 2, 10, "Siłownia", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Kazimierza Tetmajera 75", 3, 2 },
-                    { 4, "Wrocław", 4, new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, "footbal-box.png", 3, 3, "Bieganie", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Różanka", 7, 2 },
-                    { 5, "Szczecin", 5, new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, "footbal-box.png", 2, 15, "Rower", 10.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Modra 104", 7, 2 },
-                    { 6, "Warszawa", 6, new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 9, "footbal-box.png", 1, 4, "Kręgle", 16.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Vincenta van Gogha 1", 4, 1 }
+                    { 1, "Tarnów", 1, "Szukam osób do gry w kosza", new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 1, "basketball-box.png", 2, 8, "Koszykówka", 30.0, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), "Piłsudskiego 24", 6, 2 },
+                    { 2, "Kraków", 2, "Orlikowe granie", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, "footbal-box.png", 1, 10, "Piłka Nożna", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Grzegórzecka 24", 1, 2 },
+                    { 3, "Żywiec", 3, "Ciężki trening", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, "footbal-box.png", 2, 10, "Siłownia", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Kazimierza Tetmajera 75", 3, 2 },
+                    { 4, "Wrocław", 4, "Sprinty na 200m", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, "footbal-box.png", 3, 3, "Bieganie", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Różanka", 7, 2 },
+                    { 5, "Szczecin", 5, "Nauka jazdy na jednym kole", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, "footbal-box.png", 2, 15, "Rower", 10.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Modra 104", 7, 2 },
+                    { 6, "Warszawa", 6, "Sobotni chill", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 9, "footbal-box.png", 1, 4, "Kręgle", 16.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Vincenta van Gogha 1", 4, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -266,6 +271,7 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
                 values: new object[,]
                 {
+<<<<<<<< HEAD:FriendlyGames.DataAccess/Migrations/20220901092215_Initial.cs
                     { 1, 1, 1, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(571) },
                     { 1, 2, 1, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(625) },
                     { 2, 1, 3, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(647) },
@@ -274,6 +280,16 @@ namespace FriendlyGames.DataAccess.Migrations
                     { 4, 4, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(669) },
                     { 5, 5, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(680) },
                     { 6, 6, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(691) }
+========
+                    { 1, 1, 1, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5053) },
+                    { 1, 2, 1, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5103) },
+                    { 2, 1, 3, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5125) },
+                    { 2, 2, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5115) },
+                    { 3, 3, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5134) },
+                    { 4, 4, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5145) },
+                    { 5, 5, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5155) },
+                    { 6, 6, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5165) }
+>>>>>>>> aefccb3a82de711329d5a34e4f6c997572104baa:FriendlyGames.DataAccess/Migrations/20220901090108_CreateDatabase.cs
                 });
 
             migrationBuilder.CreateIndex(
