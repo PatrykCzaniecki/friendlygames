@@ -28,70 +28,16 @@ public class EventsController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int categoryId, [FromQuery] string? levelCategoryIds,
+    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int? categoryId, [FromQuery] string? levelCategoryIds,
         [FromQuery] string? surfaceCategoryIds, [FromQuery] string? surroundingCategoryIds, [FromQuery] string? payable)
     {
         _logger.LogInformation($"{nameof(GetEvents)} called...");
 
         try
         {
-            if (categoryId == 0)
-            {
-                var allEvents = await _dbContext.Events
-                    .Include(x => x.Registrations)
-                    .ToListAsync();
-                var result = _mapper.Map<IList<EventsDto>>(allEvents);
-                if (levelCategoryIds != null)
-                {
-                    result = await _eventService.FilterByLevel(levelCategoryIds, result);
-                }
-
-                if (surfaceCategoryIds != null)
-                {
-                    result = await _eventService.FilterBySurface(surfaceCategoryIds, result);
-                }
-
-                if (surroundingCategoryIds != null)
-                {
-                    result = await _eventService.FilterBySurrounding(surroundingCategoryIds, result);
-                }
-
-                if (payable != null)
-                {
-                    result = await _eventService.FilterByPayable(payable, result);
-                }
-
-                return Ok(result);
-            }
-
-            var levelIds = new List<int>();
-            foreach (var id in levelCategoryIds)
-            {
-                levelIds.Add(Convert.ToInt32(Convert.ToString(id)));
-            }
-            var specifiedEvents = await _dbContext.Events.Where(x => x.EventCategoryId == categoryId)
-                .Include(x => x.Registrations)
-                .ToListAsync();
-            var results = _mapper.Map<IList<EventsDto>>(specifiedEvents);
-            if (levelCategoryIds != null)
-            {
-                results = await _eventService.FilterByLevel(levelCategoryIds, results);
-            }
-
-            if (surfaceCategoryIds != null)
-            {
-                results = await _eventService.FilterBySurface(surfaceCategoryIds, results);
-            }
-
-            if (surroundingCategoryIds != null)
-            {
-                results = await _eventService.FilterBySurrounding(surroundingCategoryIds, results);
-            }
-
-            if (payable != null)
-            {
-                results = await _eventService.FilterByPayable(payable, results);
-            }
+            var results = await _eventService.GetEvents(categoryId, levelCategoryIds, surfaceCategoryIds,
+                surroundingCategoryIds, payable);
+          
             return Ok(results);
         }
         catch (Exception exception)

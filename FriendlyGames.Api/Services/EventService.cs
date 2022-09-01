@@ -1,59 +1,108 @@
-﻿using FriendlyGames.Api.Dtos;
+﻿using AutoMapper;
+using FriendlyGames.Api.Dtos;
+using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace FriendlyGames.Api.Services
 {
     public class EventService : IEventService
     {
-        public async Task<IList<EventsDto>> FilterByLevel(string levels, IList<EventsDto>events)
+        private FriendlyGamesDbContext _dbContext;
+        private readonly IMapper _mapper;
+
+        public EventService(FriendlyGamesDbContext dbContext, IMapper mapper)
+        {
+            _dbContext = dbContext;
+            _mapper = mapper;
+        }
+
+        public async Task<IList<EventsDto>> GetEvents(int? categoryId, string? levelCategoryIds,
+            string? surfaceCategoryIds, string? surroundingCategoryIds, string? payable)
+        {
+
+            var events = await FilterEvents(categoryId, levelCategoryIds, surfaceCategoryIds, surroundingCategoryIds,
+                payable).ToListAsync();
+            return _mapper.Map<IList<EventsDto>>(events);
+        }
+
+        private IQueryable<Event> FilterEvents(int? categoryId, string? levelCategoryIds,
+            string? surfaceCategoryIds, string? surroundingCategoryIds, string? payable)
+        {
+            IQueryable<Event> events;
+            if (categoryId != null)
+            {
+                events = _dbContext.Events.Where(x => x.EventCategoryId == categoryId)
+                    .Include(x => x.Registrations);
+            }
+            else
+                events = _dbContext.Events
+                    .Include(x => x.Registrations);
+
+
+            if (levelCategoryIds != null)
+            {
+                events = FilterByLevel(levelCategoryIds, events);
+            }
+
+            if (surfaceCategoryIds != null)
+            {
+                events = FilterBySurface(surfaceCategoryIds, events);
+            }
+
+            if (surroundingCategoryIds != null)
+            {
+                events = FilterBySurrounding(surroundingCategoryIds, events);
+            }
+
+            if (payable != null)
+            {
+                events = FilterByPayable(payable, events);
+            }
+
+            return events;
+
+        }
+
+        private IQueryable<Event> FilterByLevel(string levels, IQueryable<Event> events)
 
         {
             var idNumbers = ConvertStringToIntList(levels);
-            var filteredEvents = events.Where(x => idNumbers.Contains(x.LevelCategoryId));
-            return await Task.FromResult(filteredEvents.ToList());
+            return events.Where(x => idNumbers.Contains(x.LevelCategoryId));
+         
         }
 
-        public async Task<IList<EventsDto>> FilterBySurface(string surface, IList<EventsDto> events)
+        private IQueryable<Event> FilterBySurface(string surface, IQueryable<Event> events)
 
         {
             var idNumbers = ConvertStringToIntList(surface);
-            var filteredEvents = events.Where(x => idNumbers.Contains(x.SurfaceCategoryId));
-            return await Task.FromResult(filteredEvents.ToList());
+            return events.Where(x => idNumbers.Contains(x.SurfaceCategoryId));
+            
         }
 
-        public async Task<IList<EventsDto>> FilterBySurrounding(string surrounding, IList<EventsDto> events)
+        private IQueryable<Event> FilterBySurrounding(string surrounding, IQueryable<Event> events)
 
         {
             var idNumbers = ConvertStringToIntList(surrounding);
-            var filteredEvents = events.Where(x => idNumbers.Contains(x.SurroundingCategoryId));
-            return await Task.FromResult(filteredEvents.ToList());
+            return events.Where(x => idNumbers.Contains(x.SurroundingCategoryId));
+            
         }
 
-        public async Task<IList<EventsDto>> FilterByPayable(string payable, IList<EventsDto> events)
+        private IQueryable<Event> FilterByPayable(string payable, IQueryable<Event> events)
 
         {
-            IEnumerable<EventsDto> filteredEvents = new List<EventsDto>();
             if (payable.ToLower() == "true")
             {
-                filteredEvents = events.Where(x => x.PriceForEvent > 0);
+                return events.Where(x => x.PriceForEvent > 0);
             }
-            else
-            {
-                filteredEvents = events.Where(x => x.PriceForEvent == 0);
-            }
-            ;
-            return await Task.FromResult(filteredEvents.ToList());
+           
+            else return events.Where(x => x.PriceForEvent == 0);
+            
         }
 
         private List<int> ConvertStringToIntList(string category)
         {
-            var levelIds = new List<int>();
-            foreach (var id in category)
-            {
-                levelIds.Add(Convert.ToInt32(Convert.ToString(id)));
-            }
-
-            return levelIds;
+            return category.Split(',').Select(x => Convert.ToInt32(x)).ToList();
         }
     }
 }
