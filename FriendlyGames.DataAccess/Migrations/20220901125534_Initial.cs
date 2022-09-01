@@ -5,11 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-<<<<<<<< HEAD:FriendlyGames.DataAccess/Migrations/20220901092215_Initial.cs
     public partial class Initial : Migration
-========
-    public partial class CreateDatabase : Migration
->>>>>>>> aefccb3a82de711329d5a34e4f6c997572104baa:FriendlyGames.DataAccess/Migrations/20220901090108_CreateDatabase.cs
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -271,25 +267,14 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
                 values: new object[,]
                 {
-<<<<<<<< HEAD:FriendlyGames.DataAccess/Migrations/20220901092215_Initial.cs
-                    { 1, 1, 1, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(571) },
-                    { 1, 2, 1, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(625) },
-                    { 2, 1, 3, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(647) },
-                    { 2, 2, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(636) },
-                    { 3, 3, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(657) },
-                    { 4, 4, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(669) },
-                    { 5, 5, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(680) },
-                    { 6, 6, 2, new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(691) }
-========
-                    { 1, 1, 1, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5053) },
-                    { 1, 2, 1, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5103) },
-                    { 2, 1, 3, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5125) },
-                    { 2, 2, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5115) },
-                    { 3, 3, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5134) },
-                    { 4, 4, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5145) },
-                    { 5, 5, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5155) },
-                    { 6, 6, 2, new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5165) }
->>>>>>>> aefccb3a82de711329d5a34e4f6c997572104baa:FriendlyGames.DataAccess/Migrations/20220901090108_CreateDatabase.cs
+                    { 1, 1, 1, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1299) },
+                    { 1, 2, 1, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1413) },
+                    { 2, 1, 3, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1441) },
+                    { 2, 2, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1427) },
+                    { 3, 3, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1453) },
+                    { 4, 4, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1500) },
+                    { 5, 5, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1512) },
+                    { 6, 6, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1524) }
                 });
 
             migrationBuilder.CreateIndex(
