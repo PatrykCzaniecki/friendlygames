@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FriendlyGames.Api.Dtos;
+using FriendlyGames.Api.Services;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -14,35 +15,83 @@ public class EventsController : ControllerBase
     private readonly FriendlyGamesDbContext _dbContext;
     private readonly ILogger<EventsController> _logger;
     private readonly IMapper _mapper;
+    private readonly IEventService _eventService;
 
-    public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext)
+    public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext, IEventService eventService)
     {
         _dbContext = dbContext;
         _mapper = mapper;
         _logger = logger;
+        _eventService = eventService;
     }
 
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents(int id)
+    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int categoryId, [FromQuery] string? levelCategoryIds,
+        [FromQuery] string? surfaceCategoryIds, [FromQuery] string? surroundingCategoryIds, [FromQuery] string? payable)
     {
         _logger.LogInformation($"{nameof(GetEvents)} called...");
 
         try
         {
-            if (id == 0)
+            if (categoryId == 0)
             {
                 var allEvents = await _dbContext.Events
                     .Include(x => x.Registrations)
                     .ToListAsync();
                 var result = _mapper.Map<IList<EventsDto>>(allEvents);
+                if (levelCategoryIds != null)
+                {
+                    result = await _eventService.FilterByLevel(levelCategoryIds, result);
+                }
+
+                if (surfaceCategoryIds != null)
+                {
+                    result = await _eventService.FilterBySurface(surfaceCategoryIds, result);
+                }
+
+                if (surroundingCategoryIds != null)
+                {
+                    result = await _eventService.FilterBySurrounding(surroundingCategoryIds, result);
+                }
+
+                if (payable != null)
+                {
+                    result = await _eventService.FilterByPayable(payable, result);
+                }
+
                 return Ok(result);
             }
-            var specifiedEvents = await _dbContext.Events.Where(x => x.EventCategoryId == id)
+
+            var levelIds = new List<int>();
+            foreach (var id in levelCategoryIds)
+            {
+                levelIds.Add(Convert.ToInt32(Convert.ToString(id)));
+            }
+            var specifiedEvents = await _dbContext.Events.Where(x => x.EventCategoryId == categoryId)
                 .Include(x => x.Registrations)
                 .ToListAsync();
             var results = _mapper.Map<IList<EventsDto>>(specifiedEvents);
+            if (levelCategoryIds != null)
+            {
+                results = await _eventService.FilterByLevel(levelCategoryIds, results);
+            }
+
+            if (surfaceCategoryIds != null)
+            {
+                results = await _eventService.FilterBySurface(surfaceCategoryIds, results);
+            }
+
+            if (surroundingCategoryIds != null)
+            {
+                results = await _eventService.FilterBySurrounding(surroundingCategoryIds, results);
+            }
+
+            if (payable != null)
+            {
+                results = await _eventService.FilterByPayable(payable, results);
+            }
             return Ok(results);
         }
         catch (Exception exception)

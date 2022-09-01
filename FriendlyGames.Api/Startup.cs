@@ -1,4 +1,5 @@
 ﻿using System.Reflection;
+using FriendlyGames.Api.Services;
 using FriendlyGames.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
@@ -29,6 +30,7 @@ public class Startup
 
         // Automapper
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        services.AddScoped<IEventService, EventService>();
 
         services.AddControllers()
             // Solves problem with cyclical dependency between countries and hotels.

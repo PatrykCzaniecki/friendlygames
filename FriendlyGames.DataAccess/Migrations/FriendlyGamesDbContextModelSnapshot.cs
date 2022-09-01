@@ -448,56 +448,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(54)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(571)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(94)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(625)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(103)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(636)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(111)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(647)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(119)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(657)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(128)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(669)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(136)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(680)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(144)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 22, 14, 913, DateTimeKind.Local).AddTicks(691)
                         });
                 });
 
