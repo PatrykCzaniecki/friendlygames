@@ -30,7 +30,7 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Description")
+                    b.Property<string>("EventCategoryImage")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -46,55 +46,55 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            Description = "Szukam osób do gry w kosza",
+                            EventCategoryImage = "ball-of-basketball.png",
                             Name = "Koszykówka"
                         },
                         new
                         {
                             Id = 2,
-                            Description = "Orlikowe granie",
+                            EventCategoryImage = "football.png",
                             Name = "Piłka Nożna"
                         },
                         new
                         {
                             Id = 3,
-                            Description = "Ciężki trening",
+                            EventCategoryImage = "dumbbell.png",
                             Name = "Siłownia"
                         },
                         new
                         {
                             Id = 4,
-                            Description = "Sprinty na 200m",
+                            EventCategoryImage = "running.png",
                             Name = "Bieganie"
                         },
                         new
                         {
                             Id = 5,
-                            Description = "Nauka jazdy na jednym kole",
+                            EventCategoryImage = "bicycle.png",
                             Name = "Rower"
                         },
                         new
                         {
                             Id = 6,
-                            Description = "Mecz o wszystko",
+                            EventCategoryImage = "siatkowka.png",
                             Name = "Siatkówka"
                         },
                         new
                         {
                             Id = 7,
-                            Description = "1 vs 1",
+                            EventCategoryImage = "tennis.png",
                             Name = "Tenis"
                         },
                         new
                         {
                             Id = 8,
-                            Description = "Brak stołu.., ktoś coś?",
+                            EventCategoryImage = "table-tennis.png",
                             Name = "Ping Pong"
                         },
                         new
                         {
                             Id = 9,
-                            Description = "Sobotni chill",
+                            EventCategoryImage = "bowling.png",
                             Name = "Kręgielnia"
                         });
                 });
@@ -265,6 +265,10 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("CreatorId")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime2");
 
@@ -321,6 +325,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 1,
                             City = "Tarnów",
                             CreatorId = 1,
+                            Description = "Szukam osób do gry w kosza",
                             EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 1,
                             ImageForEvent = "basketball-box.png",
@@ -338,6 +343,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 2,
                             City = "Kraków",
                             CreatorId = 2,
+                            Description = "Orlikowe granie",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 2,
                             ImageForEvent = "footbal-box.png",
@@ -355,6 +361,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 3,
                             City = "Żywiec",
                             CreatorId = 3,
+                            Description = "Ciężki trening",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 3,
                             ImageForEvent = "footbal-box.png",
@@ -372,6 +379,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 4,
                             City = "Wrocław",
                             CreatorId = 4,
+                            Description = "Sprinty na 200m",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 4,
                             ImageForEvent = "footbal-box.png",
@@ -389,6 +397,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 5,
                             City = "Szczecin",
                             CreatorId = 5,
+                            Description = "Nauka jazdy na jednym kole",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 5,
                             ImageForEvent = "footbal-box.png",
@@ -406,6 +415,7 @@ namespace FriendlyGames.DataAccess.Migrations
                             Id = 6,
                             City = "Warszawa",
                             CreatorId = 6,
+                            Description = "Sobotni chill",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 9,
                             ImageForEvent = "footbal-box.png",
@@ -448,56 +458,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(54)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5053)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(94)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5103)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(103)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5115)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(111)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5125)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(119)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5134)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(128)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5145)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(136)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5155)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 8, 31, 13, 54, 55, 387, DateTimeKind.Local).AddTicks(144)
+                            RegistrationDateTime = new DateTime(2022, 9, 1, 11, 1, 8, 79, DateTimeKind.Local).AddTicks(5165)
                         });
                 });
 
