@@ -32,6 +32,5 @@ public class Event
     public double PriceForEvent { get; set; }
     public string Street { get; set; } = null!;
     public string City { get; set; } = null!;
-    public string ImageForEvent { get; set; } = null!;
     public string Description { get; set; } = null!;
 }

@@ -33,11 +33,13 @@ namespace FriendlyGames.Api.Services
             if (categoryId != null)
             {
                 events = _dbContext.Events.Where(x => x.EventCategoryId == categoryId)
-                    .Include(x => x.Registrations);
+                    .Include(x => x.Registrations)
+                    .Include(x => x.EventCategory);
             }
             else
                 events = _dbContext.Events
-                    .Include(x => x.Registrations);
+                    .Include(x => x.Registrations)
+                    .Include(x => x.EventCategory);
 
 
             if (levelCategoryIds != null)

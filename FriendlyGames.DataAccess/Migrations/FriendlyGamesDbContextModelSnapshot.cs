@@ -30,7 +30,11 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("EventCategoryImage")
+                    b.Property<string>("ImageForBoxWithEventInfo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ImageForSearchBar")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -46,55 +50,64 @@ namespace FriendlyGames.DataAccess.Migrations
                         new
                         {
                             Id = 1,
-                            EventCategoryImage = "ball-of-basketball.png",
+                            ImageForBoxWithEventInfo = "basketball-box.png",
+                            ImageForSearchBar = "ball-of-basketball.png",
                             Name = "Koszykówka"
                         },
                         new
                         {
                             Id = 2,
-                            EventCategoryImage = "football.png",
+                            ImageForBoxWithEventInfo = "football-box.png",
+                            ImageForSearchBar = "football.png",
                             Name = "Piłka Nożna"
                         },
                         new
                         {
                             Id = 3,
-                            EventCategoryImage = "dumbbell.png",
+                            ImageForBoxWithEventInfo = "siłownia-box.png",
+                            ImageForSearchBar = "dumbbell.png",
                             Name = "Siłownia"
                         },
                         new
                         {
                             Id = 4,
-                            EventCategoryImage = "running.png",
+                            ImageForBoxWithEventInfo = "bieganie-box.png",
+                            ImageForSearchBar = "running.png",
                             Name = "Bieganie"
                         },
                         new
                         {
                             Id = 5,
-                            EventCategoryImage = "bicycle.png",
+                            ImageForBoxWithEventInfo = "rower-box.png",
+                            ImageForSearchBar = "bicycle.png",
                             Name = "Rower"
                         },
                         new
                         {
                             Id = 6,
-                            EventCategoryImage = "siatkowka.png",
+                            ImageForBoxWithEventInfo = "siatkowka-box.png",
+                            ImageForSearchBar = "siatkowka.png",
                             Name = "Siatkówka"
                         },
                         new
                         {
                             Id = 7,
-                            EventCategoryImage = "tennis.png",
+                            ImageForBoxWithEventInfo = "tenis-box.png",
+                            ImageForSearchBar = "tennis.png",
                             Name = "Tenis"
                         },
                         new
                         {
                             Id = 8,
-                            EventCategoryImage = "table-tennis.png",
+                            ImageForBoxWithEventInfo = "table-tennis-box.png",
+                            ImageForSearchBar = "table-tennis.png",
                             Name = "Ping Pong"
                         },
                         new
                         {
                             Id = 9,
-                            EventCategoryImage = "bowling.png",
+                            ImageForBoxWithEventInfo = "kręgle-box.png",
+                            ImageForSearchBar = "bowling.png",
                             Name = "Kręgielnia"
                         });
                 });
@@ -275,10 +288,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("EventCategoryId")
                         .HasColumnType("int");
 
-                    b.Property<string>("ImageForEvent")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<int>("LevelCategoryId")
                         .HasColumnType("int");
 
@@ -328,7 +337,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Szukam osób do gry w kosza",
                             EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 1,
-                            ImageForEvent = "basketball-box.png",
                             LevelCategoryId = 2,
                             MaxNumberOfPlayers = 8,
                             Name = "Koszykówka",
@@ -346,7 +354,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Orlikowe granie",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 2,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 1,
                             MaxNumberOfPlayers = 10,
                             Name = "Piłka Nożna",
@@ -364,7 +371,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Ciężki trening",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 3,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 2,
                             MaxNumberOfPlayers = 10,
                             Name = "Siłownia",
@@ -382,7 +388,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Sprinty na 200m",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 4,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 3,
                             MaxNumberOfPlayers = 3,
                             Name = "Bieganie",
@@ -400,7 +405,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Nauka jazdy na jednym kole",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 5,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 2,
                             MaxNumberOfPlayers = 15,
                             Name = "Rower",
@@ -418,7 +422,6 @@ namespace FriendlyGames.DataAccess.Migrations
                             Description = "Sobotni chill",
                             EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
                             EventCategoryId = 9,
-                            ImageForEvent = "footbal-box.png",
                             LevelCategoryId = 1,
                             MaxNumberOfPlayers = 4,
                             Name = "Kręgle",
@@ -458,56 +461,56 @@ namespace FriendlyGames.DataAccess.Migrations
                             EventId = 1,
                             UserId = 1,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1299)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7266)
                         },
                         new
                         {
                             EventId = 1,
                             UserId = 2,
                             RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1413)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7303)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 2,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1427)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7311)
                         },
                         new
                         {
                             EventId = 2,
                             UserId = 1,
                             RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1441)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7319)
                         },
                         new
                         {
                             EventId = 3,
                             UserId = 3,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1453)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7326)
                         },
                         new
                         {
                             EventId = 4,
                             UserId = 4,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1500)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7335)
                         },
                         new
                         {
                             EventId = 5,
                             UserId = 5,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1512)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7343)
                         },
                         new
                         {
                             EventId = 6,
                             UserId = 6,
                             RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1524)
+                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7351)
                         });
                 });
 

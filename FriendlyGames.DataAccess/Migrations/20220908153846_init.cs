@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-    public partial class Initial : Migration
+    public partial class init : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -16,7 +16,8 @@ namespace FriendlyGames.DataAccess.Migrations
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    EventCategoryImage = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ImageForSearchBar = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ImageForBoxWithEventInfo = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -107,7 +108,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     PriceForEvent = table.Column<double>(type: "float", nullable: false),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ImageForEvent = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
@@ -179,18 +179,18 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "EventCategories",
-                columns: new[] { "Id", "EventCategoryImage", "Name" },
+                columns: new[] { "Id", "ImageForBoxWithEventInfo", "ImageForSearchBar", "Name" },
                 values: new object[,]
                 {
-                    { 1, "ball-of-basketball.png", "Koszykówka" },
-                    { 2, "football.png", "Piłka Nożna" },
-                    { 3, "dumbbell.png", "Siłownia" },
-                    { 4, "running.png", "Bieganie" },
-                    { 5, "bicycle.png", "Rower" },
-                    { 6, "siatkowka.png", "Siatkówka" },
-                    { 7, "tennis.png", "Tenis" },
-                    { 8, "table-tennis.png", "Ping Pong" },
-                    { 9, "bowling.png", "Kręgielnia" }
+                    { 1, "basketball-box.png", "ball-of-basketball.png", "Koszykówka" },
+                    { 2, "football-box.png", "football.png", "Piłka Nożna" },
+                    { 3, "siłownia-box.png", "dumbbell.png", "Siłownia" },
+                    { 4, "bieganie-box.png", "running.png", "Bieganie" },
+                    { 5, "rower-box.png", "bicycle.png", "Rower" },
+                    { 6, "siatkowka-box.png", "siatkowka.png", "Siatkówka" },
+                    { 7, "tenis-box.png", "tennis.png", "Tenis" },
+                    { 8, "table-tennis-box.png", "table-tennis.png", "Ping Pong" },
+                    { 9, "kręgle-box.png", "bowling.png", "Kręgielnia" }
                 });
 
             migrationBuilder.InsertData(
@@ -251,15 +251,15 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.InsertData(
                 table: "Events",
-                columns: new[] { "Id", "City", "CreatorId", "Description", "EndDateTime", "EventCategoryId", "ImageForEvent", "LevelCategoryId", "MaxNumberOfPlayers", "Name", "PriceForEvent", "StartDateTime", "Street", "SurfaceCategoryId", "SurroundingCategoryId" },
+                columns: new[] { "Id", "City", "CreatorId", "Description", "EndDateTime", "EventCategoryId", "LevelCategoryId", "MaxNumberOfPlayers", "Name", "PriceForEvent", "StartDateTime", "Street", "SurfaceCategoryId", "SurroundingCategoryId" },
                 values: new object[,]
                 {
-                    { 1, "Tarnów", 1, "Szukam osób do gry w kosza", new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 1, "basketball-box.png", 2, 8, "Koszykówka", 30.0, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), "Piłsudskiego 24", 6, 2 },
-                    { 2, "Kraków", 2, "Orlikowe granie", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, "footbal-box.png", 1, 10, "Piłka Nożna", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Grzegórzecka 24", 1, 2 },
-                    { 3, "Żywiec", 3, "Ciężki trening", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, "footbal-box.png", 2, 10, "Siłownia", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Kazimierza Tetmajera 75", 3, 2 },
-                    { 4, "Wrocław", 4, "Sprinty na 200m", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, "footbal-box.png", 3, 3, "Bieganie", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Różanka", 7, 2 },
-                    { 5, "Szczecin", 5, "Nauka jazdy na jednym kole", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, "footbal-box.png", 2, 15, "Rower", 10.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Modra 104", 7, 2 },
-                    { 6, "Warszawa", 6, "Sobotni chill", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 9, "footbal-box.png", 1, 4, "Kręgle", 16.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Vincenta van Gogha 1", 4, 1 }
+                    { 1, "Tarnów", 1, "Szukam osób do gry w kosza", new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 8, "Koszykówka", 30.0, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), "Piłsudskiego 24", 6, 2 },
+                    { 2, "Kraków", 2, "Orlikowe granie", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 10, "Piłka Nożna", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Grzegórzecka 24", 1, 2 },
+                    { 3, "Żywiec", 3, "Ciężki trening", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, 2, 10, "Siłownia", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Kazimierza Tetmajera 75", 3, 2 },
+                    { 4, "Wrocław", 4, "Sprinty na 200m", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, 3, 3, "Bieganie", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Różanka", 7, 2 },
+                    { 5, "Szczecin", 5, "Nauka jazdy na jednym kole", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, 2, 15, "Rower", 10.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Modra 104", 7, 2 },
+                    { 6, "Warszawa", 6, "Sobotni chill", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 9, 1, 4, "Kręgle", 16.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Vincenta van Gogha 1", 4, 1 }
                 });
 
             migrationBuilder.InsertData(
@@ -267,14 +267,14 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
                 values: new object[,]
                 {
-                    { 1, 1, 1, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1299) },
-                    { 1, 2, 1, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1413) },
-                    { 2, 1, 3, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1441) },
-                    { 2, 2, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1427) },
-                    { 3, 3, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1453) },
-                    { 4, 4, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1500) },
-                    { 5, 5, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1512) },
-                    { 6, 6, 2, new DateTime(2022, 9, 1, 14, 55, 33, 991, DateTimeKind.Local).AddTicks(1524) }
+                    { 1, 1, 1, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7266) },
+                    { 1, 2, 1, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7303) },
+                    { 2, 1, 3, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7319) },
+                    { 2, 2, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7311) },
+                    { 3, 3, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7326) },
+                    { 4, 4, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7335) },
+                    { 5, 5, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7343) },
+                    { 6, 6, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7351) }
                 });
 
             migrationBuilder.CreateIndex(

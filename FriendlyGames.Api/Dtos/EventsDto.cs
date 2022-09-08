@@ -13,5 +13,6 @@ public class EventsDto : EventCreateUpdateDto
     public double PriceForEvent { get; set; }
     public string Street { get; set; } = null!;
     public string City { get; set; } = null!;
+    public EventCategory EventCategory { get; set; } = null!;
     public List<Registration> Registrations { get; set; }
 }
