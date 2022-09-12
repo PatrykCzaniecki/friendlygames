@@ -14,5 +14,4 @@ public class EventCreateUpdateDto
     public int LevelCategoryId { get; set; }
     public int SurfaceCategoryId { get; set; }
     public int SurroundingCategoryId { get; set; }
-    public string ImageForEvent { get; set; }
 }

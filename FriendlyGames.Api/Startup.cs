@@ -22,7 +22,8 @@ public class Startup
         // DbContext
         services.AddDbContext<FriendlyGamesDbContext>(options =>
         {
-            options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection"));
+            options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection")).LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+                .EnableSensitiveDataLogging();
         });
 
         // UnitOfWork
