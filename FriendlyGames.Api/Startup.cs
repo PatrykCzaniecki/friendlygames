@@ -25,19 +25,17 @@ public class Startup
             options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection"));
         });
 
-        // UnitOfWork
-        //services.AddTransient<IUnitOfWork, UnitOfWork>();
-
         // Automapper
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
+        
         services.AddScoped<IEventService, EventService>();
+        
+        // Solves problem with cyclical dependency between countries and hotels.
+        services.AddControllers().AddNewtonsoftJson(options =>
+        {
+            options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
+        });
 
-        services.AddControllers()
-            // Solves problem with cyclical dependency between countries and hotels.
-            .AddNewtonsoftJson(options =>
-            {
-                options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
-            });
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo {Title = "FriendlyGames.Api", Version = "v1"});
