@@ -3499,3 +3499,79 @@ ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
 2022-48-12 11:48:00.481 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 13.4374ms
 2022-48-12 11:48:00.481 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
 2022-48-12 11:48:00.482 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 9057 application/json;+charset=utf-8 16.4331ms
+2022-55-12 13:55:27.358 +02:00 INF Application is starting...
+2022-55-12 13:55:29.598 +02:00 INF Now listening on: https://localhost:7089
+2022-55-12 13:55:29.605 +02:00 INF Now listening on: http://localhost:5089
+2022-55-12 13:55:29.611 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-55-12 13:55:29.612 +02:00 INF Hosting environment: Development
+2022-55-12 13:55:29.612 +02:00 INF Content root path: D:\Codecool\Advanced - ASP.NET\Week Pair 1\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-55-12 13:55:30.855 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-55-12 13:55:31.505 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 661.0734ms
+2022-55-12 13:55:31.556 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-55-12 13:55:31.567 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 12004 application/javascript;+charset=utf-8 10.8089ms
+2022-55-12 13:55:31.683 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_vs/browserLink - -
+2022-55-12 13:55:31.773 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_vs/browserLink - - - 200 - text/javascript;+charset=UTF-8 90.6696ms
+2022-55-12 13:55:31.986 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-55-12 13:55:32.255 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 269.5387ms
+2022-55-12 13:55:51.648 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Registration - -
+2022-55-12 13:55:51.698 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api)'
+2022-55-12 13:55:51.750 +02:00 INF Route matched with {action = "GetRegistrations", controller = "Registration"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.RegistrationDto]]] GetRegistrations(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller FriendlyGames.Api.Controllers.RegistrationController (FriendlyGames.Api).
+2022-55-12 13:55:52.507 +02:00 INF Executed action FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api) in 749.7106ms
+2022-55-12 13:55:52.515 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api)'
+2022-55-12 13:55:52.526 +02:00 ERR An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'FriendlyGames.Api.Services.Interfaces.IRegistrationService' while attempting to activate 'FriendlyGames.Api.Controllers.RegistrationController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-55-12 13:55:52.715 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Registration - - - 500 - text/plain;+charset=utf-8 1067.3706ms
+2022-56-12 13:56:25.320 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-56-12 13:56:25.321 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-56-12 13:56:25.333 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-56-12 13:56:25.384 +02:00 INF GetEvents called...
+2022-56-12 13:56:26.597 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-56-12 13:56:27.052 +02:00 INF Entity Framework Core 6.0.7 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.7' with options: SensitiveDataLoggingEnabled 
+2022-56-12 13:56:30.793 +02:00 INF Executed DbCommand (89ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[City], [e].[CreatorId], [e].[Description], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[UserId], [r].[RegistrationCategoryId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-56-12 13:56:31.195 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-56-12 13:56:31.582 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 6249.2781ms
+2022-56-12 13:56:31.585 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-56-12 13:56:31.600 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8931 application/json;+charset=utf-8 6280.6731ms
+2022-57-12 13:57:11.459 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Registration?eventId=1&userId=1&registrationCategoryId=1 - -
+2022-57-12 13:57:11.461 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api)'
+2022-57-12 13:57:11.462 +02:00 INF Route matched with {action = "GetRegistrations", controller = "Registration"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.RegistrationDto]]] GetRegistrations(System.Nullable`1[System.Int32], System.Nullable`1[System.Int32], System.Nullable`1[System.Int32]) on controller FriendlyGames.Api.Controllers.RegistrationController (FriendlyGames.Api).
+2022-57-12 13:57:11.466 +02:00 INF Executed action FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api) in 3.7944ms
+2022-57-12 13:57:11.466 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.RegistrationController.GetRegistrations (FriendlyGames.Api)'
+2022-57-12 13:57:11.467 +02:00 ERR An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Unable to resolve service for type 'FriendlyGames.Api.Services.Interfaces.IRegistrationService' while attempting to activate 'FriendlyGames.Api.Controllers.RegistrationController'.
+   at Microsoft.Extensions.DependencyInjection.ActivatorUtilities.GetService(IServiceProvider sp, Type type, Type requiredBy, Boolean isDefaultParameterRequired)
+   at lambda_method10(Closure , IServiceProvider , Object[] )
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerActivatorProvider.<>c__DisplayClass7_0.<CreateActivator>b__0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Controllers.ControllerFactoryProvider.<>c__DisplayClass6_0.<CreateControllerFactory>g__CreateController|0(ControllerContext controllerContext)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-57-12 13:57:11.468 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Registration?eventId=1&userId=1&registrationCategoryId=1 - - - 500 - text/plain;+charset=utf-8 8.8176ms

@@ -8,7 +8,7 @@ namespace FriendlyGames.Api.Services
 {
     public class EventService : IEventService
     {
-        private FriendlyGamesDbContext _dbContext;
+        private readonly FriendlyGamesDbContext _dbContext;
         private readonly IMapper _mapper;
 
         public EventService(FriendlyGamesDbContext dbContext, IMapper mapper)
