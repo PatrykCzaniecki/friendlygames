@@ -1,5 +1,7 @@
 ﻿using AutoMapper;
 using FriendlyGames.Api.Dtos;
+using FriendlyGames.Api.Services;
+using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Enums;
 using Microsoft.AspNetCore.Mvc;
@@ -11,16 +13,13 @@ namespace FriendlyGames.Api.Controllers.CategoryControllers
     [Route("api/[controller]")]
     public class CategoriesController : ControllerBase
     {
-        private readonly FriendlyGamesDbContext _dbContext;
+        private readonly ICategoriesService _categoriesService;
         private readonly ILogger<CategoriesController> _logger;
-        private readonly IMapper _mapper;
 
-
-        public CategoriesController(IMapper mapper, ILogger<CategoriesController> logger, FriendlyGamesDbContext dbContext)
+        public CategoriesController(IMapper mapper, ILogger<CategoriesController> logger, ICategoriesService categoriesService)
         {
-            _mapper = mapper;
             _logger = logger;
-            _dbContext = dbContext;
+            _categoriesService = categoriesService;
         }
 
         [HttpGet]
@@ -33,28 +32,9 @@ namespace FriendlyGames.Api.Controllers.CategoryControllers
 
             try
             {
-                var eventCategories = await _dbContext.EventCategories.ToListAsync();
-                var levelCategories = await _dbContext.LevelCategories.ToListAsync();
-                var surfaceCategories = await _dbContext.SurfaceCategories.ToListAsync();
-                var surroundingCategories = await _dbContext.SurroundingCategories.ToListAsync();
+                var categoriesDictionary = await _categoriesService.GetCategories();
 
-                var dictionary = new Dictionary<string, object>
-                {
-                    {
-                        "eventCategory", eventCategories
-                    },
-                    {
-                        "levelCategory", levelCategories
-                    },
-                    {
-                        "surfaceCategory", surfaceCategories
-                    },
-                    {
-                        "surroundingCategory", surroundingCategories
-                    }
-                };
-
-                return Ok(dictionary);
+                return Ok(categoriesDictionary);
             }
             catch (Exception exception)
             {
@@ -74,10 +54,9 @@ namespace FriendlyGames.Api.Controllers.CategoryControllers
 
             try
             {
-                var eventCategory = await _dbContext.EventCategories.ToListAsync();
-                var eventCategoryMapper = _mapper.Map<IList<EventCategoryDto>>(eventCategory);
+                var eventCategory = await _categoriesService.GetEventCategory();
 
-                return Ok(eventCategoryMapper);
+                return Ok(eventCategory);
             }
             catch (Exception exception)
             {
