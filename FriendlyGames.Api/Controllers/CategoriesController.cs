@@ -62,8 +62,29 @@ namespace FriendlyGames.Api.Controllers.CategoryControllers
 
                 return Problem("Internal server error, please try again later...");
             }
+        }
 
+        [HttpGet("eventCategory", Name = "GetEventCategory")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<EventCategoryDto>> GetEventCategory()
+        {
+            _logger.LogInformation($"{nameof(GetEventCategory)} called...");
 
+            try
+            {
+                var eventCategory = await _dbContext.EventCategories.ToListAsync();
+                var eventCategoryMapper = _mapper.Map<IList<EventCategoryDto>>(eventCategory);
+
+                return Ok(eventCategoryMapper);
+            }
+            catch (Exception exception)
+            {
+                _logger.LogError(exception, $"Something went wrong in {nameof(GetCategories)}");
+
+                return Problem("Internal server error, please try again later...");
+            }
         }
     }
 }
