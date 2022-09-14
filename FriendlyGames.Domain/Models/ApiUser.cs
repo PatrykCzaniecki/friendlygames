@@ -1,10 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace FriendlyGames.Domain.Models;
 
-public class User
+public class ApiUser : IdentityUser
 {
-    [Key] public int Id { get; set; }
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public List<Registration> Registrations { get; set; } = new();

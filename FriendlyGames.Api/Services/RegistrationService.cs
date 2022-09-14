@@ -20,8 +20,8 @@ namespace FriendlyGames.Api.Services
         public async Task<IList<RegistrationDto>> GetRegistrations(int eventId, int userId, int registrationCategoryId)
         {
             var registrations = await _dbContext.Registrations
-                .Where(x => x.RegistrationCategoryId == registrationCategoryId)
-                .Include(x => x.UserId == userId)
+                //.Where(x => x.RegistrationCategoryId == registrationCategoryId)
+                //.Include(x => x.ApiUserId == userId)
                 .Include(x => x.EventId == eventId)
                 .ToListAsync();
             return _mapper.Map<IList<RegistrationDto>>(registrations);

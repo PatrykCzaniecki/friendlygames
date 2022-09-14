@@ -17,7 +17,7 @@ namespace FriendlyGames.DataAccess.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -146,40 +146,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         });
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Enums.RegistrationCategory", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("RegistrationCategories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Oczekujące"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Zaakceptowane"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Odrzucone"
-                        });
-                });
-
             modelBuilder.Entity("FriendlyGames.Domain.Enums.SurfaceCategory", b =>
                 {
                     b.Property<int>("Id")
@@ -263,6 +229,79 @@ namespace FriendlyGames.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("FriendlyGames.Domain.Models.ApiUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasDatabaseName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasDatabaseName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers", (string)null);
+                });
+
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Property<int>("Id")
@@ -271,12 +310,13 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
+                    b.Property<string>("ApiUserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("City")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("CreatorId")
-                        .HasColumnType("int");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -316,7 +356,7 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CreatorId");
+                    b.HasIndex("ApiUserId");
 
                     b.HasIndex("EventCategoryId");
 
@@ -327,110 +367,6 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasIndex("SurroundingCategoryId");
 
                     b.ToTable("Events");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            City = "Tarnów",
-                            CreatorId = 1,
-                            Description = "Szukam osób do gry w kosza",
-                            EndDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 1,
-                            LevelCategoryId = 2,
-                            MaxNumberOfPlayers = 8,
-                            Name = "Koszykówka",
-                            PriceForEvent = 30.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Piłsudskiego 24",
-                            SurfaceCategoryId = 6,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 2,
-                            City = "Kraków",
-                            CreatorId = 2,
-                            Description = "Orlikowe granie",
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 2,
-                            LevelCategoryId = 1,
-                            MaxNumberOfPlayers = 10,
-                            Name = "Piłka Nożna",
-                            PriceForEvent = 0.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Grzegórzecka 24",
-                            SurfaceCategoryId = 1,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 3,
-                            City = "Żywiec",
-                            CreatorId = 3,
-                            Description = "Ciężki trening",
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 3,
-                            LevelCategoryId = 2,
-                            MaxNumberOfPlayers = 10,
-                            Name = "Siłownia",
-                            PriceForEvent = 0.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Kazimierza Tetmajera 75",
-                            SurfaceCategoryId = 3,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 4,
-                            City = "Wrocław",
-                            CreatorId = 4,
-                            Description = "Sprinty na 200m",
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 4,
-                            LevelCategoryId = 3,
-                            MaxNumberOfPlayers = 3,
-                            Name = "Bieganie",
-                            PriceForEvent = 0.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Różanka",
-                            SurfaceCategoryId = 7,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 5,
-                            City = "Szczecin",
-                            CreatorId = 5,
-                            Description = "Nauka jazdy na jednym kole",
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 5,
-                            LevelCategoryId = 2,
-                            MaxNumberOfPlayers = 15,
-                            Name = "Rower",
-                            PriceForEvent = 10.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Modra 104",
-                            SurfaceCategoryId = 7,
-                            SurroundingCategoryId = 2
-                        },
-                        new
-                        {
-                            Id = 6,
-                            City = "Warszawa",
-                            CreatorId = 6,
-                            Description = "Sobotni chill",
-                            EndDateTime = new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified),
-                            EventCategoryId = 9,
-                            LevelCategoryId = 1,
-                            MaxNumberOfPlayers = 4,
-                            Name = "Kręgle",
-                            PriceForEvent = 16.0,
-                            StartDateTime = new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified),
-                            Street = "Vincenta van Gogha 1",
-                            SurfaceCategoryId = 4,
-                            SurroundingCategoryId = 1
-                        });
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.Registration", b =>
@@ -438,83 +374,47 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.Property<int>("EventId")
                         .HasColumnType("int");
 
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("RegistrationCategoryId")
-                        .HasColumnType("int");
+                    b.Property<string>("ApiUserId")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<DateTime>("RegistrationDateTime")
                         .HasColumnType("datetime2");
 
-                    b.HasKey("EventId", "UserId");
+                    b.HasKey("EventId", "ApiUserId");
 
-                    b.HasIndex("RegistrationCategoryId");
-
-                    b.HasIndex("UserId");
+                    b.HasIndex("ApiUserId");
 
                     b.ToTable("Registrations");
-
-                    b.HasData(
-                        new
-                        {
-                            EventId = 1,
-                            UserId = 1,
-                            RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7266)
-                        },
-                        new
-                        {
-                            EventId = 1,
-                            UserId = 2,
-                            RegistrationCategoryId = 1,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7303)
-                        },
-                        new
-                        {
-                            EventId = 2,
-                            UserId = 2,
-                            RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7311)
-                        },
-                        new
-                        {
-                            EventId = 2,
-                            UserId = 1,
-                            RegistrationCategoryId = 3,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7319)
-                        },
-                        new
-                        {
-                            EventId = 3,
-                            UserId = 3,
-                            RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7326)
-                        },
-                        new
-                        {
-                            EventId = 4,
-                            UserId = 4,
-                            RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7335)
-                        },
-                        new
-                        {
-                            EventId = 5,
-                            UserId = 5,
-                            RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7343)
-                        },
-                        new
-                        {
-                            EventId = 6,
-                            UserId = 6,
-                            RegistrationCategoryId = 2,
-                            RegistrationDateTime = new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7351)
-                        });
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.Property<string>("NormalizedName")
+                        .HasMaxLength(256)
+                        .HasColumnType("nvarchar(256)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasDatabaseName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -522,62 +422,109 @@ namespace FriendlyGames.DataAccess.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("FirstName")
-                        .IsRequired()
+                    b.Property<string>("ClaimType")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("LastName")
-                        .IsRequired()
+                    b.Property<string>("ClaimValue")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Users");
+                    b.HasIndex("RoleId");
 
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            FirstName = "John",
-                            LastName = "Doe"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            FirstName = "Adam",
-                            LastName = "Smith"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            FirstName = "Franek",
-                            LastName = "Stopka"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            FirstName = "Asia",
-                            LastName = "Szul"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            FirstName = "Tomek",
-                            LastName = "Broda"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            FirstName = "Grzegorz",
-                            LastName = "Wisła"
-                        });
+                    b.ToTable("AspNetRoleClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles", (string)null);
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens", (string)null);
                 });
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
-                    b.HasOne("FriendlyGames.Domain.Models.User", "Creator")
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", "ApiUser")
                         .WithMany()
-                        .HasForeignKey("CreatorId")
+                        .HasForeignKey("ApiUserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
@@ -605,7 +552,7 @@ namespace FriendlyGames.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Creator");
+                    b.Navigation("ApiUser");
 
                     b.Navigation("EventCategory");
 
@@ -618,37 +565,80 @@ namespace FriendlyGames.DataAccess.Migrations
 
             modelBuilder.Entity("FriendlyGames.Domain.Models.Registration", b =>
                 {
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", "ApiUser")
+                        .WithMany("Registrations")
+                        .HasForeignKey("ApiUserId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("FriendlyGames.Domain.Models.Event", "Event")
                         .WithMany("Registrations")
                         .HasForeignKey("EventId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Enums.RegistrationCategory", "RegistrationCategory")
+                    b.Navigation("ApiUser");
+
+                    b.Navigation("Event");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
                         .WithMany()
-                        .HasForeignKey("RegistrationCategoryId")
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("FriendlyGames.Domain.Models.User", "User")
-                        .WithMany("Registrations")
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", null)
+                        .WithMany()
                         .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Event");
-
-                    b.Navigation("RegistrationCategory");
-
-                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("FriendlyGames.Domain.Models.ApiUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("FriendlyGames.Domain.Models.ApiUser", b =>
                 {
                     b.Navigation("Registrations");
                 });
 
-            modelBuilder.Entity("FriendlyGames.Domain.Models.User", b =>
+            modelBuilder.Entity("FriendlyGames.Domain.Models.Event", b =>
                 {
                     b.Navigation("Registrations");
                 });

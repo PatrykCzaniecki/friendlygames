@@ -58,11 +58,11 @@ public class EventsController : ControllerBase
 
         try
         {
-            var registrations = await _dbContext.Registrations.Include(x => x.RegistrationCategory)
-                .Include(x => x.User)
+            var registrations = await _dbContext.Registrations
+                .Include(x => x.ApiUser)
                 .Where(e => e.EventId == id).ToListAsync();
 
-            var specificEvent = await _dbContext.Events.Include(x => x.Creator)
+            var specificEvent = await _dbContext.Events.Include(x => x.ApiUser)
                 .Include(x => x.EventCategory)
                 .Include(x => x.Registrations)
                 .Include(x => x.LevelCategory)
@@ -167,11 +167,11 @@ public class EventsController : ControllerBase
 
         try
         {
-            var registrations = await _dbContext.Registrations.Include(x => x.RegistrationCategory)
-                .Include(x => x.User)
+            var registrations = await _dbContext.Registrations
+                .Include(x => x.ApiUser)
                 .Where(e => e.EventId == id).ToListAsync();
 
-            var specificEvent = await _dbContext.Events.Include(x => x.Creator)
+            var specificEvent = await _dbContext.Events.Include(x => x.ApiUser)
                 .Include(x => x.EventCategory)
                 .Include(x => x.Registrations)
                 .Include(x => x.LevelCategory)

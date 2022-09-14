@@ -5,7 +5,7 @@ public class EventCreateUpdateDto
     public string Name { get; set; }
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
-    public int CreatorId { get; set; }
+    public string ApiUserId { get; set; }
     public int MaxNumberOfPlayers { get; set; }
     public double PriceForEvent { get; set; }
     public string Street { get; set; }

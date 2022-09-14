@@ -7,12 +7,8 @@ public class Registration
 {
     [ForeignKey(nameof(EventId))] public Event Event { get; set; } = null!;
     public int EventId { get; set; }
-    [ForeignKey(nameof(UserId))] public User User { get; set; } = null!;
-    public int UserId { get; set; }
+    [ForeignKey(nameof(ApiUserId))] public ApiUser ApiUser { get; set; } = null!;
+    public string ApiUserId { get; set; }
     public DateTime RegistrationDateTime { get; set; } = DateTime.Now;
 
-    [ForeignKey(nameof(RegistrationCategoryId))]
-    public RegistrationCategory RegistrationCategory { get; set; }
-
-    public int RegistrationCategoryId { get; set; }
 }

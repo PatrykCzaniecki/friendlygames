@@ -35,10 +35,10 @@ public class RegistrationController : ControllerBase
         try
         {
             /*var allRegistration = await _dbContext.Registrations
-                .Include(x => x.User)
+                .Include(x => x.ApiUser)
                 .Include(x => x.RegistrationCategory)
                 .Include(x => x.Event)
-                .ThenInclude(x => x.Creator)
+                .ThenInclude(x => x.ApiUser)
                 .ToListAsync();
             var results = _mapper.Map<IList<RegistrationDto>>(allRegistration);*/
 
@@ -61,11 +61,10 @@ public class RegistrationController : ControllerBase
         try
         {
             var registration = await _dbContext.Registrations
-                .Include(x => x.User)
-                .Include(x => x.RegistrationCategory)
+                .Include(x => x.ApiUser)
                 .Include(x => x.Event)
-                .ThenInclude(x => x.Creator)
-                .FirstOrDefaultAsync(x => x.EventId == eventId && x.UserId == userId);
+                .ThenInclude(x => x.ApiUser)
+                .FirstOrDefaultAsync(x => x.EventId == eventId /*&& x.ApiUserId == userId*/);
 
             if (registration == null) return NotFound("Not found that specific registration");
 
@@ -105,7 +104,7 @@ public class RegistrationController : ControllerBase
 
             return
                 CreatedAtRoute("GetRegistration",
-                    new {eventId = newRegistration.EventId, userId = newRegistration.UserId}, newRegistration);
+                    new {eventId = newRegistration.EventId, userId = newRegistration.ApiUserId}, newRegistration);
         }
         catch (Exception exception)
         {
@@ -134,11 +133,10 @@ public class RegistrationController : ControllerBase
         try
         {
             var registration = await _dbContext.Registrations
-                .Include(x => x.User)
-                .Include(x => x.RegistrationCategory)
+                .Include(x => x.ApiUser)
                 .Include(x => x.Event)
-                .ThenInclude(x => x.Creator)
-                .FirstOrDefaultAsync(x => x.EventId == eventId && x.UserId == userId);
+                .ThenInclude(x => x.ApiUser)
+                .FirstOrDefaultAsync(x => x.EventId == eventId /*&& x.ApiUserId == userId*/);
 
             if (registration == null) return NotFound("There is no registration with these eventId and userId");
 
@@ -174,7 +172,7 @@ public class RegistrationController : ControllerBase
         try
         {
             var registrationToEdit = await _dbContext.Registrations
-                .FirstOrDefaultAsync(e => e.EventId == eventId || e.UserId == userId);
+                .FirstOrDefaultAsync(e => e.EventId == eventId /*|| e.ApiUserId == userId*/);
 
             if (registrationToEdit == null) return BadRequest("Submitted data is invalid!");
             _mapper.Map(registrationUpdateDto, registrationToEdit);
