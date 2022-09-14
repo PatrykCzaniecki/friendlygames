@@ -3,6 +3,7 @@ using FriendlyGames.Api.Dtos;
 using FriendlyGames.Api.Services;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -26,6 +27,7 @@ public class EventsController : ControllerBase
     }
 
     [HttpGet]
+    [Authorize(Roles = "Administrator")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int? categoryId, [FromQuery] string? levelCategoryIds,
@@ -87,6 +89,7 @@ public class EventsController : ControllerBase
     }
 
     [HttpPost]
+    [Authorize(Roles = "Administrator")]
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]

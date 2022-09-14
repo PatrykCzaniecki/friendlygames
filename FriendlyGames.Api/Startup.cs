@@ -1,10 +1,16 @@
 ﻿using System.Reflection;
+using FriendlyGames.Api.Infrastructure;
 using FriendlyGames.Api.Services;
 using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
+using FriendlyGames.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 namespace MyHotels.WebApi;
 
@@ -32,6 +38,8 @@ public class Startup
         
         services.AddScoped<IEventService, EventService>();
         services.AddScoped<ICategoriesService, CategoriesService>();
+        services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+
         
         // Solves problem with cyclical dependency between countries and hotels.
         services.AddControllers().AddNewtonsoftJson(options =>
@@ -51,6 +59,33 @@ public class Startup
                 builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
             });
         });
+
+        //configure authentication and identity management
+        services.AddAuthentication();
+        var builder = services.AddIdentityCore<ApiUser>(q => q.User.RequireUniqueEmail = true);
+        builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), services);
+        builder.AddEntityFrameworkStores<FriendlyGamesDbContext>().AddDefaultTokenProviders();
+
+        //configure JWT
+        var jwtSettings = Configuration.GetSection("Jwt");
+        var key = Environment.GetEnvironmentVariable("FRIENDLYGAMES_KEY");
+
+        services.AddAuthentication(options =>
+        {
+            options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        }).AddJwtBearer(options =>
+        {
+            options.TokenValidationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = jwtSettings.GetSection("Issuer").Value,
+                ValidAudience = jwtSettings.GetSection("Audience").Value,
+                IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(key))
+            };
+        });
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -69,6 +104,7 @@ public class Startup
 
         app.UseRouting();
 
+        app.UseAuthentication();
         app.UseAuthorization();
 
         app.UseEndpoints(endpoints => { endpoints.MapControllers(); });

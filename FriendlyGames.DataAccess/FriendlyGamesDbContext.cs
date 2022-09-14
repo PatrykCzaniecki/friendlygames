@@ -1,6 +1,7 @@
 ﻿using FriendlyGames.Domain.Categories;
 using FriendlyGames.Domain.Enums;
 using FriendlyGames.Domain.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
@@ -75,6 +76,10 @@ public class FriendlyGamesDbContext : IdentityDbContext<ApiUser>
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
                 {Id = 9, Name = "Kręgielnia", ImageForSearchBar = "bowling.png", ImageForBoxWithEventInfo = "kręgle-box.png" });
+        modelBuilder.Entity<IdentityRole>()
+            .HasData(new IdentityRole { Name = "User", NormalizedName = "USER" });
+        modelBuilder.Entity<IdentityRole>()
+            .HasData(new IdentityRole { Name = "Administrator", NormalizedName = "ADMINISTRATOR" });
         //modelBuilder.Entity<ApiUser>()
         //    .HasData(new ApiUser {Id = 1, FirstName = "John", LastName = "Doe"});
         //modelBuilder.Entity<ApiUser>()
