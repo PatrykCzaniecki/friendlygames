@@ -5,10 +5,51 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-    public partial class init : Migration
+    public partial class newDatabase : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "AspNetRoles",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetRoles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUsers",
+                columns: table => new
+                {
+                    Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    NormalizedEmail = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
+                    EmailConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    PasswordHash = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    SecurityStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ConcurrencyStamp = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumber = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    PhoneNumberConfirmed = table.Column<bool>(type: "bit", nullable: false),
+                    TwoFactorEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    LockoutEnd = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: true),
+                    LockoutEnabled = table.Column<bool>(type: "bit", nullable: false),
+                    AccessFailedCount = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "EventCategories",
                 columns: table => new
@@ -77,17 +118,109 @@ namespace FriendlyGames.DataAccess.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Users",
+                name: "AspNetRoleClaims",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Users", x => x.Id);
+                    table.PrimaryKey("PK_AspNetRoleClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetRoleClaims_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserClaims",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ClaimType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ClaimValue = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserClaims", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserClaims_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserLogins",
+                columns: table => new
+                {
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderKey = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    ProviderDisplayName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserLogins", x => new { x.LoginProvider, x.ProviderKey });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserLogins_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    RoleId = table.Column<string>(type: "nvarchar(450)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetRoles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "AspNetRoles",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AspNetUserRoles_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "AspNetUserTokens",
+                columns: table => new
+                {
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    LoginProvider = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Name = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Value = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AspNetUserTokens", x => new { x.UserId, x.LoginProvider, x.Name });
+                    table.ForeignKey(
+                        name: "FK_AspNetUserTokens_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -99,7 +232,7 @@ namespace FriendlyGames.DataAccess.Migrations
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     StartDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     EndDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatorId = table.Column<int>(type: "int", nullable: false),
+                    CreatorId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     EventCategoryId = table.Column<int>(type: "int", nullable: false),
                     LevelCategoryId = table.Column<int>(type: "int", nullable: false),
                     SurfaceCategoryId = table.Column<int>(type: "int", nullable: false),
@@ -113,6 +246,12 @@ namespace FriendlyGames.DataAccess.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Events", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Events_AspNetUsers_CreatorId",
+                        column: x => x.CreatorId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Events_EventCategories_EventCategoryId",
                         column: x => x.EventCategoryId,
@@ -137,12 +276,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         principalTable: "SurroundingCategories",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Events_Users_CreatorId",
-                        column: x => x.CreatorId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -150,7 +283,7 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: table => new
                 {
                     EventId = table.Column<int>(type: "int", nullable: false),
-                    UserId = table.Column<int>(type: "int", nullable: false),
+                    UserId = table.Column<string>(type: "nvarchar(450)", nullable: false),
                     RegistrationDateTime = table.Column<DateTime>(type: "datetime2", nullable: false),
                     RegistrationCategoryId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -158,21 +291,15 @@ namespace FriendlyGames.DataAccess.Migrations
                 {
                     table.PrimaryKey("PK_Registrations", x => new { x.EventId, x.UserId });
                     table.ForeignKey(
-                        name: "FK_Registrations_Events_EventId",
-                        column: x => x.EventId,
-                        principalTable: "Events",
+                        name: "FK_Registrations_AspNetUsers_UserId",
+                        column: x => x.UserId,
+                        principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_Registrations_RegistrationCategories_RegistrationCategoryId",
-                        column: x => x.RegistrationCategoryId,
-                        principalTable: "RegistrationCategories",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_Registrations_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
+                        name: "FK_Registrations_Events_EventId",
+                        column: x => x.EventId,
+                        principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
@@ -236,46 +363,44 @@ namespace FriendlyGames.DataAccess.Migrations
                     { 2, "Na zewnątrz" }
                 });
 
-            migrationBuilder.InsertData(
-                table: "Users",
-                columns: new[] { "Id", "FirstName", "LastName" },
-                values: new object[,]
-                {
-                    { 1, "John", "Doe" },
-                    { 2, "Adam", "Smith" },
-                    { 3, "Franek", "Stopka" },
-                    { 4, "Asia", "Szul" },
-                    { 5, "Tomek", "Broda" },
-                    { 6, "Grzegorz", "Wisła" }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetRoleClaims_RoleId",
+                table: "AspNetRoleClaims",
+                column: "RoleId");
 
-            migrationBuilder.InsertData(
-                table: "Events",
-                columns: new[] { "Id", "City", "CreatorId", "Description", "EndDateTime", "EventCategoryId", "LevelCategoryId", "MaxNumberOfPlayers", "Name", "PriceForEvent", "StartDateTime", "Street", "SurfaceCategoryId", "SurroundingCategoryId" },
-                values: new object[,]
-                {
-                    { 1, "Tarnów", 1, "Szukam osób do gry w kosza", new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), 1, 2, 8, "Koszykówka", 30.0, new DateTime(2022, 8, 1, 10, 0, 0, 0, DateTimeKind.Unspecified), "Piłsudskiego 24", 6, 2 },
-                    { 2, "Kraków", 2, "Orlikowe granie", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 2, 1, 10, "Piłka Nożna", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Grzegórzecka 24", 1, 2 },
-                    { 3, "Żywiec", 3, "Ciężki trening", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 3, 2, 10, "Siłownia", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Kazimierza Tetmajera 75", 3, 2 },
-                    { 4, "Wrocław", 4, "Sprinty na 200m", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 4, 3, 3, "Bieganie", 0.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Różanka", 7, 2 },
-                    { 5, "Szczecin", 5, "Nauka jazdy na jednym kole", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 5, 2, 15, "Rower", 10.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Modra 104", 7, 2 },
-                    { 6, "Warszawa", 6, "Sobotni chill", new DateTime(2022, 8, 1, 14, 0, 0, 0, DateTimeKind.Unspecified), 9, 1, 4, "Kręgle", 16.0, new DateTime(2022, 8, 1, 12, 0, 0, 0, DateTimeKind.Unspecified), "Vincenta van Gogha 1", 4, 1 }
-                });
+            migrationBuilder.CreateIndex(
+                name: "RoleNameIndex",
+                table: "AspNetRoles",
+                column: "NormalizedName",
+                unique: true,
+                filter: "[NormalizedName] IS NOT NULL");
 
-            migrationBuilder.InsertData(
-                table: "Registrations",
-                columns: new[] { "EventId", "UserId", "RegistrationCategoryId", "RegistrationDateTime" },
-                values: new object[,]
-                {
-                    { 1, 1, 1, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7266) },
-                    { 1, 2, 1, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7303) },
-                    { 2, 1, 3, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7319) },
-                    { 2, 2, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7311) },
-                    { 3, 3, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7326) },
-                    { 4, 4, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7335) },
-                    { 5, 5, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7343) },
-                    { 6, 6, 2, new DateTime(2022, 9, 8, 17, 38, 46, 595, DateTimeKind.Local).AddTicks(7351) }
-                });
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserClaims_UserId",
+                table: "AspNetUserClaims",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserLogins_UserId",
+                table: "AspNetUserLogins",
+                column: "UserId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AspNetUserRoles_RoleId",
+                table: "AspNetUserRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "EmailIndex",
+                table: "AspNetUsers",
+                column: "NormalizedEmail");
+
+            migrationBuilder.CreateIndex(
+                name: "UserNameIndex",
+                table: "AspNetUsers",
+                column: "NormalizedUserName",
+                unique: true,
+                filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Events_CreatorId",
@@ -303,11 +428,6 @@ namespace FriendlyGames.DataAccess.Migrations
                 column: "SurroundingCategoryId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Registrations_RegistrationCategoryId",
-                table: "Registrations",
-                column: "RegistrationCategoryId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Registrations_UserId",
                 table: "Registrations",
                 column: "UserId");
@@ -316,13 +436,34 @@ namespace FriendlyGames.DataAccess.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "AspNetRoleClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserClaims");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserLogins");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserRoles");
+
+            migrationBuilder.DropTable(
+                name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "RegistrationCategories");
+
+            migrationBuilder.DropTable(
                 name: "Registrations");
+
+            migrationBuilder.DropTable(
+                name: "AspNetRoles");
 
             migrationBuilder.DropTable(
                 name: "Events");
 
             migrationBuilder.DropTable(
-                name: "RegistrationCategories");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
                 name: "EventCategories");
@@ -335,9 +476,6 @@ namespace FriendlyGames.DataAccess.Migrations
 
             migrationBuilder.DropTable(
                 name: "SurroundingCategories");
-
-            migrationBuilder.DropTable(
-                name: "Users");
         }
     }
 }

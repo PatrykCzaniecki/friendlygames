@@ -1,7 +1,9 @@
 ﻿using System.Reflection;
+using FriendlyGames.Api.Extensions;
 using FriendlyGames.Api.Services;
 using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
@@ -51,6 +53,8 @@ public class Startup
                 builder.WithOrigins("http://localhost:3000").AllowAnyHeader().AllowAnyMethod();
             });
         });
+
+        services.ConfigureAuthenticationAndIdentityManagement();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

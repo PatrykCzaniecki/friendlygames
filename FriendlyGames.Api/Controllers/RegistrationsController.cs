@@ -28,7 +28,7 @@ public class RegistrationController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RegistrationDto>>> GetRegistrations([FromQuery] int eventId, [FromQuery] int userId, [FromQuery] int registrationCategoryId)
+    public async Task<ActionResult<IEnumerable<RegistrationDto>>> GetRegistrations([FromQuery] int eventId, [FromQuery] string userId, [FromQuery] int registrationCategoryId)
     {
         _logger.LogInformation($"{nameof(GetRegistrations)} called...");
 
@@ -54,7 +54,7 @@ public class RegistrationController : ControllerBase
     }
 
     [HttpGet("{eventId}/{userId}", Name = "GetRegistration")]
-    public async Task<ActionResult<EventsDto>> GetRegistration(int eventId, int userId)
+    public async Task<ActionResult<EventsDto>> GetRegistration(int eventId, string userId)
     {
         _logger.LogInformation($"{nameof(GetRegistration)} called...");
 
@@ -62,7 +62,6 @@ public class RegistrationController : ControllerBase
         {
             var registration = await _dbContext.Registrations
                 .Include(x => x.User)
-                .Include(x => x.RegistrationCategory)
                 .Include(x => x.Event)
                 .ThenInclude(x => x.Creator)
                 .FirstOrDefaultAsync(x => x.EventId == eventId && x.UserId == userId);
@@ -120,11 +119,11 @@ public class RegistrationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> DeleteRegistration(int eventId, int userId)
+    public async Task<IActionResult> DeleteRegistration(int eventId, string userId)
     {
         _logger.LogInformation($"{nameof(DeleteRegistration)} called...");
 
-        if (eventId < 1 || userId < 1)
+        if (eventId < 1 || userId.Length < 1)
         {
             _logger.LogError($"Invalid DELETE attempt in {nameof(DeleteRegistration)}");
 
@@ -135,7 +134,6 @@ public class RegistrationController : ControllerBase
         {
             var registration = await _dbContext.Registrations
                 .Include(x => x.User)
-                .Include(x => x.RegistrationCategory)
                 .Include(x => x.Event)
                 .ThenInclude(x => x.Creator)
                 .FirstOrDefaultAsync(x => x.EventId == eventId && x.UserId == userId);
@@ -161,7 +159,7 @@ public class RegistrationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
     public async Task<IActionResult> UpdateRegistration([FromBody] RegistrationCreateUpdateDto registrationUpdateDto, int eventId,
-        int userId)
+        string userId)
     {
         _logger.LogInformation($"{nameof(UpdateRegistration)} called...");
 

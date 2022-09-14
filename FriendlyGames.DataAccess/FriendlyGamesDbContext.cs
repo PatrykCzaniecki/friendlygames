@@ -1,11 +1,12 @@
 ﻿using FriendlyGames.Domain.Categories;
 using FriendlyGames.Domain.Enums;
 using FriendlyGames.Domain.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
 namespace FriendlyGames.DataAccess;
 
-public class FriendlyGamesDbContext : DbContext
+public class FriendlyGamesDbContext : IdentityDbContext<User>
 {
     public FriendlyGamesDbContext(DbContextOptions options) : base(options)
     {
@@ -22,6 +23,8 @@ public class FriendlyGamesDbContext : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
+        base.OnModelCreating(modelBuilder);
+
         // Defining relations and type conversions
         modelBuilder.Entity<Registration>()
             .HasKey(r => new {r.EventId, r.UserId});
@@ -77,7 +80,7 @@ public class FriendlyGamesDbContext : DbContext
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
                 {Id = 9, Name = "Kręgielnia", ImageForSearchBar = "bowling.png", ImageForBoxWithEventInfo = "kręgle-box.png" });
-        modelBuilder.Entity<User>()
+        /*modelBuilder.Entity<User>()
             .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"});
         modelBuilder.Entity<User>()
             .HasData(new User {Id = 2, FirstName = "Adam", LastName = "Smith"});
@@ -252,6 +255,6 @@ public class FriendlyGamesDbContext : DbContext
                 EventId = 6,
                 UserId = 6,
                 RegistrationCategoryId = 2
-            });
+            });*/
     }
 }

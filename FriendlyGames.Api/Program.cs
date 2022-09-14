@@ -24,8 +24,6 @@ app.MapControllers();
 
 app.Run();*/
 
-
-
 using Serilog;
 using Serilog.Events;
 

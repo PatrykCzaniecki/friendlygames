@@ -4,6 +4,6 @@ namespace FriendlyGames.Api.Services.Interfaces
 {
     public interface IRegistrationService
     {
-        Task<IList<RegistrationDto>> GetRegistrations(int eventId, int userId, int registrationCategoryId);
+        Task<IList<RegistrationDto>> GetRegistrations(int eventId, string userId, int registrationCategoryId);
     }
 }

@@ -12,7 +12,7 @@ public class Event
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
     [ForeignKey(nameof(CreatorId))] public User Creator { get; set; } = null!;
-    public int CreatorId { get; set; }
+    public string CreatorId { get; set; }
     [ForeignKey(nameof(EventCategoryId))] public EventCategory EventCategory { get; set; } = null!;
     public int EventCategoryId { get; set; }
     public List<Registration> Registrations { get; set; } = new();
