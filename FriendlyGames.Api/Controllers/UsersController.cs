@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Collections;
+using AutoMapper;
 using FriendlyGames.Api.Dtos;
 using FriendlyGames.Api.Infrastructure;
 using FriendlyGames.Domain.Models;
@@ -27,7 +28,6 @@ namespace FriendlyGames.Api.Controllers
 
         [HttpOptions]
         [Route("register")]
-        //[Authorize(Roles="Adminstrator")]
         [ProducesResponseType(StatusCodes.Status202Accepted)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -40,10 +40,10 @@ namespace FriendlyGames.Api.Controllers
             {
                 return BadRequest(ModelState);
             }
-
+            
             var user = _mapper.Map<ApiUser>(userDto);
             user.UserName = user.Email;
-
+            
             var result = await _userManager.CreateAsync(user, userDto.Password);
 
             if (!result.Succeeded)
@@ -83,6 +83,13 @@ namespace FriendlyGames.Api.Controllers
             }
 
             return Accepted(new { Token = await _authenticationManager.CreateJwtToken() });
+        }
+
+        [Authorize(Roles = "User")]
+        [HttpGet("GetUser")]
+        public IActionResult GetUser()
+        {
+            return new JsonResult(User.Claims.Select(c => new { Type = c.Type, Value = c.Value }));
         }
     }
 }
