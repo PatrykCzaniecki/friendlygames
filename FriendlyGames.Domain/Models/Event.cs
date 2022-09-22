@@ -11,7 +11,8 @@ public class Event
     public string Name { get; set; } = null!;
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
-    [ForeignKey(nameof(ApiUserId))] public ApiUser ApiUser { get; set; } = null!;
+    [ForeignKey(nameof(ApiUserId))]
+    public ApiUser ApiUser { get; set; } = null!;
     public string ApiUserId { get; set; }
     [ForeignKey(nameof(EventCategoryId))] public EventCategory EventCategory { get; set; } = null!;
     public int EventCategoryId { get; set; }
@@ -32,5 +33,4 @@ public class Event
     public double PriceForEvent { get; set; }
     public string Street { get; set; } = null!;
     public string City { get; set; } = null!;
-    public string Description { get; set; } = null!;
 }

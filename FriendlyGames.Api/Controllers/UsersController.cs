@@ -53,7 +53,7 @@ namespace FriendlyGames.Api.Controllers
                     ModelState.AddModelError(error.Code, error.Description);
                 }
 
-                return BadRequest(ModelState);
+                return BadRequest(result.Errors);
             }
 
             await _userManager.AddToRolesAsync(user, userDto.Roles);
@@ -89,7 +89,27 @@ namespace FriendlyGames.Api.Controllers
         [HttpGet("GetUser")]
         public IActionResult GetUser()
         {
-            return new JsonResult(User.Claims.Select(c => new { Type = c.Type, Value = c.Value }));
+            var userData = new UserDataDto();
+            foreach (var claim in User.Claims)
+            {
+                if (claim.Type == "userEmail")
+                {
+                    userData.Email = claim.Value;
+                } 
+                else if (claim.Type == "id")
+                {
+                    userData.Id = claim.Value;
+                }
+                else if(claim.Type == "firstName")
+                {
+                    userData.FirstName = claim.Value;
+                } else if (claim.Type == "lastName")
+                {
+                    userData.LastName = claim.Value;
+                }
+            }
+
+            return new JsonResult(userData);
         }
     }
 }

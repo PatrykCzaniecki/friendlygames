@@ -51,8 +51,8 @@ namespace FriendlyGames.Api.Infrastructure
         {
             var claims = new List<Claim>
             {
-                new Claim(ClaimTypes.Email, _user.Email),
-                new Claim("sub", _user.Id),
+                new Claim("userEmail", _user.Email),
+                new Claim("id", _user.Id),
                 new Claim("firstName", _user.FirstName),
                 new Claim("lastName", _user.LastName)
             };

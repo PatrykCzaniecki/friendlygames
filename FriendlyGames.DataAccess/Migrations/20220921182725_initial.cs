@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-    public partial class initialMigration : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -227,8 +227,7 @@ namespace FriendlyGames.DataAccess.Migrations
                     MaxNumberOfPlayers = table.Column<int>(type: "int", nullable: false),
                     PriceForEvent = table.Column<double>(type: "float", nullable: false),
                     Street = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    City = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    City = table.Column<string>(type: "nvarchar(max)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -288,6 +287,15 @@ namespace FriendlyGames.DataAccess.Migrations
                         principalTable: "Events",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
+                {
+                    { "1f243cd6-2f63-4ba8-a48a-30db6ef331f2", "547b3afd-e30a-41a6-a39d-998bad6a7e04", "User", "USER" },
+                    { "cc3db444-6ee7-459b-8046-81f6626385c2", "456586bf-248c-4058-bb90-ab914a0476b7", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(

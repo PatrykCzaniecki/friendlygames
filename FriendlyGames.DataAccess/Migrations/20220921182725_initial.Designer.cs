@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    [Migration("20220914094200_addingIdentityRoles")]
-    partial class addingIdentityRoles
+    [Migration("20220921182725_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -320,10 +320,6 @@ namespace FriendlyGames.DataAccess.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<DateTime>("EndDateTime")
                         .HasColumnType("datetime2");
 
@@ -418,15 +414,15 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "01277cac-ff43-44e2-a4bb-0691e4e70f2a",
-                            ConcurrencyStamp = "88f77a96-7d94-4161-bd86-b7e3abea7fae",
+                            Id = "1f243cd6-2f63-4ba8-a48a-30db6ef331f2",
+                            ConcurrencyStamp = "547b3afd-e30a-41a6-a39d-998bad6a7e04",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "44507b65-7943-422d-b43f-5296cf9d396d",
-                            ConcurrencyStamp = "412e585f-27a5-478e-80db-a86543caf8a5",
+                            Id = "cc3db444-6ee7-459b-8046-81f6626385c2",
+                            ConcurrencyStamp = "456586bf-248c-4058-bb90-ab914a0476b7",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

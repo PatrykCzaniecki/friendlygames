@@ -109,7 +109,7 @@ public class EventsController : ControllerBase
             await _dbContext.Events.AddAsync(newEvent);
             await _dbContext.SaveChangesAsync();
 
-            return CreatedAtRoute("CreateEvent", new {id = newEvent.Id}, newEvent);
+            return CreatedAtRoute("GetEvent", new {id = newEvent.Id}, newEvent);
         }
         catch (Exception exception)
         {
