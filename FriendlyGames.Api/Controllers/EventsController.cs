@@ -183,7 +183,7 @@ public class EventsController : ControllerBase
                 .Include(x => x.SurroundingCategory)
                 .FirstOrDefaultAsync(x => x.Id == id);
 
-            if (specificEvent == null) return NotFound($"There is no country with id = {id}");
+            if (specificEvent == null) return NotFound($"There is no event with id = {id}");
 
             foreach (var registration in registrations) _dbContext.Registrations.Remove(registration);
             _dbContext.Events.Remove(specificEvent);
