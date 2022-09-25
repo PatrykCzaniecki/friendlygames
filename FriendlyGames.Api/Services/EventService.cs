@@ -97,8 +97,12 @@ namespace FriendlyGames.Api.Services
             {
                 return events.Where(x => x.PriceForEvent > 0);
             }
-           
-            else return events.Where(x => x.PriceForEvent == 0);
+
+            if (payable.ToLower() == "false")
+            {
+                return events.Where(x => x.PriceForEvent > 0);
+            }
+            return events;
             
         }
 
