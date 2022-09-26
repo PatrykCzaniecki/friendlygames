@@ -45,6 +45,10 @@ namespace FriendlyGames.Api.Services
             if (levelCategoryIds != null)
             {
                 events = FilterByLevel(levelCategoryIds, events);
+                //if (!events.Any())
+                //{
+                //    return events;
+                //}
             }
 
             if (surfaceCategoryIds != null)
@@ -93,12 +97,12 @@ namespace FriendlyGames.Api.Services
         private IQueryable<Event> FilterByPayable(string payable, IQueryable<Event> events)
 
         {
-            if (payable.ToLower() == "true")
+            if (payable.ToLower() == "free")
             {
-                return events.Where(x => x.PriceForEvent > 0);
+                return events.Where(x => x.PriceForEvent == 0);
             }
 
-            if (payable.ToLower() == "false")
+            if (payable.ToLower() == "paid")
             {
                 return events.Where(x => x.PriceForEvent > 0);
             }
