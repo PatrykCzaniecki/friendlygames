@@ -1,7 +1,7 @@
 using Serilog;
 using Serilog.Events;
 
-namespace MyHotels.WebApi;
+namespace FriendlyGames.Api;
 
 public class Program
 {

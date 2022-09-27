@@ -12,7 +12,7 @@ using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
 
-namespace MyHotels.WebApi;
+namespace FriendlyGames.Api;
 
 public class Startup
 {

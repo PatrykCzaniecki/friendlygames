@@ -412,15 +412,15 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "f37df1af-14c1-4c7e-ba81-0437de9bef15",
-                            ConcurrencyStamp = "abb9e706-5057-48aa-aec9-774f9e6024fd",
+                            Id = "30a9e4c4-2a83-47a2-9d7e-f73c68991722",
+                            ConcurrencyStamp = "4bf8a71e-b0e9-4909-9fd1-d2ba9c722a6d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "45872dd4-1717-4dc1-9420-05f329f722fa",
-                            ConcurrencyStamp = "c135d9a3-0fe7-4f48-8985-73e01cacd2e8",
+                            Id = "8bf89c3e-4e26-4d87-bd8c-abd0ead60d33",
+                            ConcurrencyStamp = "a79fa0dd-0160-4fc3-9944-efe528c089d3",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });
