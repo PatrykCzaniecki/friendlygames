@@ -101,10 +101,7 @@ public class RegistrationController : ControllerBase
             await _dbContext.Registrations.AddAsync(newRegistration);
             await _dbContext.SaveChangesAsync();
 
-
-            return
-                CreatedAtRoute("GetRegistration",
-                    new {eventId = newRegistration.EventId, userId = newRegistration.ApiUserId}, newRegistration);
+            return Ok();
         }
         catch (Exception exception)
         {

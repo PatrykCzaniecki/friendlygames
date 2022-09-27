@@ -39,6 +39,7 @@ public class Startup
         services.AddScoped<IEventService, EventService>();
         services.AddScoped<ICategoriesService, CategoriesService>();
         services.AddScoped<IAuthenticationManager, AuthenticationManager>();
+        services.AddScoped<IRegistrationService, RegistrationService>();
 
         
         // Solves problem with cyclical dependency between countries and hotels.
