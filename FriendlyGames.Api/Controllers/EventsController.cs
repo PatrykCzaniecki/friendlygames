@@ -11,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FriendlyGames.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]/{id:int}")]
+[Route("api/[controller]")]
 public class EventsController : ControllerBase
 {
     private readonly FriendlyGamesDbContext _dbContext;
@@ -52,7 +52,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpGet("", Name = "GetEvent")]
+    [HttpGet("{id:int}", Name = "GetEvent")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -121,7 +121,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpPut("")]
+    [HttpPut("{id:int}")]
     [Authorize(Roles = "User")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -155,7 +155,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpDelete("")]
+    [HttpDelete("{id:int}")]
     [Authorize(Roles = "User")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FriendlyGames.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]/{eventId}/{userId}")]
+[Route("api/[controller]")]
 public class RegistrationController : ControllerBase
 {
     private readonly FriendlyGamesDbContext _dbContext;
@@ -47,7 +47,7 @@ public class RegistrationController : ControllerBase
         }
     }
 
-    [HttpGet("", Name = "GetRegistration")]
+    [HttpGet("{eventId}/{userId}", Name = "GetRegistration")]
     public async Task<ActionResult<EventsDto>> GetRegistration(int eventId, int userId)
     {
         _logger.LogInformation($"{nameof(GetRegistration)} called...");
@@ -108,7 +108,7 @@ public class RegistrationController : ControllerBase
         }
     }
 
-    [HttpDelete("", Name = "DeleteRegistration")]
+    [HttpDelete("{eventId}/{userId}", Name = "DeleteRegistration")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -147,7 +147,7 @@ public class RegistrationController : ControllerBase
         }
     }
 
-    [HttpPut("", Name = "UpdateRegistration")]
+    [HttpPut("{eventId}/{userId}", Name = "UpdateRegistration")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
