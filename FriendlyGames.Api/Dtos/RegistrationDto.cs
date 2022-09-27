@@ -1,5 +1,4 @@
-﻿using FriendlyGames.Domain.Enums;
-using FriendlyGames.Domain.Models;
+﻿using FriendlyGames.Domain.Models;
 
 namespace FriendlyGames.Api.Dtos;
 

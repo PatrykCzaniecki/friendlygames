@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Diagnostics;
+using AutoMapper;
 using FriendlyGames.Api.Dtos;
 using FriendlyGames.Api.Services;
 using FriendlyGames.DataAccess;
@@ -10,15 +11,16 @@ using Microsoft.EntityFrameworkCore;
 namespace FriendlyGames.Api.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/[controller]/{id:int}")]
 public class EventsController : ControllerBase
 {
     private readonly FriendlyGamesDbContext _dbContext;
+    private readonly IEventService _eventService;
     private readonly ILogger<EventsController> _logger;
     private readonly IMapper _mapper;
-    private readonly IEventService _eventService;
 
-    public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext, IEventService eventService)
+    public EventsController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext,
+        IEventService eventService)
     {
         _dbContext = dbContext;
         _mapper = mapper;
@@ -29,7 +31,8 @@ public class EventsController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int? categoryId, [FromQuery] string? levelCategoryIds,
+    public async Task<ActionResult<IEnumerable<EventsDto>>> GetEvents([FromQuery] int? categoryId,
+        [FromQuery] string? levelCategoryIds,
         [FromQuery] string? surfaceCategoryIds, [FromQuery] string? surroundingCategoryIds, [FromQuery] string? payable)
     {
         _logger.LogInformation($"{nameof(GetEvents)} called...");
@@ -38,7 +41,7 @@ public class EventsController : ControllerBase
         {
             var results = await _eventService.GetEvents(categoryId, levelCategoryIds, surfaceCategoryIds,
                 surroundingCategoryIds, payable);
-          
+
             return Ok(results);
         }
         catch (Exception exception)
@@ -49,7 +52,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpGet("{id:int}", Name = "GetEvent")]
+    [HttpGet("", Name = "GetEvent")]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -59,11 +62,12 @@ public class EventsController : ControllerBase
 
         try
         {
-            var registrations = await _dbContext.Registrations
+            var registrations = await (_dbContext.Registrations ?? throw new InvalidOperationException())
                 .Include(x => x.ApiUser)
                 .Where(e => e.EventId == id).ToListAsync();
 
-            var specificEvent = await _dbContext.Events.Include(x => x.ApiUser)
+            var specificEvent = await (_dbContext.Events ?? throw new InvalidOperationException())
+                .Include(x => x.ApiUser)
                 .Include(x => x.EventCategory)
                 .Include(x => x.Registrations)
                 .Include(x => x.LevelCategory)
@@ -74,8 +78,6 @@ public class EventsController : ControllerBase
             if (specificEvent == null) return NotFound("Not found that specific event");
 
             specificEvent.Registrations = registrations;
-
-            //var result = _mapper.Map<EventUpdateDto>(specificEvent);
 
             return Ok(specificEvent);
         }
@@ -106,6 +108,7 @@ public class EventsController : ControllerBase
         try
         {
             var newEvent = _mapper.Map<Event>(eventCreateUpdateDto);
+            Debug.Assert(_dbContext.Events != null, "_dbContext.Events != null");
             await _dbContext.Events.AddAsync(newEvent);
             await _dbContext.SaveChangesAsync();
 
@@ -118,7 +121,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpPut("{id:int}")]
+    [HttpPut("")]
     [Authorize(Roles = "User")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -135,7 +138,7 @@ public class EventsController : ControllerBase
 
         try
         {
-            var eventToEdit = await _dbContext.Events
+            var eventToEdit = await (_dbContext.Events ?? throw new InvalidOperationException())
                 .FirstOrDefaultAsync(e => e.Id == id);
 
             if (eventToEdit == null) return BadRequest("Submitted data is invalid!");
@@ -152,7 +155,7 @@ public class EventsController : ControllerBase
         }
     }
 
-    [HttpDelete("{id:int}")]
+    [HttpDelete("")]
     [Authorize(Roles = "User")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -171,11 +174,12 @@ public class EventsController : ControllerBase
 
         try
         {
-            var registrations = await _dbContext.Registrations
+            var registrations = await (_dbContext.Registrations ?? throw new InvalidOperationException())
                 .Include(x => x.ApiUser)
                 .Where(e => e.EventId == id).ToListAsync();
 
-            var specificEvent = await _dbContext.Events.Include(x => x.ApiUser)
+            var specificEvent = await (_dbContext.Events ?? throw new InvalidOperationException())
+                .Include(x => x.ApiUser)
                 .Include(x => x.EventCategory)
                 .Include(x => x.Registrations)
                 .Include(x => x.LevelCategory)

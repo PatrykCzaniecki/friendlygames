@@ -1,9 +1,8 @@
-﻿namespace FriendlyGames.Api.Dtos
+﻿namespace FriendlyGames.Api.Dtos;
+
+public class EventCategoryDto
 {
-    public class EventCategoryDto
-    {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string ImageForSearchBar { get; set; }
-    }
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+    public string ImageForSearchBar { get; set; } = null!;
 }
