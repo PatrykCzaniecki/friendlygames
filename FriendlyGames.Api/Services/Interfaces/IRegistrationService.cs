@@ -1,9 +1,8 @@
 ﻿using FriendlyGames.Api.Dtos;
 
-namespace FriendlyGames.Api.Services.Interfaces
+namespace FriendlyGames.Api.Services.Interfaces;
+
+public interface IRegistrationService
 {
-    public interface IRegistrationService
-    {
-        Task<IList<RegistrationDto>> GetRegistrations(int eventId, int userId, int registrationCategoryId);
-    }
+    Task<IList<RegistrationDto>> GetRegistrations(int eventId, int userId, int registrationCategoryId);
 }

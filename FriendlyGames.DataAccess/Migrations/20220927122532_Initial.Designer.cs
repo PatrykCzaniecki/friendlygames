@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace FriendlyGames.DataAccess.Migrations
 {
     [DbContext(typeof(FriendlyGamesDbContext))]
-    [Migration("20220921182725_initial")]
-    partial class initial
+    [Migration("20220927122532_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -414,15 +414,15 @@ namespace FriendlyGames.DataAccess.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "1f243cd6-2f63-4ba8-a48a-30db6ef331f2",
-                            ConcurrencyStamp = "547b3afd-e30a-41a6-a39d-998bad6a7e04",
+                            Id = "30a9e4c4-2a83-47a2-9d7e-f73c68991722",
+                            ConcurrencyStamp = "4bf8a71e-b0e9-4909-9fd1-d2ba9c722a6d",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
-                            Id = "cc3db444-6ee7-459b-8046-81f6626385c2",
-                            ConcurrencyStamp = "456586bf-248c-4058-bb90-ab914a0476b7",
+                            Id = "8bf89c3e-4e26-4d87-bd8c-abd0ead60d33",
+                            ConcurrencyStamp = "a79fa0dd-0160-4fc3-9944-efe528c089d3",
                             Name = "Administrator",
                             NormalizedName = "ADMINISTRATOR"
                         });

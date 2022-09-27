@@ -1,18 +1,18 @@
 ﻿using System.Reflection;
+using System.Text;
 using FriendlyGames.Api.Infrastructure;
 using FriendlyGames.Api.Services;
 using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Newtonsoft.Json;
-using Microsoft.Extensions.Configuration;
-using Microsoft.IdentityModel.Tokens;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
 
-namespace MyHotels.WebApi;
+namespace FriendlyGames.Api;
 
 public class Startup
 {
@@ -23,19 +23,16 @@ public class Startup
 
     public IConfiguration Configuration { get; }
 
-    // This method gets called by the runtime. Use this method to add services to the container.
     public void ConfigureServices(IServiceCollection services)
     {
-        // DbContext
         services.AddDbContext<FriendlyGamesDbContext>(options =>
         {
-            options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection")).LogTo(Console.WriteLine, new[] { DbLoggerCategory.Database.Command.Name }, LogLevel.Information)
+            options.UseSqlServer(Configuration.GetConnectionString("MssqlConnection")).LogTo(Console.WriteLine,
+                    new[] {DbLoggerCategory.Database.Command.Name}, LogLevel.Information)
                 .EnableSensitiveDataLogging();
         });
 
-        // Automapper
         services.AddAutoMapper(Assembly.GetExecutingAssembly());
-        
         services.AddScoped<IEventService, EventService>();
         services.AddScoped<ICategoriesService, CategoriesService>();
         services.AddScoped<IAuthenticationManager, AuthenticationManager>();
@@ -87,12 +84,12 @@ public class Startup
                 ValidateIssuerSigningKey = true,
                 ValidIssuer = jwtSettings.GetSection("Issuer").Value,
                 ValidAudience = jwtSettings.GetSection("Audience").Value,
-                IssuerSigningKey = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(key))
+                IssuerSigningKey =
+                    new SymmetricSecurityKey(Encoding.UTF8.GetBytes(key ?? throw new InvalidOperationException()))
             };
         });
     }
 
-    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
     {
         if (env.IsDevelopment())

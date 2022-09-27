@@ -2,14 +2,14 @@
 
 public class EventCreateUpdateDto
 {
-    public string Name { get; set; }
+    public string Name { get; set; } = null!;
     public DateTime StartDateTime { get; set; }
     public DateTime EndDateTime { get; set; }
-    public string ApiUserId { get; set; }
+    public string ApiUserId { get; set; } = null!;
     public int MaxNumberOfPlayers { get; set; }
     public double PriceForEvent { get; set; }
-    public string Street { get; set; }
-    public string City { get; set; }
+    public string Street { get; set; } = null!;
+    public string City { get; set; } = null!;
     public int EventCategoryId { get; set; }
     public int LevelCategoryId { get; set; }
     public int SurfaceCategoryId { get; set; }

@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace FriendlyGames.DataAccess.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -294,8 +294,8 @@ namespace FriendlyGames.DataAccess.Migrations
                 columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
                 values: new object[,]
                 {
-                    { "1f243cd6-2f63-4ba8-a48a-30db6ef331f2", "547b3afd-e30a-41a6-a39d-998bad6a7e04", "User", "USER" },
-                    { "cc3db444-6ee7-459b-8046-81f6626385c2", "456586bf-248c-4058-bb90-ab914a0476b7", "Administrator", "ADMINISTRATOR" }
+                    { "30a9e4c4-2a83-47a2-9d7e-f73c68991722", "4bf8a71e-b0e9-4909-9fd1-d2ba9c722a6d", "User", "USER" },
+                    { "8bf89c3e-4e26-4d87-bd8c-abd0ead60d33", "a79fa0dd-0160-4fc3-9944-efe528c089d3", "Administrator", "ADMINISTRATOR" }
                 });
 
             migrationBuilder.InsertData(

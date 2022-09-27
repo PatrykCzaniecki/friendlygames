@@ -17,7 +17,8 @@ public class RegistrationController : ControllerBase
     private readonly IMapper _mapper;
     private readonly IRegistrationService _registrationService;
 
-    public RegistrationController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext, IRegistrationService registrationService)
+    public RegistrationController(IMapper mapper, ILogger<EventsController> logger, FriendlyGamesDbContext dbContext,
+        IRegistrationService registrationService)
     {
         _dbContext = dbContext;
         _mapper = mapper;
@@ -28,20 +29,13 @@ public class RegistrationController : ControllerBase
     [HttpGet]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<ActionResult<IEnumerable<RegistrationDto>>> GetRegistrations([FromQuery] int eventId, [FromQuery] int userId, [FromQuery] int registrationCategoryId)
+    public async Task<ActionResult<IEnumerable<RegistrationDto>>> GetRegistrations([FromQuery] int eventId,
+        [FromQuery] int userId, [FromQuery] int registrationCategoryId)
     {
         _logger.LogInformation($"{nameof(GetRegistrations)} called...");
 
         try
         {
-            /*var allRegistration = await _dbContext.Registrations
-                .Include(x => x.ApiUser)
-                .Include(x => x.RegistrationCategory)
-                .Include(x => x.Event)
-                .ThenInclude(x => x.ApiUser)
-                .ToListAsync();
-            var results = _mapper.Map<IList<RegistrationDto>>(allRegistration);*/
-
             var results = await _registrationService.GetRegistrations(eventId, userId, registrationCategoryId);
             return Ok(results);
         }
@@ -60,11 +54,11 @@ public class RegistrationController : ControllerBase
 
         try
         {
-            var registration = await _dbContext.Registrations
+            var registration = await (_dbContext.Registrations ?? throw new InvalidOperationException())
                 .Include(x => x.ApiUser)
                 .Include(x => x.Event)
                 .ThenInclude(x => x.ApiUser)
-                .FirstOrDefaultAsync(x => x.EventId == eventId /*&& x.ApiUserId == userId*/);
+                .FirstOrDefaultAsync(x => x.EventId == eventId);
 
             if (registration == null) return NotFound("Not found that specific registration");
 
@@ -84,7 +78,8 @@ public class RegistrationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> CreateRegistration([FromBody] RegistrationCreateUpdateDto registrationCreateDto)
+    public async Task<IActionResult> CreateRegistration([FromBody] RegistrationCreateUpdateDto registrationCreateDto,
+        string eventId, string userId)
     {
         _logger.LogInformation($"{nameof(CreateRegistration)} called...");
 
@@ -98,7 +93,7 @@ public class RegistrationController : ControllerBase
         try
         {
             var newRegistration = _mapper.Map<Registration>(registrationCreateDto);
-            await _dbContext.Registrations.AddAsync(newRegistration);
+            if (_dbContext.Registrations != null) await _dbContext.Registrations.AddAsync(newRegistration);
             await _dbContext.SaveChangesAsync();
 
             return Ok();
@@ -129,11 +124,11 @@ public class RegistrationController : ControllerBase
 
         try
         {
-            var registration = await _dbContext.Registrations
+            var registration = await (_dbContext.Registrations ?? throw new InvalidOperationException())
                 .Include(x => x.ApiUser)
                 .Include(x => x.Event)
                 .ThenInclude(x => x.ApiUser)
-                .FirstOrDefaultAsync(x => x.EventId == eventId /*&& x.ApiUserId == userId*/);
+                .FirstOrDefaultAsync(x => x.EventId == eventId);
 
             if (registration == null) return NotFound("There is no registration with these eventId and userId");
 
@@ -150,12 +145,12 @@ public class RegistrationController : ControllerBase
         }
     }
 
-
     [HttpPut("{eventId}/{userId}", Name = "UpdateRegistration")]
     [ProducesResponseType(StatusCodes.Status204NoContent)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> UpdateRegistration([FromBody] RegistrationCreateUpdateDto registrationUpdateDto, int eventId,
+    public async Task<IActionResult> UpdateRegistration([FromBody] RegistrationCreateUpdateDto registrationUpdateDto,
+        int eventId,
         int userId)
     {
         _logger.LogInformation($"{nameof(UpdateRegistration)} called...");
@@ -168,8 +163,8 @@ public class RegistrationController : ControllerBase
 
         try
         {
-            var registrationToEdit = await _dbContext.Registrations
-                .FirstOrDefaultAsync(e => e.EventId == eventId /*|| e.ApiUserId == userId*/);
+            var registrationToEdit = await (_dbContext.Registrations ?? throw new InvalidOperationException())
+                .FirstOrDefaultAsync(e => e.EventId == eventId);
 
             if (registrationToEdit == null) return BadRequest("Submitted data is invalid!");
             _mapper.Map(registrationUpdateDto, registrationToEdit);

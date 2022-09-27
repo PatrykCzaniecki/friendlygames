@@ -13,12 +13,12 @@ public class FriendlyGamesDbContext : IdentityDbContext<ApiUser>
     {
     }
 
-    public DbSet<EventCategory> EventCategories { get; set; }
-    public DbSet<SurfaceCategory> SurfaceCategories { get; set; }
-    public DbSet<SurroundingCategory> SurroundingCategories { get; set; }
-    public DbSet<LevelCategory> LevelCategories { get; set; }
-    public DbSet<Event> Events { get; set; }
-    public DbSet<Registration> Registrations { get; set; }
+    public DbSet<EventCategory>? EventCategories { get; set; }
+    public DbSet<SurfaceCategory>? SurfaceCategories { get; set; }
+    public DbSet<SurroundingCategory>? SurroundingCategories { get; set; }
+    public DbSet<LevelCategory>? LevelCategories { get; set; }
+    public DbSet<Event>? Events { get; set; }
+    public DbSet<Registration>? Registrations { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -35,7 +35,6 @@ public class FriendlyGamesDbContext : IdentityDbContext<ApiUser>
             .HasOne(r => r.ApiUser)
             .WithMany(u => u.Registrations)
             .OnDelete(DeleteBehavior.Restrict);
-        
 
         // Seeding data
         modelBuilder.Entity<SurroundingCategory>().HasData(new SurroundingCategory {Id = 1, Name = "Węwnątrz"});
@@ -52,34 +51,57 @@ public class FriendlyGamesDbContext : IdentityDbContext<ApiUser>
         modelBuilder.Entity<LevelCategory>().HasData(new LevelCategory {Id = 3, Name = "Zaawanzowany"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 1, Name = "Koszykówka", ImageForSearchBar = "ball-of-basketball.png", ImageForBoxWithEventInfo = "basketball-box.png"});
+            {
+                Id = 1, Name = "Koszykówka", ImageForSearchBar = "ball-of-basketball.png",
+                ImageForBoxWithEventInfo = "basketball-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 2, Name = "Piłka Nożna", ImageForSearchBar = "football.png", ImageForBoxWithEventInfo = "football-box.png" });
+            {
+                Id = 2, Name = "Piłka Nożna", ImageForSearchBar = "football.png",
+                ImageForBoxWithEventInfo = "football-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 3, Name = "Siłownia", ImageForSearchBar = "dumbbell.png", ImageForBoxWithEventInfo = "siłownia-box.png" });
+            {
+                Id = 3, Name = "Siłownia", ImageForSearchBar = "dumbbell.png",
+                ImageForBoxWithEventInfo = "siłownia-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 4, Name = "Bieganie", ImageForSearchBar = "running.png", ImageForBoxWithEventInfo = "bieganie-box.png" });
+            {
+                Id = 4, Name = "Bieganie", ImageForSearchBar = "running.png",
+                ImageForBoxWithEventInfo = "bieganie-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 5, Name = "Rower", ImageForSearchBar = "bicycle.png", ImageForBoxWithEventInfo = "rower-box.png" });
+            {
+                Id = 5, Name = "Rower", ImageForSearchBar = "bicycle.png", ImageForBoxWithEventInfo = "rower-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 6, Name = "Siatkówka", ImageForSearchBar = "siatkowka.png", ImageForBoxWithEventInfo = "siatkowka-box.png" });
+            {
+                Id = 6, Name = "Siatkówka", ImageForSearchBar = "siatkowka.png",
+                ImageForBoxWithEventInfo = "siatkowka-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 7, Name = "Tenis", ImageForSearchBar = "tennis.png", ImageForBoxWithEventInfo = "tenis-box.png" });
+                {Id = 7, Name = "Tenis", ImageForSearchBar = "tennis.png", ImageForBoxWithEventInfo = "tenis-box.png"});
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 8, Name = "Ping Pong", ImageForSearchBar = "table-tennis.png", ImageForBoxWithEventInfo = "table-tennis-box.png" });
+            {
+                Id = 8, Name = "Ping Pong", ImageForSearchBar = "table-tennis.png",
+                ImageForBoxWithEventInfo = "table-tennis-box.png"
+            });
         modelBuilder.Entity<EventCategory>()
             .HasData(new EventCategory
-                {Id = 9, Name = "Kręgielnia", ImageForSearchBar = "bowling.png", ImageForBoxWithEventInfo = "kręgle-box.png" });
+            {
+                Id = 9, Name = "Kręgielnia", ImageForSearchBar = "bowling.png",
+                ImageForBoxWithEventInfo = "kręgle-box.png"
+            });
         modelBuilder.Entity<IdentityRole>()
-            .HasData(new IdentityRole { Name = "User", NormalizedName = "USER" });
+            .HasData(new IdentityRole {Name = "User", NormalizedName = "USER"});
         modelBuilder.Entity<IdentityRole>()
-            .HasData(new IdentityRole { Name = "Administrator", NormalizedName = "ADMINISTRATOR" });
+            .HasData(new IdentityRole {Name = "Administrator", NormalizedName = "ADMINISTRATOR"});
     }
 }
