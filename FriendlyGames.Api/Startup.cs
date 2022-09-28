@@ -38,8 +38,6 @@ public class Startup
         services.AddScoped<IAuthenticationManager, AuthenticationManager>();
         services.AddScoped<IRegistrationService, RegistrationService>();
 
-        
-        // Solves problem with cyclical dependency between countries and hotels.
         services.AddControllers().AddNewtonsoftJson(options =>
         {
             options.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore;
@@ -61,13 +59,11 @@ public class Startup
             });
         });
 
-        //configure authentication and identity management
         services.AddAuthentication();
         var builder = services.AddIdentityCore<ApiUser>(q => q.User.RequireUniqueEmail = true);
         builder = new IdentityBuilder(builder.UserType, typeof(IdentityRole), services);
         builder.AddEntityFrameworkStores<FriendlyGamesDbContext>().AddDefaultTokenProviders();
 
-        //configure JWT
         var jwtSettings = Configuration.GetSection("Jwt");
         var key = Environment.GetEnvironmentVariable("FRIENDLYGAMES_KEY");
 
