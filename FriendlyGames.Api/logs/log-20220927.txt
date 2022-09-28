@@ -1,0 +1,638 @@
+2022-56-27 14:56:58.704 +02:00 INF Application is starting...
+2022-56-27 14:56:59.762 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-57-27 14:57:00.097 +02:00 INF Now listening on: https://localhost:7089
+2022-57-27 14:57:00.097 +02:00 INF Now listening on: http://localhost:5089
+2022-57-27 14:57:00.099 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-57-27 14:57:00.099 +02:00 INF Hosting environment: Development
+2022-57-27 14:57:00.099 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-57-27 14:57:02.419 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-57-27 14:57:02.726 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 312.2378ms
+2022-57-27 14:57:02.768 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-57-27 14:57:02.773 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 5.7754ms
+2022-57-27 14:57:02.985 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-57-27 14:57:03.198 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 212.6406ms
+2022-58-27 14:58:33.815 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:33.819 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:33.827 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:33.827 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:33.913 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:33.913 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:33.927 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:33.931 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:34.234 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:34.246 +02:00 INF GetEvents called...
+2022-58-27 14:58:34.913 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-58-27 14:58:35.164 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-58-27 14:58:35.165 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-58-27 14:58:35.165 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:35.165 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:35.167 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 1.2200ms
+2022-58-27 14:58:35.167 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 2.7836ms
+2022-58-27 14:58:35.175 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-58-27 14:58:35.175 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:35.178 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:35.178 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:35.190 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-58-27 14:58:35.200 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-58-27 14:58:35.208 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-58-27 14:58:35.209 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 33.7031ms
+2022-58-27 14:58:35.210 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-58-27 14:58:35.210 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:35.211 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-58-27 14:58:35.212 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-58-27 14:58:35.212 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-58-27 14:58:35.212 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 2.0895ms
+2022-58-27 14:58:36.818 +02:00 INF Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:36.818 +02:00 INF Executed DbCommand (50ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:36.928 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:36.944 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.055 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:37.055 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.056 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.056 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:37.057 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:37.060 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 3128.7454ms
+2022-58-27 14:58:37.061 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.062 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 3131.1893ms
+2022-58-27 14:58:37.062 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.064 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:37.064 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.064 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.064 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:37.065 +02:00 INF GetEvents called...
+2022-58-27 14:58:37.069 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 3250.7501ms
+2022-58-27 14:58:37.069 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 3254.4178ms
+2022-58-27 14:58:37.099 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.099 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.106 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:37.106 +02:00 INF Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:37.108 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.108 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.108 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 52.1109ms
+2022-58-27 14:58:37.108 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.108 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 44.098ms
+2022-58-27 14:58:37.108 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.108 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 53.0637ms
+2022-58-27 14:58:37.108 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 44.6959ms
+2022-58-27 14:58:37.110 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:37.110 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:37.110 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.110 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.110 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.110 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.110 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:37.110 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:37.111 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:37.112 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.112 +02:00 INF GetEvents called...
+2022-58-27 14:58:37.114 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:37.114 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.120 +02:00 INF Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:37.120 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.121 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 11.0602ms
+2022-58-27 14:58:37.121 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.121 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 12.0178ms
+2022-58-27 14:58:37.122 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.122 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 12.5501ms
+2022-58-27 14:58:37.123 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.123 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:37.123 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.123 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 13.2344ms
+2022-58-27 14:58:37.123 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.123 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:37.123 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:37.124 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.125 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:37.125 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:37.125 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:37.125 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.125 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:37.126 +02:00 INF GetEvents called...
+2022-58-27 14:58:37.126 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.126 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:37.126 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 2.972ms
+2022-58-27 14:58:37.126 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:37.126 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 3.4924ms
+2022-58-27 14:58:37.127 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:37.129 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:37.130 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 3.9581ms
+2022-58-27 14:58:37.130 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:37.131 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 5.9794ms
+2022-58-27 14:58:38.501 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-58-27 14:58:38.501 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:38.501 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-58-27 14:58:38.502 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-58-27 14:58:38.502 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-58-27 14:58:38.502 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 1.1426ms
+2022-58-27 14:58:38.504 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-58-27 14:58:38.504 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:38.504 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-58-27 14:58:38.504 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-58-27 14:58:38.504 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-58-27 14:58:38.505 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.6698ms
+2022-58-27 14:58:44.999 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-58-27 14:58:44.999 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:44.999 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.2578ms
+2022-58-27 14:58:45.000 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-58-27 14:58:45.001 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.001 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-58-27 14:58:45.003 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-58-27 14:58:45.057 +02:00 INF LoginApiUser called...
+2022-58-27 14:58:45.057 +02:00 INF Login attempt for damian@gmail.com
+2022-58-27 14:58:45.061 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:45.134 +02:00 INF Executed DbCommand (31ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-58-27 14:58:45.208 +02:00 INF Executed DbCommand (3ms) [Parameters=[@__userId_0='ca81e64a-59c4-43d2-8593-eb550efb5442' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-58-27 14:58:45.303 +02:00 INF Executing AcceptedResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-58-27 14:58:45.308 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 304.3391ms
+2022-58-27 14:58:45.308 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-58-27 14:58:45.308 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 202 447 application/json;+charset=utf-8 308.0111ms
+2022-58-27 14:58:45.313 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-58-27 14:58:45.313 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.313 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.3573ms
+2022-58-27 14:58:45.314 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-58-27 14:58:45.314 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.374 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-58-27 14:58:45.375 +02:00 INF Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUser() on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-58-27 14:58:45.381 +02:00 INF Executing JsonResult, writing value of type 'FriendlyGames.Api.Dtos.UserDataDto'.
+2022-58-27 14:58:45.383 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api) in 8.0685ms
+2022-58-27 14:58:45.383 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-58-27 14:58:45.383 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 200 - application/json;+charset=utf-8 69.5572ms
+2022-58-27 14:58:45.408 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:45.408 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:45.408 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.408 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.408 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:45.408 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:45.408 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:45.408 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:45.408 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:45.409 +02:00 INF GetEvents called...
+2022-58-27 14:58:45.409 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:45.409 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:45.419 +02:00 INF Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:45.419 +02:00 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:45.420 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:45.422 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 13.1896ms
+2022-58-27 14:58:45.422 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:45.423 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:45.423 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:45.423 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.423 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:45.423 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:45.422 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 13.9312ms
+2022-58-27 14:58:45.424 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:45.424 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 15.4607ms
+2022-58-27 14:58:45.424 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:45.424 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 16.1629ms
+2022-58-27 14:58:45.425 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:45.425 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:45.428 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:45.428 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:45.428 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:45.428 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:45.429 +02:00 INF GetEvents called...
+2022-58-27 14:58:45.429 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:45.433 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:45.433 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:45.433 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 9.3304ms
+2022-58-27 14:58:45.433 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:45.433 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 9.8780ms
+2022-58-27 14:58:45.434 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:45.435 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 6.1822ms
+2022-58-27 14:58:45.435 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:45.435 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 9.6145ms
+2022-58-27 14:58:47.176 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/12 - -
+2022-58-27 14:58:47.176 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:47.176 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:47.180 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:47.182 +02:00 INF GetEvent called...
+2022-58-27 14:58:47.183 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:47.196 +02:00 INF Executed DbCommand (4ms) [Parameters=[@__id_0='12'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:47.248 +02:00 INF Executed DbCommand (11ms) [Parameters=[@__id_0='12'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:47.264 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:47.269 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 89.4654ms
+2022-58-27 14:58:47.269 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:47.270 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/12 - - - 200 2761 application/json;+charset=utf-8 93.6766ms
+2022-58-27 14:58:47.271 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/12 - -
+2022-58-27 14:58:47.271 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:47.271 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:47.271 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:47.272 +02:00 INF GetEvent called...
+2022-58-27 14:58:47.272 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:47.275 +02:00 INF Executed DbCommand (2ms) [Parameters=[@__id_0='12'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:47.280 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='12'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:47.291 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:47.293 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 21.0465ms
+2022-58-27 14:58:47.293 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:47.293 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/12 - - - 200 2761 application/json;+charset=utf-8 22.4399ms
+2022-58-27 14:58:49.491 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:49.494 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:49.494 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:49.494 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:49.494 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:49.494 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:49.494 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:49.494 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:49.494 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:49.495 +02:00 INF GetEvents called...
+2022-58-27 14:58:49.495 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:49.495 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:49.496 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:49.497 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:49.500 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:49.500 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 6.1067ms
+2022-58-27 14:58:49.500 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:49.501 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 9.5209ms
+2022-58-27 14:58:49.502 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:49.502 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 7.5273ms
+2022-58-27 14:58:49.502 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:49.502 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:49.502 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:49.502 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 8.3914ms
+2022-58-27 14:58:49.503 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:49.503 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:49.503 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:49.503 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:49.504 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:49.504 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:49.506 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:49.506 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:49.507 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:49.507 +02:00 INF GetEvents called...
+2022-58-27 14:58:49.507 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:49.507 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:49.507 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 4.7416ms
+2022-58-27 14:58:49.507 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:49.514 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 5.4484ms
+2022-58-27 14:58:49.516 +02:00 INF Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:49.519 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:49.522 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 15.2813ms
+2022-58-27 14:58:49.522 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:49.523 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 18.9598ms
+2022-58-27 14:58:50.016 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/13 - -
+2022-58-27 14:58:50.017 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:50.017 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:50.017 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:50.017 +02:00 INF GetEvent called...
+2022-58-27 14:58:50.017 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:50.021 +02:00 INF Executed DbCommand (3ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:50.029 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:50.035 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:50.036 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 18.7843ms
+2022-58-27 14:58:50.036 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:50.036 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/13 - - - 200 3516 application/json;+charset=utf-8 19.5016ms
+2022-58-27 14:58:50.037 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/13 - -
+2022-58-27 14:58:50.037 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:50.037 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:50.037 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:50.037 +02:00 INF GetEvent called...
+2022-58-27 14:58:50.038 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:50.040 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:50.046 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:50.052 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:50.052 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 15.319ms
+2022-58-27 14:58:50.052 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:50.053 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/13 - - - 200 3516 application/json;+charset=utf-8 15.8904ms
+2022-58-27 14:58:53.624 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:53.624 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:53.624 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:53.624 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:53.631 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:53.632 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:53.633 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:53.633 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:53.634 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:53.635 +02:00 INF GetEvents called...
+2022-58-27 14:58:53.635 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:53.635 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:53.638 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:53.638 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:53.639 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:53.639 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 13.6386ms
+2022-58-27 14:58:53.639 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:53.639 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 15.7873ms
+2022-58-27 14:58:53.641 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:53.641 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:53.641 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:53.641 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:53.641 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:53.642 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 6.9206ms
+2022-58-27 14:58:53.642 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:53.642 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:53.642 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 10.8496ms
+2022-58-27 14:58:53.642 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:53.644 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:53.644 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:53.644 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:53.645 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:53.645 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:53.645 +02:00 INF GetEvents called...
+2022-58-27 14:58:53.649 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:53.651 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:53.652 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 10.8502ms
+2022-58-27 14:58:53.652 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:53.652 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:53.653 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 11.4414ms
+2022-58-27 14:58:53.663 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:53.663 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 18.5221ms
+2022-58-27 14:58:53.663 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:53.663 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 18.9767ms
+2022-58-27 14:58:55.055 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events?categoryId=2 - -
+2022-58-27 14:58:55.055 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:55.055 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:55.056 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:55.061 +02:00 INF GetEvents called...
+2022-58-27 14:58:55.061 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:55.071 +02:00 INF Executed DbCommand (3ms) [Parameters=[@__categoryId_0='2' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+WHERE [e].[EventCategoryId] = @__categoryId_0
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:55.073 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:55.073 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 17.7874ms
+2022-58-27 14:58:55.073 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:55.074 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events?categoryId=2 - - - 200 2223 application/json;+charset=utf-8 18.2303ms
+2022-58-27 14:58:55.741 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events?categoryId=1 - -
+2022-58-27 14:58:55.741 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:55.741 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:55.741 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:55.741 +02:00 INF GetEvents called...
+2022-58-27 14:58:55.742 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:55.743 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__categoryId_0='1' (Nullable = true)], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+WHERE [e].[EventCategoryId] = @__categoryId_0
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:55.745 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:55.753 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 11.6322ms
+2022-58-27 14:58:55.753 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:55.781 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events?categoryId=1 - - - 200 3477 application/json;+charset=utf-8 12.2761ms
+2022-58-27 14:58:57.064 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/13 - -
+2022-58-27 14:58:57.064 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:57.064 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:57.064 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:57.064 +02:00 INF GetEvent called...
+2022-58-27 14:58:57.065 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:57.071 +02:00 INF Executed DbCommand (6ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:57.075 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:57.079 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:57.080 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 15.3691ms
+2022-58-27 14:58:57.080 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:57.080 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/13 - - - 200 3516 application/json;+charset=utf-8 15.8709ms
+2022-58-27 14:58:57.081 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events/13 - -
+2022-58-27 14:58:57.081 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:57.081 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:57.081 +02:00 INF Route matched with {action = "GetEvent", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventsDto]] GetEvent(Int32) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:57.081 +02:00 INF GetEvent called...
+2022-58-27 14:58:57.082 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:57.086 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [Registrations] AS [r]
+INNER JOIN [AspNetUsers] AS [a] ON [r].[ApiUserId] = [a].[Id]
+WHERE [r].[EventId] = @__id_0
+2022-58-27 14:58:57.089 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__id_0='13'], CommandType='"Text"', CommandTimeout='30']
+SELECT [t].[Id], [t].[ApiUserId], [t].[City], [t].[EndDateTime], [t].[EventCategoryId], [t].[LevelCategoryId], [t].[MaxNumberOfPlayers], [t].[Name], [t].[PriceForEvent], [t].[StartDateTime], [t].[Street], [t].[SurfaceCategoryId], [t].[SurroundingCategoryId], [t].[Id0], [t].[AccessFailedCount], [t].[ConcurrencyStamp], [t].[Email], [t].[EmailConfirmed], [t].[FirstName], [t].[LastName], [t].[LockoutEnabled], [t].[LockoutEnd], [t].[NormalizedEmail], [t].[NormalizedUserName], [t].[PasswordHash], [t].[PhoneNumber], [t].[PhoneNumberConfirmed], [t].[SecurityStamp], [t].[TwoFactorEnabled], [t].[UserName], [t].[Id1], [t].[ImageForBoxWithEventInfo], [t].[ImageForSearchBar], [t].[Name0], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [t].[Name1], [t].[Name2], [t].[Name3]
+FROM (
+    SELECT TOP(1) [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [a].[Id] AS [Id0], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName], [e0].[Id] AS [Id1], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name] AS [Name0], [l].[Id] AS [Id2], [l].[Name] AS [Name1], [s].[Id] AS [Id3], [s].[Name] AS [Name2], [s0].[Id] AS [Id4], [s0].[Name] AS [Name3]
+    FROM [Events] AS [e]
+    INNER JOIN [AspNetUsers] AS [a] ON [e].[ApiUserId] = [a].[Id]
+    INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+    INNER JOIN [LevelCategories] AS [l] ON [e].[LevelCategoryId] = [l].[Id]
+    INNER JOIN [SurfaceCategories] AS [s] ON [e].[SurfaceCategoryId] = [s].[Id]
+    INNER JOIN [SurroundingCategories] AS [s0] ON [e].[SurroundingCategoryId] = [s0].[Id]
+    WHERE [e].[Id] = @__id_0
+) AS [t]
+LEFT JOIN [Registrations] AS [r] ON [t].[Id] = [r].[EventId]
+ORDER BY [t].[Id], [t].[Id0], [t].[Id1], [t].[Id2], [t].[Id3], [t].[Id4], [r].[EventId]
+2022-58-27 14:58:57.093 +02:00 INF Executing OkObjectResult, writing value of type 'FriendlyGames.Domain.Models.Event'.
+2022-58-27 14:58:57.093 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api) in 11.8492ms
+2022-58-27 14:58:57.093 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvent (FriendlyGames.Api)'
+2022-58-27 14:58:57.093 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events/13 - - - 200 3516 application/json;+charset=utf-8 12.5535ms
+2022-58-27 14:58:58.669 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:58.669 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:58.669 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:58.669 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:58.669 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:58.669 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:58.669 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:58.670 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:58.670 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:58.670 +02:00 INF GetEvents called...
+2022-58-27 14:58:58.670 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:58.670 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:58.676 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:58.677 +02:00 INF Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:58.683 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:58.685 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 15.5157ms
+2022-58-27 14:58:58.685 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:58.685 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:58.685 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 16.1020ms
+2022-58-27 14:58:58.685 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 15.8992ms
+2022-58-27 14:58:58.685 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:58.686 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 16.2447ms
+2022-58-27 14:58:58.687 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-58-27 14:58:58.687 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-58-27 14:58:58.687 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:58.687 +02:00 INF CORS policy execution successful.
+2022-58-27 14:58:58.687 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:58.687 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:58.687 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-58-27 14:58:58.687 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-58-27 14:58:58.687 +02:00 INF GetEvents called...
+2022-58-27 14:58:58.687 +02:00 INF GetEventCategory called...
+2022-58-27 14:58:58.688 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:58.688 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-58-27 14:58:58.690 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-58-27 14:58:58.691 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-58-27 14:58:58.694 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:58.697 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 9.2373ms
+2022-58-27 14:58:58.697 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-58-27 14:58:58.697 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 9.9716ms
+2022-58-27 14:58:58.698 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-58-27 14:58:58.698 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 11.0407ms
+2022-58-27 14:58:58.698 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-58-27 14:58:58.699 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 5699 application/json;+charset=utf-8 11.7269ms

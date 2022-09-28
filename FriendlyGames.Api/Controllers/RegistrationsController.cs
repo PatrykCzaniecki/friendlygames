@@ -78,8 +78,7 @@ public class RegistrationController : ControllerBase
     [ProducesResponseType(StatusCodes.Status201Created)]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     [ProducesResponseType(StatusCodes.Status500InternalServerError)]
-    public async Task<IActionResult> CreateRegistration([FromBody] RegistrationCreateUpdateDto registrationCreateDto,
-        string eventId, string userId)
+    public async Task<IActionResult> CreateRegistration([FromBody] RegistrationCreateUpdateDto registrationCreateDto)
     {
         _logger.LogInformation($"{nameof(CreateRegistration)} called...");
 
