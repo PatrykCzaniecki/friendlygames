@@ -1,6 +1,6 @@
 ﻿using FriendlyGames.Api.Dtos;
 
-namespace FriendlyGames.Api.Infrastructure;
+namespace FriendlyGames.Api.Services;
 
 public interface IAuthenticationManager
 {

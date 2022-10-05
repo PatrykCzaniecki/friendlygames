@@ -1,0 +1,49 @@
+2022-12-05 13:12:01.985 +02:00 INF Application is starting...
+2022-12-05 13:12:05.488 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-12-05 13:12:06.518 +02:00 INF Now listening on: https://localhost:7089
+2022-12-05 13:12:06.518 +02:00 INF Now listening on: http://localhost:5089
+2022-12-05 13:12:06.520 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-12-05 13:12:06.520 +02:00 INF Hosting environment: Development
+2022-12-05 13:12:06.520 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-12-05 13:12:07.006 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger - -
+2022-12-05 13:12:07.135 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger - - - 301 0 - 131.4035ms
+2022-12-05 13:12:07.138 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-12-05 13:12:07.407 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 269.3310ms
+2022-12-05 13:12:07.418 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-12-05 13:12:07.418 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui.css - -
+2022-12-05 13:12:07.418 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui-bundle.js - -
+2022-12-05 13:12:07.419 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/swagger-ui-standalone-preset.js - -
+2022-12-05 13:12:07.427 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 8.3898ms
+2022-12-05 13:12:07.436 +02:00 INF Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2022-12-05 13:12:07.448 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui.css - - - 200 143943 text/css 29.7499ms
+2022-12-05 13:12:07.455 +02:00 INF Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2022-12-05 13:12:07.458 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui-standalone-preset.js - - - 200 339486 application/javascript 38.9704ms
+2022-12-05 13:12:07.488 +02:00 INF Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2022-12-05 13:12:07.488 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/swagger-ui-bundle.js - - - 200 1096145 application/javascript 69.6157ms
+2022-12-05 13:12:07.649 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-12-05 13:12:07.678 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/favicon-32x32.png - -
+2022-12-05 13:12:07.680 +02:00 INF Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2022-12-05 13:12:07.680 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/favicon-32x32.png - - - 200 628 image/png 2.3044ms
+2022-12-05 13:12:07.779 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 129.9880ms
+2022-12-05 13:12:32.384 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json-patch+json 65
+2022-12-05 13:12:32.387 +02:00 INF CORS policy execution failed.
+2022-12-05 13:12:32.387 +02:00 INF Request origin https://localhost:7089 does not have permission to access the resource.
+2022-12-05 13:12:32.790 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-12-05 13:12:32.817 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-12-05 13:12:33.722 +02:00 INF LoginApiUser called...
+2022-12-05 13:12:33.722 +02:00 INF Login attempt for jkowalski@example.com
+2022-12-05 13:12:34.448 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-12-05 13:12:34.707 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-12-05 13:12:37.450 +02:00 INF Executed DbCommand (78ms) [Parameters=[@__normalizedEmail_0='JKOWALSKI@EXAMPLE.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-12-05 13:12:37.686 +02:00 INF Executed DbCommand (5ms) [Parameters=[@__userId_0='9ed6d20f-5363-4321-b762-3f029a871de8' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-12-05 13:12:37.882 +02:00 INF Executing AcceptedResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-12-05 13:12:37.929 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 5106.6749ms
+2022-12-05 13:12:37.930 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-12-05 13:12:37.939 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json-patch+json 65 - 202 449 application/json;+charset=utf-8 5555.6340ms

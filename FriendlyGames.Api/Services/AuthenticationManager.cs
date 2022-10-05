@@ -6,7 +6,7 @@ using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 
-namespace FriendlyGames.Api.Infrastructure;
+namespace FriendlyGames.Api.Services;
 
 public class AuthenticationManager : IAuthenticationManager
 {
