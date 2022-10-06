@@ -5,6 +5,7 @@ using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 
 namespace FriendlyGames.Api.Controllers;
 
@@ -68,7 +69,8 @@ public class UsersController : ControllerBase
 
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
-        if (!await _authenticationManager.ValidateApiUser(userDto)) return Unauthorized(userDto);
+        var errorString = "Zły email lub hasło";
+        if (!await _authenticationManager.ValidateApiUser(userDto)) return Unauthorized(JsonConvert.SerializeObject(errorString));
 
         return Accepted(new {Token = await _authenticationManager.CreateJwtToken()});
     }

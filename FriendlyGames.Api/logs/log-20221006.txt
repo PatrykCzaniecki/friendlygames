@@ -1,0 +1,823 @@
+2022-34-06 18:34:21.550 +02:00 INF Application is starting...
+2022-34-06 18:34:25.301 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-34-06 18:34:26.373 +02:00 INF Now listening on: https://localhost:7089
+2022-34-06 18:34:26.373 +02:00 INF Now listening on: http://localhost:5089
+2022-34-06 18:34:26.375 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-34-06 18:34:26.375 +02:00 INF Hosting environment: Development
+2022-34-06 18:34:26.375 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-34-06 18:34:26.939 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-34-06 18:34:27.339 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 401.3319ms
+2022-34-06 18:34:27.354 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-34-06 18:34:27.359 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 5.5948ms
+2022-34-06 18:34:27.507 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-34-06 18:34:27.644 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 137.0005ms
+2022-37-06 18:37:08.415 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-37-06 18:37:08.415 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-37-06 18:37:08.419 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:08.419 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:08.421 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 6.0224ms
+2022-37-06 18:37:08.421 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 6.1699ms
+2022-37-06 18:37:08.425 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-37-06 18:37:08.426 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:08.892 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-37-06 18:37:08.899 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-37-06 18:37:08.907 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-37-06 18:37:08.908 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 482.6333ms
+2022-37-06 18:37:08.909 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-37-06 18:37:08.909 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:08.911 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-37-06 18:37:08.912 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-37-06 18:37:08.912 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-37-06 18:37:08.912 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 3.5189ms
+2022-37-06 18:37:16.225 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-37-06 18:37:16.225 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:16.225 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.3084ms
+2022-37-06 18:37:16.226 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-37-06 18:37:16.226 +02:00 INF CORS policy execution successful.
+2022-37-06 18:37:16.230 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-37-06 18:37:16.261 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-37-06 18:37:23.521 +02:00 INF LoginApiUser called...
+2022-37-06 18:37:25.627 +02:00 INF Login attempt for damian@gmail.com
+2022-37-06 18:37:30.055 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-37-06 18:37:30.301 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-37-06 18:37:32.972 +02:00 INF Executed DbCommand (74ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-37-06 18:37:33.122 +02:00 WRN Invalid password for user.
+2022-37-06 18:37:43.570 +02:00 INF Executing UnauthorizedObjectResult, writing value of type 'FriendlyGames.Api.Dtos.LoginApiUserDto'.
+2022-37-06 18:37:43.613 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 27347.3872ms
+2022-37-06 18:37:43.615 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-37-06 18:37:43.625 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 401 51 application/json;+charset=utf-8 27398.9685ms
+2022-38-06 18:38:53.647 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-38-06 18:38:53.647 +02:00 INF CORS policy execution successful.
+2022-38-06 18:38:53.647 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.5781ms
+2022-38-06 18:38:53.651 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-38-06 18:38:53.651 +02:00 INF CORS policy execution successful.
+2022-38-06 18:38:53.651 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-38-06 18:38:53.652 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-38-06 18:38:53.652 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-38-06 18:38:53.652 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.9051ms
+2022-38-06 18:38:58.053 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-38-06 18:38:58.053 +02:00 INF CORS policy execution successful.
+2022-38-06 18:38:58.053 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.2172ms
+2022-38-06 18:38:58.054 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-38-06 18:38:58.054 +02:00 INF CORS policy execution successful.
+2022-38-06 18:38:58.054 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-38-06 18:38:58.054 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-39-06 18:39:00.182 +02:00 INF LoginApiUser called...
+2022-39-06 18:39:00.182 +02:00 INF Login attempt for damian@gmail.com
+2022-39-06 18:39:00.216 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-39-06 18:39:00.227 +02:00 INF Executed DbCommand (6ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-39-06 18:39:00.234 +02:00 WRN Invalid password for user.
+2022-39-06 18:39:00.235 +02:00 INF Executing UnauthorizedObjectResult, writing value of type 'FriendlyGames.Api.Dtos.LoginApiUserDto'.
+2022-39-06 18:39:00.235 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 2180.4454ms
+2022-39-06 18:39:00.235 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-39-06 18:39:00.235 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 401 51 application/json;+charset=utf-8 2181.2148ms
+2022-40-06 18:40:32.259 +02:00 INF Application is starting...
+2022-40-06 18:40:33.133 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-40-06 18:40:33.688 +02:00 INF Now listening on: https://localhost:7089
+2022-40-06 18:40:33.688 +02:00 INF Now listening on: http://localhost:5089
+2022-40-06 18:40:33.692 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-40-06 18:40:33.692 +02:00 INF Hosting environment: Development
+2022-40-06 18:40:33.692 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-40-06 18:40:34.177 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-40-06 18:40:34.415 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 238.4987ms
+2022-40-06 18:40:34.429 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-40-06 18:40:34.434 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 4.7835ms
+2022-40-06 18:40:34.555 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-40-06 18:40:34.703 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 147.7041ms
+2022-40-06 18:40:36.541 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-40-06 18:40:36.544 +02:00 INF CORS policy execution successful.
+2022-40-06 18:40:36.545 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 4.1003ms
+2022-40-06 18:40:36.546 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-40-06 18:40:36.547 +02:00 INF CORS policy execution successful.
+2022-40-06 18:40:36.644 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-40-06 18:40:36.666 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-40-06 18:40:39.134 +02:00 INF LoginApiUser called...
+2022-40-06 18:40:39.134 +02:00 INF Login attempt for damian@gmail.com
+2022-40-06 18:40:39.794 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-40-06 18:40:40.049 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-40-06 18:40:40.946 +02:00 INF Executed DbCommand (74ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-40-06 18:40:41.090 +02:00 WRN Invalid password for user.
+2022-40-06 18:40:41.100 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-40-06 18:40:41.107 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 4435.6322ms
+2022-40-06 18:40:41.108 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-40-06 18:40:41.119 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 4573.1120ms
+2022-43-06 18:43:04.009 +02:00 INF Application is starting...
+2022-43-06 18:43:04.793 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-43-06 18:43:05.229 +02:00 INF Now listening on: https://localhost:7089
+2022-43-06 18:43:05.229 +02:00 INF Now listening on: http://localhost:5089
+2022-43-06 18:43:05.233 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-43-06 18:43:05.234 +02:00 INF Hosting environment: Development
+2022-43-06 18:43:05.234 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-43-06 18:43:05.837 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-43-06 18:43:06.079 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 245.0763ms
+2022-43-06 18:43:06.088 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-43-06 18:43:06.092 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 3.7941ms
+2022-43-06 18:43:06.211 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-43-06 18:43:06.346 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 134.9439ms
+2022-43-06 18:43:10.825 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-43-06 18:43:10.832 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:10.833 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 7.8746ms
+2022-43-06 18:43:10.835 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-43-06 18:43:10.835 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:10.918 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-43-06 18:43:10.940 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-43-06 18:43:13.360 +02:00 INF LoginApiUser called...
+2022-43-06 18:43:13.360 +02:00 INF Login attempt for damian@gmail.com
+2022-43-06 18:43:14.016 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-43-06 18:43:14.267 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-43-06 18:43:15.140 +02:00 INF Executed DbCommand (73ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-43-06 18:43:15.269 +02:00 WRN Invalid password for user.
+2022-43-06 18:43:15.294 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-43-06 18:43:15.303 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 4357.021ms
+2022-43-06 18:43:15.305 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-43-06 18:43:15.319 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 4484.4116ms
+2022-43-06 18:43:55.623 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-43-06 18:43:55.624 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:55.624 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 1.5501ms
+2022-43-06 18:43:55.631 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-43-06 18:43:55.631 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:55.645 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-43-06 18:43:55.651 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-43-06 18:43:55.664 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-43-06 18:43:55.664 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 33.4033ms
+2022-43-06 18:43:56.584 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-43-06 18:43:56.584 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:56.584 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.2446ms
+2022-43-06 18:43:56.585 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-43-06 18:43:56.585 +02:00 INF CORS policy execution successful.
+2022-43-06 18:43:56.586 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-43-06 18:43:56.587 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-43-06 18:43:58.975 +02:00 INF LoginApiUser called...
+2022-43-06 18:43:58.975 +02:00 INF Login attempt for damian@gmail.com
+2022-43-06 18:43:59.009 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-43-06 18:43:59.018 +02:00 INF Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-43-06 18:43:59.025 +02:00 WRN Invalid password for user.
+2022-43-06 18:43:59.025 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-43-06 18:43:59.025 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 2438.623ms
+2022-43-06 18:43:59.025 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-43-06 18:43:59.026 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 2440.8873ms
+2022-44-06 18:44:09.648 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-44-06 18:44:09.648 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:09.648 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.6351ms
+2022-44-06 18:44:09.650 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-44-06 18:44:09.650 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:09.651 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-44-06 18:44:09.651 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-44-06 18:44:09.652 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-44-06 18:44:09.652 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 2.2527ms
+2022-44-06 18:44:11.767 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-44-06 18:44:11.767 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:11.768 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.3917ms
+2022-44-06 18:44:11.772 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-44-06 18:44:11.772 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:11.772 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-44-06 18:44:11.772 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-44-06 18:44:11.783 +02:00 INF LoginApiUser called...
+2022-44-06 18:44:11.783 +02:00 INF Login attempt for damian@gmail.com
+2022-44-06 18:44:11.790 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-44-06 18:44:11.792 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-44-06 18:44:11.799 +02:00 WRN Invalid password for user.
+2022-44-06 18:44:11.799 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-44-06 18:44:11.799 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 26.7959ms
+2022-44-06 18:44:11.799 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-44-06 18:44:11.799 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 27.3300ms
+2022-44-06 18:44:11.804 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-44-06 18:44:11.804 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:11.804 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-44-06 18:44:11.805 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-44-06 18:44:11.805 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-44-06 18:44:11.805 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.7930ms
+2022-44-06 18:44:36.641 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-44-06 18:44:36.641 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:36.642 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.2735ms
+2022-44-06 18:44:36.643 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-44-06 18:44:36.643 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:36.643 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-44-06 18:44:36.643 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-44-06 18:44:36.643 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-44-06 18:44:36.643 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.4397ms
+2022-44-06 18:44:37.815 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-44-06 18:44:37.815 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:37.816 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.2709ms
+2022-44-06 18:44:37.817 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-44-06 18:44:37.817 +02:00 INF CORS policy execution successful.
+2022-44-06 18:44:37.817 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-44-06 18:44:37.817 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-44-06 18:44:37.817 +02:00 INF LoginApiUser called...
+2022-44-06 18:44:37.818 +02:00 INF Login attempt for damian@gmail.com
+2022-44-06 18:44:37.818 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-44-06 18:44:37.820 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-44-06 18:44:37.827 +02:00 WRN Invalid password for user.
+2022-44-06 18:44:37.827 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-44-06 18:44:37.827 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.9719ms
+2022-44-06 18:44:37.827 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-44-06 18:44:37.827 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 10.7116ms
+2022-03-06 19:03:40.428 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-03-06 19:03:40.429 +02:00 INF CORS policy execution successful.
+2022-03-06 19:03:40.432 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 4.0347ms
+2022-03-06 19:03:40.434 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-03-06 19:03:40.434 +02:00 INF CORS policy execution successful.
+2022-03-06 19:03:40.434 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-03-06 19:03:40.434 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-03-06 19:03:40.434 +02:00 INF LoginApiUser called...
+2022-03-06 19:03:40.434 +02:00 INF Login attempt for damian@gmail.com
+2022-03-06 19:03:40.435 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-03-06 19:03:41.181 +02:00 INF Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-03-06 19:03:41.189 +02:00 WRN Invalid password for user.
+2022-03-06 19:03:41.189 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-03-06 19:03:41.190 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 755.5455ms
+2022-03-06 19:03:41.190 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-03-06 19:03:41.190 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 756.0732ms
+2022-07-06 19:07:50.602 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-07-06 19:07:50.602 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:50.602 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 1.4399ms
+2022-07-06 19:07:50.615 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-07-06 19:07:50.615 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:50.618 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-07-06 19:07:50.619 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-07-06 19:07:50.619 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-07-06 19:07:50.621 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 6.8582ms
+2022-07-06 19:07:53.270 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-07-06 19:07:53.270 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:53.270 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.5677ms
+2022-07-06 19:07:53.272 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-07-06 19:07:53.272 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:53.272 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-07-06 19:07:53.272 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-07-06 19:07:53.272 +02:00 INF LoginApiUser called...
+2022-07-06 19:07:53.272 +02:00 INF Login attempt for damian@gmail.com
+2022-07-06 19:07:53.273 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-07-06 19:07:53.275 +02:00 INF Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-07-06 19:07:53.283 +02:00 WRN Invalid password for user.
+2022-07-06 19:07:53.283 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-07-06 19:07:53.283 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 11.0083ms
+2022-07-06 19:07:53.283 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-07-06 19:07:53.283 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 11.6083ms
+2022-07-06 19:07:59.012 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-07-06 19:07:59.012 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:59.012 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.2562ms
+2022-07-06 19:07:59.013 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-07-06 19:07:59.014 +02:00 INF CORS policy execution successful.
+2022-07-06 19:07:59.014 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-07-06 19:07:59.014 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-07-06 19:07:59.014 +02:00 INF LoginApiUser called...
+2022-07-06 19:07:59.014 +02:00 INF Login attempt for damian@gmail.com
+2022-07-06 19:07:59.014 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-07-06 19:07:59.015 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-07-06 19:07:59.023 +02:00 WRN Invalid password for user.
+2022-07-06 19:07:59.023 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-07-06 19:07:59.023 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.1482ms
+2022-07-06 19:07:59.023 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-07-06 19:07:59.023 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 400 - text/plain;+charset=utf-8 9.7417ms
+2022-09-06 19:09:34.594 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-09-06 19:09:34.594 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:34.594 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.3471ms
+2022-09-06 19:09:34.599 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-09-06 19:09:34.599 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:34.599 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-09-06 19:09:34.599 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-09-06 19:09:34.599 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-09-06 19:09:34.599 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.4134ms
+2022-09-06 19:09:37.118 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-09-06 19:09:37.124 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:37.124 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-09-06 19:09:37.126 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-09-06 19:09:37.126 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-09-06 19:09:37.127 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 9.2160ms
+2022-09-06 19:09:37.127 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-09-06 19:09:37.127 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:37.127 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-09-06 19:09:37.128 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-09-06 19:09:37.128 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-09-06 19:09:37.128 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.4217ms
+2022-09-06 19:09:41.665 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-09-06 19:09:41.665 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:41.665 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.1999ms
+2022-09-06 19:09:41.666 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-09-06 19:09:41.666 +02:00 INF CORS policy execution successful.
+2022-09-06 19:09:41.666 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-09-06 19:09:41.667 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-09-06 19:09:41.667 +02:00 INF LoginApiUser called...
+2022-09-06 19:09:41.667 +02:00 INF Login attempt for damian@gmail.com
+2022-09-06 19:09:41.667 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-09-06 19:09:41.668 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-09-06 19:09:41.675 +02:00 WRN Invalid password for user.
+2022-09-06 19:09:41.676 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-09-06 19:09:41.676 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.0687ms
+2022-09-06 19:09:41.676 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-09-06 19:09:41.676 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 400 - text/plain;+charset=utf-8 9.5617ms
+2022-10-06 19:10:00.600 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-10-06 19:10:00.600 +02:00 INF CORS policy execution successful.
+2022-10-06 19:10:00.600 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.2169ms
+2022-10-06 19:10:00.607 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-10-06 19:10:00.607 +02:00 INF CORS policy execution successful.
+2022-10-06 19:10:00.607 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-10-06 19:10:00.607 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-10-06 19:10:00.607 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-10-06 19:10:00.607 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.4167ms
+2022-10-06 19:10:02.768 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-10-06 19:10:02.768 +02:00 INF CORS policy execution successful.
+2022-10-06 19:10:02.768 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.1966ms
+2022-10-06 19:10:02.769 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-10-06 19:10:02.769 +02:00 INF CORS policy execution successful.
+2022-10-06 19:10:02.769 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-10-06 19:10:02.769 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-10-06 19:10:02.770 +02:00 INF LoginApiUser called...
+2022-10-06 19:10:02.770 +02:00 INF Login attempt for damian@gmail.com
+2022-10-06 19:10:02.770 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-10-06 19:10:02.771 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-10-06 19:10:02.779 +02:00 WRN Invalid password for user.
+2022-10-06 19:10:02.779 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-10-06 19:10:02.779 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.608ms
+2022-10-06 19:10:02.779 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-10-06 19:10:02.779 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 400 - text/plain;+charset=utf-8 10.2626ms
+2022-13-06 19:13:21.227 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-13-06 19:13:21.227 +02:00 INF CORS policy execution successful.
+2022-13-06 19:13:21.227 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 1.9808ms
+2022-13-06 19:13:21.237 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-13-06 19:13:21.237 +02:00 INF CORS policy execution successful.
+2022-13-06 19:13:21.237 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-13-06 19:13:21.238 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-13-06 19:13:21.238 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-13-06 19:13:21.238 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.9474ms
+2022-13-06 19:13:23.178 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-13-06 19:13:23.178 +02:00 INF CORS policy execution successful.
+2022-13-06 19:13:23.178 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.3775ms
+2022-13-06 19:13:23.183 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-13-06 19:13:23.183 +02:00 INF CORS policy execution successful.
+2022-13-06 19:13:23.183 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-13-06 19:13:23.183 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-13-06 19:13:23.183 +02:00 INF LoginApiUser called...
+2022-13-06 19:13:23.183 +02:00 INF Login attempt for damian@gmail.com
+2022-13-06 19:13:23.184 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-13-06 19:13:23.185 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-13-06 19:13:23.193 +02:00 WRN Invalid password for user.
+2022-13-06 19:13:23.193 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-13-06 19:13:23.193 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.8746ms
+2022-13-06 19:13:23.193 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-13-06 19:13:23.193 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 400 - text/plain;+charset=utf-8 10.3921ms
+2022-14-06 19:14:24.578 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-14-06 19:14:24.579 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:24.582 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 3.8239ms
+2022-14-06 19:14:24.609 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-14-06 19:14:24.609 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:24.609 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-14-06 19:14:24.609 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-14-06 19:14:24.609 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-14-06 19:14:24.610 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 0.7210ms
+2022-14-06 19:14:31.872 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-14-06 19:14:31.872 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:31.872 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.3167ms
+2022-14-06 19:14:31.875 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-14-06 19:14:31.875 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:31.875 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-14-06 19:14:31.875 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-14-06 19:14:31.875 +02:00 INF LoginApiUser called...
+2022-14-06 19:14:31.876 +02:00 INF Login attempt for damian@gmail.com
+2022-14-06 19:14:31.876 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:31.878 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-14-06 19:14:31.972 +02:00 INF Executed DbCommand (3ms) [Parameters=[@__userId_0='ca81e64a-59c4-43d2-8593-eb550efb5442' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-14-06 19:14:32.070 +02:00 INF Executing AcceptedResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-14-06 19:14:32.095 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 219.4135ms
+2022-14-06 19:14:32.095 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-14-06 19:14:32.095 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 202 447 application/json;+charset=utf-8 219.9094ms
+2022-14-06 19:14:32.101 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-14-06 19:14:32.101 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.101 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.2736ms
+2022-14-06 19:14:32.102 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-14-06 19:14:32.102 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.167 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-14-06 19:14:32.168 +02:00 INF Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUser() on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-14-06 19:14:32.174 +02:00 INF Executing JsonResult, writing value of type 'FriendlyGames.Api.Dtos.UserDataDto'.
+2022-14-06 19:14:32.176 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api) in 8.0596ms
+2022-14-06 19:14:32.176 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-14-06 19:14:32.176 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 200 - application/json;+charset=utf-8 73.8983ms
+2022-14-06 19:14:32.226 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-14-06 19:14:32.226 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.226 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:32.226 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-14-06 19:14:32.227 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.227 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:32.231 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:32.232 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-14-06 19:14:32.233 +02:00 INF GetEventCategory called...
+2022-14-06 19:14:32.234 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:32.234 +02:00 INF GetEvents called...
+2022-14-06 19:14:32.237 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:32.240 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:32.268 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:32.277 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 46.4651ms
+2022-14-06 19:14:32.277 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:32.278 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 51.8989ms
+2022-14-06 19:14:32.279 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-14-06 19:14:32.279 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.279 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:32.279 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:32.279 +02:00 INF GetEventCategory called...
+2022-14-06 19:14:32.280 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:32.281 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:32.282 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:32.283 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 3.7227ms
+2022-14-06 19:14:32.283 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:32.283 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 4.3315ms
+2022-14-06 19:14:32.327 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-14-06 19:14:32.388 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:32.407 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 174.3234ms
+2022-14-06 19:14:32.407 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:32.407 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 183.6724ms
+2022-14-06 19:14:32.408 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-14-06 19:14:32.408 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:32.408 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:32.408 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-14-06 19:14:32.408 +02:00 INF GetEvents called...
+2022-14-06 19:14:32.409 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:32.410 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-14-06 19:14:32.411 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:32.412 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 3.3687ms
+2022-14-06 19:14:32.412 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:32.412 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 3.8979ms
+2022-14-06 19:14:34.306 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories - -
+2022-14-06 19:14:34.306 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:34.306 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api)'
+2022-14-06 19:14:34.309 +02:00 INF Route matched with {action = "GetCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.Dictionary`2[System.String,System.Object]]] GetCategories() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:34.311 +02:00 INF GetCategories called...
+2022-14-06 19:14:34.312 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:34.313 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:34.324 +02:00 INF Executed DbCommand (2ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Name]
+FROM [LevelCategories] AS [l]
+2022-14-06 19:14:34.333 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurfaceCategories] AS [s]
+2022-14-06 19:14:34.356 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-14-06 19:14:34.360 +02:00 INF Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ActionResult`1[[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-14-06 19:14:34.369 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api) in 60.3437ms
+2022-14-06 19:14:34.369 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api)'
+2022-14-06 19:14:34.370 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories - - - 200 1411 application/json;+charset=utf-8 63.4323ms
+2022-14-06 19:14:34.371 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories - -
+2022-14-06 19:14:34.371 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:34.371 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api)'
+2022-14-06 19:14:34.371 +02:00 INF Route matched with {action = "GetCategories", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.Dictionary`2[System.String,System.Object]]] GetCategories() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:34.371 +02:00 INF GetCategories called...
+2022-14-06 19:14:34.371 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:34.373 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:34.374 +02:00 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [l].[Id], [l].[Name]
+FROM [LevelCategories] AS [l]
+2022-14-06 19:14:34.375 +02:00 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurfaceCategories] AS [s]
+2022-14-06 19:14:34.376 +02:00 INF Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [s].[Id], [s].[Name]
+FROM [SurroundingCategories] AS [s]
+2022-14-06 19:14:34.376 +02:00 INF Executing OkObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ActionResult`1[[System.Collections.Generic.Dictionary`2[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e],[System.Object, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]], System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-14-06 19:14:34.377 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api) in 5.6954ms
+2022-14-06 19:14:34.377 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetCategories (FriendlyGames.Api)'
+2022-14-06 19:14:34.377 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories - - - 200 1411 application/json;+charset=utf-8 6.3418ms
+2022-14-06 19:14:35.770 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-14-06 19:14:35.770 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-14-06 19:14:35.771 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:35.771 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:35.771 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:35.771 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:35.771 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-14-06 19:14:35.771 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:35.771 +02:00 INF GetEventCategory called...
+2022-14-06 19:14:35.771 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:35.772 +02:00 INF GetEvents called...
+2022-14-06 19:14:35.776 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:35.777 +02:00 INF Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:35.782 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:35.784 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 11.2307ms
+2022-14-06 19:14:35.784 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:35.786 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 15.2320ms
+2022-14-06 19:14:35.786 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-14-06 19:14:35.786 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-14-06 19:14:35.786 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:35.786 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:35.786 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-14-06 19:14:35.787 +02:00 INF GetEventCategory called...
+2022-14-06 19:14:35.787 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:35.789 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:35.796 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 21.5998ms
+2022-14-06 19:14:35.798 +02:00 INF Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-14-06 19:14:35.798 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:35.798 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 28.1405ms
+2022-14-06 19:14:35.800 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:35.813 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 26.3394ms
+2022-14-06 19:14:35.813 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-14-06 19:14:35.813 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-14-06 19:14:35.813 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:35.813 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 26.8997ms
+2022-14-06 19:14:35.813 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:35.815 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-14-06 19:14:35.815 +02:00 INF GetEvents called...
+2022-14-06 19:14:35.816 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:35.820 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-14-06 19:14:35.822 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-14-06 19:14:35.822 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 6.7631ms
+2022-14-06 19:14:35.822 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-14-06 19:14:35.822 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 9.2686ms
+2022-14-06 19:14:39.225 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-14-06 19:14:39.225 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:39.226 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-14-06 19:14:39.226 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:39.233 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 10.9341ms
+2022-14-06 19:14:39.234 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 7.1176ms
+2022-14-06 19:14:39.236 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-14-06 19:14:39.236 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:39.237 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-14-06 19:14:39.237 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-14-06 19:14:39.237 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-14-06 19:14:39.237 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 2.2834ms
+2022-14-06 19:14:39.240 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-14-06 19:14:39.240 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:39.241 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-14-06 19:14:39.241 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-14-06 19:14:39.241 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-14-06 19:14:39.241 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 1.2535ms
+2022-14-06 19:14:41.616 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-14-06 19:14:41.617 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:41.617 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.6106ms
+2022-14-06 19:14:41.618 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-14-06 19:14:41.618 +02:00 INF CORS policy execution successful.
+2022-14-06 19:14:41.618 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-14-06 19:14:41.618 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-14-06 19:14:41.618 +02:00 INF LoginApiUser called...
+2022-14-06 19:14:41.618 +02:00 INF Login attempt for damian@gmail.com
+2022-14-06 19:14:41.618 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-14-06 19:14:41.619 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-14-06 19:14:41.627 +02:00 WRN Invalid password for user.
+2022-14-06 19:14:41.627 +02:00 INF Executing BadRequestObjectResult, writing value of type 'System.String'.
+2022-14-06 19:14:41.627 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 9.0254ms
+2022-14-06 19:14:41.627 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-14-06 19:14:41.627 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 400 - text/plain;+charset=utf-8 9.6383ms
+2022-16-06 19:16:04.874 +02:00 INF Application is starting...
+2022-16-06 19:16:05.766 +02:00 INF User profile is available. Using 'C:\Users\Damian\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2022-16-06 19:16:06.344 +02:00 INF Now listening on: https://localhost:7089
+2022-16-06 19:16:06.344 +02:00 INF Now listening on: http://localhost:5089
+2022-16-06 19:16:06.347 +02:00 INF Application started. Press Ctrl+C to shut down.
+2022-16-06 19:16:06.347 +02:00 INF Hosting environment: Development
+2022-16-06 19:16:06.347 +02:00 INF Content root path: D:\projekty\Asp.net advanced\week1\TW\el-proyecte-grande-sprint-1-csharp-adrianzych2\FriendlyGames.Api
+2022-16-06 19:16:06.724 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/index.html - -
+2022-16-06 19:16:06.972 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/index.html - - - 200 - text/html;charset=utf-8 251.7231ms
+2022-16-06 19:16:06.989 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - -
+2022-16-06 19:16:06.993 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/_framework/aspnetcore-browser-refresh.js - - - 200 11992 application/javascript;+charset=utf-8 3.9856ms
+2022-16-06 19:16:07.113 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - -
+2022-16-06 19:16:07.264 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 150.7945ms
+2022-16-06 19:16:12.136 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-16-06 19:16:12.146 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:12.148 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 12.7801ms
+2022-16-06 19:16:12.150 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-16-06 19:16:12.150 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:12.276 +02:00 INF Bearer was not authenticated. Failure message: No SecurityTokenValidator available for token.
+2022-16-06 19:16:12.284 +02:00 INF Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (User)
+2022-16-06 19:16:12.295 +02:00 INF AuthenticationScheme: Bearer was challenged.
+2022-16-06 19:16:12.296 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 401 0 - 146.0056ms
+2022-16-06 19:16:13.341 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-16-06 19:16:13.341 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:13.342 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.9020ms
+2022-16-06 19:16:13.344 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-16-06 19:16:13.344 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:13.352 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:13.377 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-16-06 19:16:13.807 +02:00 INF LoginApiUser called...
+2022-16-06 19:16:13.807 +02:00 INF Login attempt for damian@gmail.com
+2022-16-06 19:16:14.437 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-16-06 19:16:14.437 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:14.438 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:14.438 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-16-06 19:16:14.439 +02:00 INF LoginApiUser called...
+2022-16-06 19:16:14.439 +02:00 INF Login attempt for damian@gmail.com
+2022-16-06 19:16:14.461 +02:00 WRN Sensitive data logging is enabled. Log entries and exception messages may include sensitive application data; this mode should only be enabled during development.
+2022-16-06 19:16:14.704 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:14.704 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:15.576 +02:00 INF Executed DbCommand (75ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-16-06 19:16:15.576 +02:00 INF Executed DbCommand (75ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-16-06 19:16:15.707 +02:00 WRN Invalid password for user.
+2022-16-06 19:16:15.707 +02:00 WRN Invalid password for user.
+2022-16-06 19:16:15.732 +02:00 INF Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2022-16-06 19:16:15.732 +02:00 INF Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2022-16-06 19:16:15.740 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 2356.616ms
+2022-16-06 19:16:15.740 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 1295.8564ms
+2022-16-06 19:16:15.741 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:15.741 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:15.753 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 401 - text/plain;+charset=utf-8 2409.2235ms
+2022-16-06 19:16:15.753 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 401 - text/plain;+charset=utf-8 1315.8409ms
+2022-16-06 19:16:18.732 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-16-06 19:16:18.732 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:18.732 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.4924ms
+2022-16-06 19:16:18.733 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48
+2022-16-06 19:16:18.734 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:18.734 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:18.734 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-16-06 19:16:18.740 +02:00 INF LoginApiUser called...
+2022-16-06 19:16:18.740 +02:00 INF Login attempt for damian@gmail.com
+2022-16-06 19:16:18.778 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:18.783 +02:00 INF Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-16-06 19:16:18.790 +02:00 WRN Invalid password for user.
+2022-16-06 19:16:18.790 +02:00 INF Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2022-16-06 19:16:18.790 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 56.619ms
+2022-16-06 19:16:18.790 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:18.791 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 48 - 401 - text/plain;+charset=utf-8 57.1056ms
+2022-16-06 19:16:28.071 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login - -
+2022-16-06 19:16:28.071 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.071 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login - - - 204 - - 0.4488ms
+2022-16-06 19:16:28.073 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51
+2022-16-06 19:16:28.073 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.073 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:28.073 +02:00 INF Route matched with {action = "LoginApiUser", controller = "Users"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] LoginApiUser(FriendlyGames.Api.Dtos.LoginApiUserDto) on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-16-06 19:16:28.073 +02:00 INF LoginApiUser called...
+2022-16-06 19:16:28.073 +02:00 INF Login attempt for damian@gmail.com
+2022-16-06 19:16:28.073 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:28.075 +02:00 INF Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='DAMIAN@GMAIL.COM' (Size = 256)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+2022-16-06 19:16:28.162 +02:00 INF Executed DbCommand (3ms) [Parameters=[@__userId_0='ca81e64a-59c4-43d2-8593-eb550efb5442' (Size = 450)], CommandType='"Text"', CommandTimeout='30']
+SELECT [a0].[Name]
+FROM [AspNetUserRoles] AS [a]
+INNER JOIN [AspNetRoles] AS [a0] ON [a].[RoleId] = [a0].[Id]
+WHERE [a].[UserId] = @__userId_0
+2022-16-06 19:16:28.254 +02:00 INF Executing AcceptedResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=6.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2022-16-06 19:16:28.278 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api) in 204.7618ms
+2022-16-06 19:16:28.278 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.LoginApiUser (FriendlyGames.Api)'
+2022-16-06 19:16:28.278 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/login application/json 51 - 202 447 application/json;+charset=utf-8 205.5307ms
+2022-16-06 19:16:28.282 +02:00 INF Request starting HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - -
+2022-16-06 19:16:28.282 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.282 +02:00 INF Request finished HTTP/2 OPTIONS https://localhost:7089/api/Users/GetUser - - - 204 - - 0.3301ms
+2022-16-06 19:16:28.283 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json -
+2022-16-06 19:16:28.283 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.348 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-16-06 19:16:28.349 +02:00 INF Route matched with {action = "GetUser", controller = "Users"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult GetUser() on controller FriendlyGames.Api.Controllers.UsersController (FriendlyGames.Api).
+2022-16-06 19:16:28.355 +02:00 INF Executing JsonResult, writing value of type 'FriendlyGames.Api.Dtos.UserDataDto'.
+2022-16-06 19:16:28.357 +02:00 INF Executed action FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api) in 7.9521ms
+2022-16-06 19:16:28.357 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.UsersController.GetUser (FriendlyGames.Api)'
+2022-16-06 19:16:28.357 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Users/GetUser application/json - - 200 - application/json;+charset=utf-8 74.1221ms
+2022-16-06 19:16:28.385 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-16-06 19:16:28.385 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.385 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-16-06 19:16:28.385 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-16-06 19:16:28.385 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.385 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-16-06 19:16:28.392 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-16-06 19:16:28.393 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-16-06 19:16:28.394 +02:00 INF GetEventCategory called...
+2022-16-06 19:16:28.396 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:28.396 +02:00 INF GetEvents called...
+2022-16-06 19:16:28.398 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:28.401 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-16-06 19:16:28.428 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-16-06 19:16:28.437 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 45.7116ms
+2022-16-06 19:16:28.437 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-16-06 19:16:28.438 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 53.1030ms
+2022-16-06 19:16:28.438 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - -
+2022-16-06 19:16:28.439 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.439 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-16-06 19:16:28.439 +02:00 INF Route matched with {action = "GetEventCategory", controller = "Categories"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[FriendlyGames.Api.Dtos.EventCategoryDto]] GetEventCategory() on controller FriendlyGames.Api.Controllers.CategoriesController (FriendlyGames.Api).
+2022-16-06 19:16:28.439 +02:00 INF GetEventCategory called...
+2022-16-06 19:16:28.440 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:28.443 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ImageForBoxWithEventInfo], [e].[ImageForSearchBar], [e].[Name]
+FROM [EventCategories] AS [e]
+2022-16-06 19:16:28.445 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventCategoryDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-16-06 19:16:28.445 +02:00 INF Executed action FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api) in 5.8274ms
+2022-16-06 19:16:28.445 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.CategoriesController.GetEventCategory (FriendlyGames.Api)'
+2022-16-06 19:16:28.445 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Categories/eventCategory - - - 200 578 application/json;+charset=utf-8 6.6863ms
+2022-16-06 19:16:28.492 +02:00 INF Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-16-06 19:16:28.555 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-16-06 19:16:28.573 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 179.3104ms
+2022-16-06 19:16:28.573 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-16-06 19:16:28.573 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 188.2695ms
+2022-16-06 19:16:28.574 +02:00 INF Request starting HTTP/2 GET https://localhost:7089/api/Events - -
+2022-16-06 19:16:28.574 +02:00 INF CORS policy execution successful.
+2022-16-06 19:16:28.574 +02:00 INF Executing endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-16-06 19:16:28.574 +02:00 INF Route matched with {action = "GetEvents", controller = "Events"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[FriendlyGames.Api.Dtos.EventsDto]]] GetEvents(System.Nullable`1[System.Int32], System.String, System.String, System.String, System.String) on controller FriendlyGames.Api.Controllers.EventsController (FriendlyGames.Api).
+2022-16-06 19:16:28.574 +02:00 INF GetEvents called...
+2022-16-06 19:16:28.575 +02:00 INF Entity Framework Core 6.0.9 initialized 'FriendlyGamesDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer:6.0.9' with options: SensitiveDataLoggingEnabled 
+2022-16-06 19:16:28.576 +02:00 INF Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [e].[Id], [e].[ApiUserId], [e].[City], [e].[EndDateTime], [e].[EventCategoryId], [e].[LevelCategoryId], [e].[MaxNumberOfPlayers], [e].[Name], [e].[PriceForEvent], [e].[StartDateTime], [e].[Street], [e].[SurfaceCategoryId], [e].[SurroundingCategoryId], [e0].[Id], [r].[EventId], [r].[ApiUserId], [r].[RegistrationDateTime], [e0].[ImageForBoxWithEventInfo], [e0].[ImageForSearchBar], [e0].[Name]
+FROM [Events] AS [e]
+INNER JOIN [EventCategories] AS [e0] ON [e].[EventCategoryId] = [e0].[Id]
+LEFT JOIN [Registrations] AS [r] ON [e].[Id] = [r].[EventId]
+ORDER BY [e].[Id], [e0].[Id], [r].[EventId]
+2022-16-06 19:16:28.578 +02:00 INF Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[FriendlyGames.Api.Dtos.EventsDto, FriendlyGames.Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2022-16-06 19:16:28.579 +02:00 INF Executed action FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api) in 4.3401ms
+2022-16-06 19:16:28.579 +02:00 INF Executed endpoint 'FriendlyGames.Api.Controllers.EventsController.GetEvents (FriendlyGames.Api)'
+2022-16-06 19:16:28.579 +02:00 INF Request finished HTTP/2 GET https://localhost:7089/api/Events - - - 200 8488 application/json;+charset=utf-8 5.3058ms
