@@ -70,7 +70,8 @@ public class UsersController : ControllerBase
         if (!ModelState.IsValid) return BadRequest(ModelState);
 
         var errorString = "Zły email lub hasło";
-        if (!await _authenticationManager.ValidateApiUser(userDto)) return Unauthorized(JsonConvert.SerializeObject(errorString));
+        if (!await _authenticationManager.ValidateApiUser(userDto))
+            return Unauthorized(JsonConvert.SerializeObject(errorString));
 
         return Accepted(new {Token = await _authenticationManager.CreateJwtToken()});
     }
