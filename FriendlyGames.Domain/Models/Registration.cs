@@ -12,6 +12,6 @@ public class Registration
     public DateTime RegistrationDateTime { get; set; } = DateTime.Now;
 
     [ForeignKey(nameof(RegistrationCategoryId))]
-
+//formatowanie do usuneica ta spacja pomiedzy atrybutem a propertisem
     public int RegistrationCategoryId { get; set; }
 }
