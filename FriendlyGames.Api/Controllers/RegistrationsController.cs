@@ -40,7 +40,7 @@ public class RegistrationController : ControllerBase
                 .Include(x => x.Event)
                 .ThenInclude(x => x.Creator)
                 .ToListAsync();
-            var results = _mapper.Map<IList<RegistrationDto>>(allRegistration);*/
+            var results = _mapper.Map<IList<RegistrationDto>>(allRegistration);*/ //komentarz do usuniecia
 
             var results = await _registrationService.GetRegistrations(eventId, userId, registrationCategoryId);
             return Ok(results);
