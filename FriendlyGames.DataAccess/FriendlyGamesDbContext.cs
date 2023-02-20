@@ -37,7 +37,7 @@ public class FriendlyGamesDbContext : IdentityDbContext<User>
             .WithMany(u => u.Registrations)
             .OnDelete(DeleteBehavior.Restrict);
 
-        // Seeding data
+        // Seeding data //jak seedujesz dane to daj to do osobnej metody wtedy nie musisz uzywac komentarzy
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 1, Name = "Oczekujące"});
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 2, Name = "Zaakceptowane"});
         modelBuilder.Entity<RegistrationCategory>().HasData(new RegistrationCategory {Id = 3, Name = "Odrzucone"});
@@ -81,7 +81,7 @@ public class FriendlyGamesDbContext : IdentityDbContext<User>
             .HasData(new EventCategory
                 {Id = 9, Name = "Kręgielnia", ImageForSearchBar = "bowling.png", ImageForBoxWithEventInfo = "kręgle-box.png" });
         /*modelBuilder.Entity<User>()
-            .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"});
+            .HasData(new User {Id = 1, FirstName = "John", LastName = "Doe"}); //zbedny komentarz do usuniecia
         modelBuilder.Entity<User>()
             .HasData(new User {Id = 2, FirstName = "Adam", LastName = "Smith"});
         modelBuilder.Entity<User>()
