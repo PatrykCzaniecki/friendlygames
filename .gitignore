@@ -452,3 +452,6 @@ MigrationBackup/
 
 # Ignore log.txt
 log.txt
+
+# Ignore logs directory
+logs/
