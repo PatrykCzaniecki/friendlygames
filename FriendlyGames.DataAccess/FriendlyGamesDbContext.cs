@@ -1,5 +1,4 @@
 ﻿using FriendlyGames.Domain.Categories;
-using FriendlyGames.Domain.Enums;
 using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;

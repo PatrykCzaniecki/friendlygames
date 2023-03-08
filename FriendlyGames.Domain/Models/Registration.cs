@@ -4,12 +4,11 @@ namespace FriendlyGames.Domain.Models;
 
 public class Registration
 {
-    [ForeignKey(nameof(EventId))] public Event Event { get; set; } = null!;
-
+    public Event Event { get; set; } = null!;
+    [ForeignKey(nameof(EventId))]
     public int EventId { get; set; }
-
-    [ForeignKey(nameof(ApiUserId))] public ApiUser ApiUser { get; set; } = null!;
-
+    public ApiUser ApiUser { get; set; } = null!;
+    [ForeignKey(nameof(ApiUserId))]
     public string ApiUserId { get; set; } = string.Empty;
     public DateTime RegistrationDateTime { get; set; } = DateTime.Now;
 }

@@ -1,0 +1,6 @@
+﻿namespace FriendlyGames.Domain.Categories;
+public class BaseCategory
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = null!;
+}

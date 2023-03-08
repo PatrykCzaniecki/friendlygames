@@ -1,7 +1,5 @@
-﻿namespace FriendlyGames.Domain.Enums;
+﻿namespace FriendlyGames.Domain.Categories;
 
-public class SurroundingCategory
+public class SurroundingCategory : BaseCategory
 {
-    public int Id { get; set; }
-    public string Name { get; set; } = null!;
 }
