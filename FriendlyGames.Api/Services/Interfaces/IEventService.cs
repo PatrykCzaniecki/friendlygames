@@ -1,6 +1,6 @@
 ﻿using FriendlyGames.Api.Dtos;
 
-namespace FriendlyGames.Api.Services;
+namespace FriendlyGames.Api.Services.Interfaces;
 
 public interface IEventService
 {

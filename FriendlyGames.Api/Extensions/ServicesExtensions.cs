@@ -21,7 +21,6 @@ public static class ServicesExtensions
     {
         var jwtSettings = configuration.GetSection("Jwt");
         var key = Environment.GetEnvironmentVariable("FRIENDLYGAMES_KEY");
-
         services.AddAuthentication(options =>
         {
             options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

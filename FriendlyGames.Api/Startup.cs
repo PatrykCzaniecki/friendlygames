@@ -54,10 +54,7 @@ public class Startup
             });
         });
 
-        // Authentication & Identity Management
         services.ConfigureAuthenticationAndIdentityManagement();
-
-        // JWT
         services.ConfigureJwt(Configuration);
     }
 

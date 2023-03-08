@@ -2,6 +2,7 @@
 using AutoMapper;
 using FriendlyGames.Api.Dtos;
 using FriendlyGames.Api.Services;
+using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Authorization;

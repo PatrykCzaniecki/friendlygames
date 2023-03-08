@@ -26,7 +26,6 @@ public class CategoriesService : ICategoriesService
             await (_dbContext.SurfaceCategories ?? throw new InvalidOperationException()).ToListAsync();
         var surroundingCategories =
             await (_dbContext.SurroundingCategories ?? throw new InvalidOperationException()).ToListAsync();
-
         var dictionary = new Dictionary<string, object>
         {
             {
@@ -42,7 +41,6 @@ public class CategoriesService : ICategoriesService
                 "surroundingCategory", surroundingCategories
             }
         };
-
         return dictionary;
     }
 
@@ -50,7 +48,6 @@ public class CategoriesService : ICategoriesService
     {
         var eventCategory = await (_dbContext.EventCategories ?? throw new InvalidOperationException()).ToListAsync();
         var eventCategoryMapper = _mapper.Map<IList<EventCategoryDto>>(eventCategory);
-
         return eventCategoryMapper;
     }
 }

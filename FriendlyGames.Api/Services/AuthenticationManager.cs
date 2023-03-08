@@ -2,6 +2,7 @@
 using System.Security.Claims;
 using System.Text;
 using FriendlyGames.Api.Dtos;
+using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.Domain.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
@@ -31,7 +32,6 @@ public class AuthenticationManager : IAuthenticationManager
     public async Task<bool> ValidateApiUser(LoginApiUserDto userDto)
     {
         _user = await _userManager.FindByEmailAsync(userDto.Email);
-
         return _user != null && await _userManager.CheckPasswordAsync(_user, userDto.Password);
     }
 
@@ -42,7 +42,6 @@ public class AuthenticationManager : IAuthenticationManager
         var audience = jwtSettings.GetSection("Audience").Value;
         var lifetime = Convert.ToDouble(jwtSettings.GetSection("Lifetime").Value);
         var expires = DateTime.Now.AddMinutes(lifetime);
-
         var token = new JwtSecurityToken(
             issuer,
             audience,
@@ -50,7 +49,6 @@ public class AuthenticationManager : IAuthenticationManager
             claims: claims,
             signingCredentials: signingCredentials
         );
-
         return token;
     }
 
@@ -65,9 +63,7 @@ public class AuthenticationManager : IAuthenticationManager
         };
 
         var roles = await _userManager.GetRolesAsync(_user);
-
         claims.AddRange(roles.Select(role => new Claim(ClaimTypes.Role, role)));
-
         return claims;
     }
 

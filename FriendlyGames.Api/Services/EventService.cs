@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using FriendlyGames.Api.Dtos;
+using FriendlyGames.Api.Services.Interfaces;
 using FriendlyGames.DataAccess;
 using FriendlyGames.Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -38,15 +39,10 @@ public class EventService : IEventService
             events = (_dbContext.Events ?? throw new InvalidOperationException())
                 .Include(x => x.Registrations)
                 .Include(x => x.EventCategory);
-
         if (levelCategoryIds != null) events = FilterByLevel(levelCategoryIds, events);
-
         if (surfaceCategoryIds != null) events = FilterBySurface(surfaceCategoryIds, events);
-
         if (surroundingCategoryIds != null) events = FilterBySurrounding(surroundingCategoryIds, events);
-
         if (payable != null) events = FilterByPayable(payable, events);
-
         return events;
     }
 
